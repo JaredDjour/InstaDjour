@@ -5,8 +5,10 @@ const usersReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type){
     case RECEIVE_CURRENT_USER:
-    return merge({}, state, {[action.currentUser.id]: currentUser.id})
+    return merge({}, state, {[action.currentUser.id]: currentUser.id});
     default:
     return state;
   }
-}
+};
+
+export default usersReducer;
