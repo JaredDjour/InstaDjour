@@ -1,4 +1,4 @@
-import * as APIUtil from "../util/session_api_util";
+import * as APIUtil from "../util/session_api_util.js";
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
@@ -13,7 +13,7 @@ export const login = (user) => dispatch => {
 };
 
 export const logout = () => dispatch => {
-  return APIUtil.logout().then(()=> dispatch(logoutCurrentUser());
+  return APIUtil.logout().then(()=> dispatch(logoutCurrentUser()));
 };
 
 export const signup = user => dispatch => {
