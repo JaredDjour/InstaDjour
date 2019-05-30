@@ -20,12 +20,13 @@ class SessionForm extends React.Component {
   };
 
   renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}> {error} </li>))}
-      </ul>
-    );
+    if (typeof this.state.errors !== "undefined"){
+      return(
+        <ul>
+          {this.state.errors.map((error, i) => (<li key={`error-${i}`}> {error} </li> ) )}
+        </ul>
+      );
+    }
   };
 
   render() {
