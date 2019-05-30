@@ -34,7 +34,9 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
           InstaDjour
           <br/>
-          {this.props.formType} or {this.props.navLink}
+          {this.props.formType}
+          <br/>
+          {this.props.navLink}
           {this.renderErrors()}
             <div className="login-form">
                 <br/>
@@ -58,4 +60,4 @@ class SessionForm extends React.Component {
 };
 
 
-export default withRouter(SessionForm);
+export default SessionForm;

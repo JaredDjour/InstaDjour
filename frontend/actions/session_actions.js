@@ -24,7 +24,7 @@ export const signup = user => dispatch => {
 
 
 
-const receiveCurrentUser = (currentUser) => {
+const receiveCurrentUser = currentUser => {
   return {
     type: RECEIVE_CURRENT_USER,
     currentUser
@@ -38,7 +38,7 @@ const logoutCurrentUser = () => {
 };
 
  // errors will be an array:
-const receiveErrors = (errors) => {
+const receiveErrors = errors => {
   return {
     type: RECEIVE_SESSION_ERRORS,
     errors
