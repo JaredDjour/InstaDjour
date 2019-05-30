@@ -6,10 +6,10 @@ import NavBar from './nav_bar';
 
 const mapStateToProps = state => {
   const id = state.session.id
-  const currentUser = state.entities.users[id].username
+  const currentUser = state.entities.users[state.session.id]
   return {
     id,
-    currentUser,
+    currentUser
   }
 };
 

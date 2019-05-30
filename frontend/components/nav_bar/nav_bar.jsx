@@ -1,23 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+
 
 export default ({ id, logout, currentUser }) => {
-  let display;
+  let logoutDisplay;
   if (id){
-    display = (
+    logoutDisplay = (
       <div>
         <p>Hello, {currentUser.username}!</p>
         <button onClick={logout}>Logout</button>
       </div>
     )
+  } else {
+    <div>
+      <p>Hello, {currentUser.username}!</p>
+      <button onClick={logout}>Logout</button>
+    </div>
   };
-
 
   return (
     <header className="nav-bar">
       <h1 className="logo">InstaDjour</h1>
-      <div className="nav-display">
-        {display}
+      <div className="nav-logout-display">
+        {logoutDisplay}
       </div>
     </header>
   );

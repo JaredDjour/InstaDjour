@@ -13,7 +13,8 @@ export const login = (user) => dispatch => {
 };
 
 export const logout = () => dispatch => {
-  return APIUtil.logout().then(()=> dispatch(logoutCurrentUser()));
+  return APIUtil.logout().then(()=> dispatch(logoutCurrentUser()),
+  error => dispatch(receiveErrors(error.responseJSON)));
 };
 
 export const signup = user => dispatch => {
