@@ -7,17 +7,17 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {username: "", password: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
-  };
+  }
 
   handleChange(field){
     return e => this.setState({[field]: e.currentTarget.value})
-  };
+  }
 
   handleSubmit(e){
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(() => this.props.history.push("/"))
-  };
+  }
 
   renderErrors() {
     if (typeof this.state.errors !== "undefined"){
@@ -27,14 +27,15 @@ class SessionForm extends React.Component {
         </ul>
       );
     }
-  };
+  }
 
   render() {
     let conditional 
     if (this.props.formType === "Sign Up"){
       conditional = 
-        (
+        (  
           <label>
+          <h2 className="logo-greet">Sign up to see photos and videos from your friends. </h2>
             <input className="login-input" type="text"
               placeholder="Mobile Number or email" value={this.state.email}
               onChange={this.handleChange('email')} />
@@ -72,7 +73,6 @@ class SessionForm extends React.Component {
       <div>
       <div className="login-form-container">
         <h1 className="logo">Instadjour</h1>
-        <h2 className="logo-greet">Sign up to see photos and videos from your friends. </h2>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
           {this.renderErrors()}
@@ -88,7 +88,9 @@ class SessionForm extends React.Component {
       </div>
 
       <div className="session-nav">
-        {this.props.navLink}
+          <div className="session-nav-content">
+          {this.props.navLink}
+          </div>
       </div>
     </div>
     );
@@ -99,16 +101,3 @@ class SessionForm extends React.Component {
 
 export default SessionForm;
 
-
-
-{/* <label>
-  <input className="login-input" type="text"
-    placeholder="Phone number, username, or email" value={this.state.username}
-    onChange={this.handleChange('username')} />
-</label>
-  <br />
-  <label>
-    <input className="login-input" type="password" value={this.state.password}
-      placeholder="Password"
-      onChange={this.handleChange('password')} />
-  </label> */}

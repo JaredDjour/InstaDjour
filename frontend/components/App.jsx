@@ -9,10 +9,11 @@ const App = () => {
   return (
   <div>
       <Route path ="/" component={NavBarContainer}/>
-      <AuthRoute exact path="/" component={SignupFormContainer}/>
+      {/* <AuthRoute exact path="/" component={SignupFormContainer}/> */}
       <AuthRoute exact path="/login" component={LoginFormContainer}/>
       <AuthRoute exact path="/signup" component={SignupFormContainer}/>
   </div>
+
   );
 };
 export default App;
