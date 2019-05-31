@@ -5,12 +5,13 @@ import NavBar from './nav_bar';
 
 
 const mapStateToProps = state => {
-  const id = state.session.id
-  const currentUser = state.entities.users[state.session.id]
+  const id = state.session.id;
+  const currentUser = state.entities.users[state.session.id];
   return {
     id,
     currentUser,
-  }
+    loggedIn: !!currentUser,
+  };
 };
 
 const mapDispatchToProps = dispatch => ({
