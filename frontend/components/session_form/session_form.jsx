@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 
 class SessionForm extends React.Component {
@@ -29,32 +30,67 @@ class SessionForm extends React.Component {
   };
 
   render() {
+    let conditional 
+    if (this.props.formType === "Sign Up"){
+      conditional = 
+        (
+          <label>
+            <input className="login-input" type="text"
+              placeholder="Mobile Number or email" value={this.state.email}
+              onChange={this.handleChange('email')} />
+            <br/>
+            <input className="login-input" type="text"
+              placeholder="Full Name" value={this.state.fullName}
+              onChange={this.handleChange('fullName')} />
+            <br/>
+            <input className="login-input" type="text"
+              placeholder="Username" value={this.state.username}
+              onChange={this.handleChange('username')} />
+            <br/>  
+            <input className="login-input" type="password" value={this.state.password}
+              placeholder="Password"
+              onChange={this.handleChange('password')} />
+          </label>
+        )
+    } else if (this.props.formType === "Log In"){
+      conditional = 
+      (
+        <label>
+        <input className="login-input" type="text"
+          placeholder="Phone number, username, or email" value={this.state.username}
+          onChange={this.handleChange('username')} />
+        <br/>
+        <input className="login-input" type="password" value={this.state.password}
+          placeholder="Password"
+          onChange={this.handleChange('password')}/>
+        </label>
+      )
+    }
+        
+  
     return(
+      <div>
       <div className="login-form-container">
-        <h1 className="logo">InstaDjour</h1>
+        <h1 className="logo">Instadjour</h1>
+        <h2 className="logo-greet">Sign up to see photos and videos from your friends. </h2>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
           {this.renderErrors()}
             <div className="login-form">
                 <br/>
-                <label>
-                  <input className="login-input" type="text"
-                   placeholder="Phone number, username, or email" value={this.state.username}
-                  onChange={this.handleChange('username')}/>
-                </label>
-                <br/>
-                <label>
-                  <input className="login-input" type="password" value={this.state.password}
-                  placeholder="Password"
-                  onChange={this.handleChange('password')}/>
-                </label>
+               {conditional}
                 <br/>
                 <input className="session-submit" type="submit" value={this.props.formType} />
               <br/>
-            {this.props.navLink}
-            </div>
+              <h2 className="terms">By signing up, you agree to our <Link className="terms-link" to="https://help.instagram.com/581066165581870">Terms</Link>, <Link className="terms-link" to="https://help.instagram.com/519522125107875">Data Policy</Link> and <Link className="terms-link" to="https://help.instagram.com/1896641480634370?ref=ig">Cookies Policy</Link>.</h2> 
+            </div> 
         </form>
       </div>
+
+      <div className="session-nav">
+        {this.props.navLink}
+      </div>
+    </div>
     );
   };
 
@@ -62,3 +98,17 @@ class SessionForm extends React.Component {
 
 
 export default SessionForm;
+
+
+
+{/* <label>
+  <input className="login-input" type="text"
+    placeholder="Phone number, username, or email" value={this.state.username}
+    onChange={this.handleChange('username')} />
+</label>
+  <br />
+  <label>
+    <input className="login-input" type="password" value={this.state.password}
+      placeholder="Password"
+      onChange={this.handleChange('password')} />
+  </label> */}

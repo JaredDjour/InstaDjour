@@ -2,19 +2,27 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 350px;
-    height: 380px;
+    width: 235px;
+    height: 375px;
     margin: auto;
-    padding: 10px 0;
+    padding: auto;
     background-color: #ffff;
+    border: solid #e6e6e6 1px;
 } ;
 
+
 .logo {
+    display: flex;
+    justify-content: center;
     color: #262626;
-    margin: 22px 86.5078px 12px;;
-    font-size: 30px;
-    font-family: s;
+    margin: 22px 86.50765px 12px;;
+    font-size: 35px;
+    font-family: 'Billabong';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Billabong'), url('Billabong.woff') format('woff');
 }
+
 .login-form {
     display: flex;
    flex-direction: column; 
@@ -23,14 +31,65 @@
 
 
 .login-form-box {
-
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
 .login-input {
+    display: flex;
+    align-content: center;
     background: #fafafa;
-    padding: 9px 0 7px 8px;
-};
+    border: solid #efefef 1px;
+    border-radius: 5px;
+    height: 25px;
+    width: 185px;
+}
 
 .session-submit {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background: #3897f0;
+    color: white;
+    width: 180px;
+    height: 25px;
+  
+}
 
-};
+.logo-greet {
+    font-weight: 600;
+    font-size: 12px;
+    margin: 0 40px 10px;
+    color: #999999;
+    margin: 0 40px 10px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+.terms {
+   font-weight: 300;
+    font-size: 10px;
+    margin: 0 40px 10px;
+    color: #999999;
+    margin: 0 40px 10px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; 
+}
+
+.terms-link{
+    color: #999999;
+    font-weight: 600;
+    text-decoration-line: none; 
+}
+
+.session-nav{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 235px;
+    height: 20px;
+    margin: 5px;
+    padding: 10px 0;
+    background-color: #ffff;
+    border: solid #e6e6e6 1px;
+}
