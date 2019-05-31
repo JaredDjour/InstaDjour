@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 
 class SessionForm extends React.Component {
@@ -32,24 +31,27 @@ class SessionForm extends React.Component {
   render() {
     return(
       <div className="login-form-container">
+        <h1 className="logo">InstaDjour</h1>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          {this.props.formType}
           <br/>
-          {this.props.navLink}
           {this.renderErrors()}
             <div className="login-form">
                 <br/>
-                <label>Username:
-                  <input className="login-input" type="text" value={this.state.username}
+                <label>
+                  <input className="login-input" type="text"
+                   placeholder="Phone number, username, or email" value={this.state.username}
                   onChange={this.handleChange('username')}/>
                 </label>
                 <br/>
-                <label>Password:
+                <label>
                   <input className="login-input" type="password" value={this.state.password}
+                  placeholder="Password"
                   onChange={this.handleChange('password')}/>
                 </label>
                 <br/>
                 <input className="session-submit" type="submit" value={this.props.formType} />
+              <br/>
+            {this.props.navLink}
             </div>
         </form>
       </div>

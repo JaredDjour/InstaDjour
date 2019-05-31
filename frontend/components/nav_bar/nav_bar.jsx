@@ -28,7 +28,6 @@ class NavBar extends React.Component {
 
     return (
       <div className="nav-bar">
-        <h1 className="logo">InstaDjour</h1>
         <div className="nav-logout-display">
           {loggy}
         </div>

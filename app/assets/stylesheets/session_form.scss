@@ -1,12 +1,24 @@
 .login-form-container {
     display: flex;
-   justify-content: center;
-
+    flex-direction: column;
+    justify-content: center;
+    width: 350px;
+    height: 380px;
+    margin: auto;
+    padding: 10px 0;
+    background-color: #ffff;
 } ;
 
-
+.logo {
+    color: #262626;
+    margin: 22px 86.5078px 12px;;
+    font-size: 30px;
+    font-family: s;
+}
 .login-form {
-
+    display: flex;
+   flex-direction: column; 
+    justify-content: center;
 }
 
 
@@ -15,7 +27,8 @@
 }
 
 .login-input {
-
+    background: #fafafa;
+    padding: 9px 0 7px 8px;
 };
 
 .session-submit {
