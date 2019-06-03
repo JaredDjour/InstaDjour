@@ -1,26 +1,107 @@
+.everything{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 330px 0;
+    max-width: 550px;
+    padding-bottom: 44px;
+    width: 100%;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+    
+.iphone-container{
+    display: flex;
+    width: 310px;
+    height: 440px;
+    margin: 40px 0px auto auto;
+}
+.iphone {
+    background-image: url("https://www.instagram.com/static/images/homepage/home-phones.png/43cc71bb1b43.png");
+    background-size: 310px 440px;
+    height: 100%;
+    width: 100%;
+    align-self: center;
+    background-position: 0 0;
+    flex-basis: 454px;
+}
+
+.iphone-screen{
+    
+    background-size: 165px 306px;
+    height: 307px;
+    width: 166px;
+    // background-image: url("app/assets/images/jeffrey2.png");
+    // background-image: url("https://www.instagram.com/static/images/homepage/screenshot2.jpg/6f03eb85463c.jpg");
+    margin: 70px 0px 0px 102px;
+    border-radius: 3px;
+    // background-image: url("https://www.instagram.com/static/images/homepage/screenshot1.jpg/d6bf0c928b5a.jpg"); 
+    // background-image: url("https://www.instagram.com/static/images/homepage/screenshot3.jpg/f0c687aa6ec2.jpg");
+    // background-image: url("https://www.instagram.com/static/images/homepage/screenshot4.jpg/842fe5699220.jpg");
+    background-image: url("https://www.instagram.com/static/images/homepage/screenshot5.jpg/0a2d3016f375.jpg");
+    transition: background-image 0.2s ease-in-out;
+}
+
 .login-form-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 235px;
-    height: 375px;
-    margin: auto;
+    justify-content: right;
+    width: 220px;
+    height: 380;
+    margin: 0px 0 6px 0;
     padding: auto;
     background-color: #ffff;
     border: solid #e6e6e6 1px;
-} ;
+    border-radius: 1px;
+};
 
 
 .logo {
     display: flex;
     justify-content: center;
     color: #262626;
-    margin: 22px 86.50765px 12px;;
-    font-size: 35px;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 0;
+    font-size: 37px;
     font-family: 'Billabong';
-    font-style: normal;
     font-weight: normal;
     src: local('Billabong'), url('Billabong.woff') format('woff');
+}
+.demo-icon{
+    background-image: url("http://www.transparentpng.com/thumb/instagram-logo-icon/yVnfo1-instagram-logo-photo-icon.png");
+    background-size: 26px 19px;
+    height: 19px;
+    width: 26px;
+    margin: -2px 5px 0px -11px;;
+}
+.demo-user{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 15px;
+    background: #3897f0;
+    color: white;
+    width: 180px;
+    height: 20px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 10px;
+    margin-bottom: 5px;
+    padding: 5px 0 0 0;
+    cursor: pointer;
+}
+.main{
+    margin-bottom: 0 0 0 -8px;
+}
+.or {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 9px;
+    margin: 12px 39px 12px;;
+    color: #999999;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 
 .login-form {
@@ -42,9 +123,12 @@
     background: #fafafa;
     border: solid #efefef 1px;
     border-radius: 5px;
-    height: 25px;
+    height: 20px;
     width: 185px;
-    margin: auto;
+    margin: -6px auto;
+    font-size: 10px;
+    font-weight: 100;
+    padding: 1px 5px;
 }
 
 .session-submit {
@@ -53,53 +137,103 @@
     width: 100%;
     background: #3897f0;
     color: white;
-    width: 180px;
-    height: 25px;
+    width: 190px;
+    height: 20px;
     margin: auto;
-    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 9px;
+    cursor: pointer;
 }
 
 .logo-greet {
-    font-weight: 600;
-    font-size: 12px;
-    margin: 0 40px 10px;
+    font-weight: 500;
+    font-size: 11px;
+    margin: 0 40px 15px;
     color: #999999;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 
+.terms-container{
+    display: flex; 
+    flex-direction: row;
+    margin-top: -16px;
+}
 .terms {
    font-weight: 300;
     font-size: 10px;
-    margin: 0 40px 10px;
+    margin: 0 40px 15px;
     color: #999999;
-    margin: 0 40px 10px;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; 
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    text-align: center;
 }
 
 .terms-link{
     color: #999999;
-    font-weight: 600;
+    font-weight: 500;
     text-decoration-line: none; 
 }
 
-.session-nav{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    width: 235px;
-    height: 20px;
-    margin: auto;
-    padding: 10px 0;
+.session-switch{
+    width: 220px;
     background-color: #ffff;
     border: solid #e6e6e6 1px;
-    font-weight: 600;
-    font-size: 12px;
-    color: #999999
+    font-weight: 400;
+    font-size: 13px;
+    color: #999999;
+    border-radius: 1px;
+    margin: 0 0 10px;
 }
 
-.session-nav-content {
+.session-switch-content {
     display: flex;
     align-content: center;
+    justify-content: center;
     margin: auto;
+    color: #262626;
+    font-size: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+.session-switch-link {
+    text-decoration-line: none;
+    font: inherit;
+    color: #3897f0;
+    font-weight: 600;
+    font-size: 10px;
+}
+
+.get-app-text{
+  font-size: 9px;
+    color: #262626;
+    display: flex;
+    justify-content: center;
+}
+
+.app-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px 0 30px;
+}
+.get-app-apple{
+    background-image: url("https://www.instagram.com/static/images/appstore-install-badges/badge_ios_english-en.png/180ae7a0bcf7.png");
+    height: 30px;
+    width: 91px;
+    background-size: 91px 30px;
+    margin: 3px;
+}
+
+.get-app-google{
+    width: 50%;
+    background-image: url("https://www.instagram.com/static/images/appstore-install-badges/badge_android_english-en.png/e9cd846dc748.png");
+    height: 30px;
+    width: 91px;
+    background-size: 91px 30px;
+    margin: 3px;
 }

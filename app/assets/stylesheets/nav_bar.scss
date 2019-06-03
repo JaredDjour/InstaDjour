@@ -1,17 +1,184 @@
 body {
     background-color: #fafafa;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color: #262626;
 }
 
 .nav-bar {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 100px 0 0 0;
-    // height: 51px;
-    // width: 175px;
-    
+    margin: 0px 0 0 0;
+    background-color: white;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    border-bottom: solid #e6e6e6 1px; 
 }
 
-.nav-logout-display{
+.nav-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: -40px;
+    margin-top: 13px;;
+}
 
+.nav-left-text {
+    text-decoration: none;
+    color: #262626;
+    font-size: 20px;
+    font-family: "Billabong";
+    src: local('Billabong'), url('Billabong.woff') format('woff'); 
+    margin: 3px 10px 0;
+    padding: 0px 8px;
+    border-left: solid 1px black; 
+}
+
+.nav-left-icon {
+    background-size: 18px 18px;
+    width: 18px;
+    height: 18px;
+    background-image: url("http://grassyhillcountryclub.com/wp-content/uploads/2019/01/ig-logo-2.png");
+    cursor: pointer;
+}
+
+.nav-center {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    margin: -20px 10px 10px 10px;;
+}
+
+// .nav-display{
+
+// }
+
+// .nav-user{
+
+// }
+
+.search-bar{
+    border: solid 1px #dbdbdb;
+    border-radius: 3px;
+    color: #262626;
+    outline: 0;
+    padding: 3px 10px 3px 26px;
+    z-index: 2;
+    background-color: #fafafa;
+    height: 12px;
+    text-align: left;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 100;
+}
+
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: -65px -5px 0px 500px;
+}
+
+[class*="icon-"] {
+  display: inline-block;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  overflow: hidden;
+  padding-top: 25px;
+}
+
+.icon-search{
+    background-image: url("https://images.vexels.com/media/users/3/147105/isolated/preview/5c38be8d63c0ae0ad034417daaef3bcb-instagram-search-icon-by-vexels.png");
+    background-size: 10px 10px;
+    height: 10px;
+    width: 10px;
+    z-index: 5;
+    margin: 6px -22px;
+}
+.icon-explore {
+    // background-image: url("https://static.thenounproject.com/png/782776-200.png");
+    // background-image: url("https://icons-for-free.com/iconfiles/png/512/explore+find+location+icon-1320184016962546925.png");
+    background-image: url("https://cdn1.iconfinder.com/data/icons/instagram-ui-flat/48/Instagram_UI-19-512.png");
+    background-size: 35px 35px;
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+.icon-heart{
+    background-image: url("https://images.vexels.com/media/users/3/147091/isolated/preview/5f8a1ea9c90ceed8d92999bc824417eb-instagram-heart-icon-by-vexels.png");
+    background-size: 23px 20px;
+    width: 23px;
+    height: 20px;
+    margin-right: 14px;
+}
+
+.icon-profile{
+    // background-image: url("https://images.vexels.com/media/users/3/147103/isolated/preview/e9bf9a44d83e00b1535324b0fda6e91a-instagram-profile-line-icon-by-vexels.png");
+    background-image: url("https://images.vexels.com/media/users/3/147102/isolated/preview/082213cb0f9eabb7e6715f59ef7d322a-instagram-profile-icon-by-vexels.png");
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+}
+
+// .icon-camera{
+//     background-image: url("https://images.vexels.com/media/users/3/147099/isolated/preview/ffd2e8aeb1f35bcf5196d56580bc6ad1-instagram-photo-icon-by-vexels.png");
+//     background-size: 25px 25px;
+//     width: 25px;
+//     height: 25px 
+// }
+
+// .icon-insta {
+//     background-image: url("http://grassyhillcountryclub.com/wp-content/uploads/2019/01/ig-logo-2.png");
+//     background-size: 25px 25px;
+//     width: 25px;
+//     height: 25px 
+// }
+.logout{
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    margin: -12px 1px 8px 5px;
+}
+
+
+// .icon-settings{
+    // background-image: url("https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiMxb_5oMziAhUNT98KHR2CBnEQjRx6BAgBEAU&url=https%3A%2F%2Fwww.vexels.com%2Fpng-svg%2Fpreview%2F147109%2Finstagram-settings-icon&psig=AOvVaw0PQP03jVw2ea1oHFCyW8Sx&ust=1559615033228469");
+
+// }
+
+.nav-bar-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    width: 100%;
+    margin: 10px;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+}
+
+.nav-bar-bottom-text{
+    margin: 10px;
+    color: #003569;
+    text-decoration: none;
+    font-size: 10px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 600;
+} 
+
+.trademark{
+    display: flex;
+    flex-direction: row;
+    bottom: 0;
+    position: fixed;
+    justify-content: center;
+    font-size: 10px;
+    color: #999;
+    font-weight: 500;
+    width: 100%;
+    margin: 10px 0px 0 -72px;
+    padding: 10px;
 }
