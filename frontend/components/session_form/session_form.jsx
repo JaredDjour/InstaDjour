@@ -8,10 +8,18 @@ class SessionForm extends React.Component {
     this.state = {username: "", password: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
+    this.changeBg = this.changeBg.bind(this);
   }
 
   componentDidMount(){
     this.props.clearErrors;
+
+    window.setInterval(() => this.changeBg(), 3000);
+  }
+
+  changeBg(){
+    $('.iphone-screen').fadeToggle('bg1');
+    $('.iphone-screen').fadeToggle('bg2');
   }
 
   handleChange(field){
@@ -94,7 +102,7 @@ class SessionForm extends React.Component {
         left = (
           <div className="iphone-container">
             <div className="iphone">
-              <div className="iphone-screen"></div>
+              <div className="iphone-screen bg1"></div>
             </div>
           </div>
         )
