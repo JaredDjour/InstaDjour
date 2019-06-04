@@ -2,8 +2,8 @@ import { RECEIVE_ALL_POSTS, RECEIVE_POST, REMOVE_POST } from "../actions/post_ac
 import merge from "lodash";
 
 
-export default postsReducer = (state = {}, action) => {
-   oldState = Object.freeze(state);
+const postsReducer = (state = {}, action) => {
+  let oldState = Object.freeze(state);
   switch (action.type) { 
     case RECEIVE_ALL_POSTS:
        return merge({}, action.posts);
@@ -17,3 +17,5 @@ export default postsReducer = (state = {}, action) => {
         return oldState;
   }
 };
+
+export default postsReducer;

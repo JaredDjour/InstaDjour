@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import {fetchAllPosts, deletePost} from "../../action/post_actions";
+import {fetchAllPosts, deletePost} from "../../actions/post_actions";
 import PostIndex from "./post_index";
 
 
