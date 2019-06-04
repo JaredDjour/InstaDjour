@@ -8,19 +8,22 @@ class SessionForm extends React.Component {
     this.state = {username: "", password: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
-    this.changeBg = this.changeBg.bind(this);
+    // this.changeBg = this.changeBg.bind(this);
   }
 
   componentDidMount(){
     this.props.clearErrors;
 
-    window.setInterval(() => this.changeBg(), 3000);
+    // window.setInterval(() => this.changeBg());
   }
 
-  changeBg(){
-    $('.iphone-screen').fadeToggle('bg1');
-    $('.iphone-screen').fadeToggle('bg2');
-  }
+  // changeBg(){
+  //   $('bg1').fadeToggle("slow","swing", "bg2");
+  //   // $('.iphone-screen').fadeIn("slow", "swing", 'bg2');
+  //   // $('.iphone-screen').fadeToggle("slow", "swing", 'bg3');
+  //   // $('.iphone-screen').fadeToggle("slow", "swing", 'bg4');
+  //   // $('.iphone-screen').fadeToggle("slow", "swing", 'bg5');
+  // }
 
   handleChange(field){
     return e => this.setState({[field]: e.currentTarget.value})
@@ -57,10 +60,19 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    let main; 
-    let left;
-    let bottom;
-    let demo = (
+    const pics = ( 
+    <div className="iphone-screen">
+      <img className="bg1" src="https://www.instagram.com/static/images/homepage/screenshot1.jpg/d6bf0c928b5a.jpg" />
+      <img className="bg2" src="https://www.instagram.com/static/images/homepage/screenshot2.jpg/6f03eb85463c.jpg" />
+      <img className="bg3" src="https://www.instagram.com/static/images/homepage/screenshot3.jpg/f0c687aa6ec2.jpg" />
+      <img className="bg4" src="https://www.instagram.com/static/images/homepage/screenshot4.jpg/842fe5699220.jpg" />
+      <img className="bg5" src="https://www.instagram.com/static/images/homepage/screenshot5.jpg/0a2d3016f375.jpg" />
+    </div>
+    ) 
+        let main; 
+        let left;
+        let bottom;
+        let demo = (
       <div>
         <button type="button" onClick={this.handleDemo} className="demo-button">Log in as Demo User</button>
         <div className="demo-icon"></div>
@@ -102,7 +114,7 @@ class SessionForm extends React.Component {
         left = (
           <div className="iphone-container">
             <div className="iphone">
-              <div className="iphone-screen bg1"></div>
+              {pics}
             </div>
           </div>
         )

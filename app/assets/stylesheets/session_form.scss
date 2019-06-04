@@ -25,25 +25,78 @@
     background-position: 0 0;
     flex-basis: 454px;
 }
+    // background-image: url("https://www.instagram.com/static/images/homepage/screenshot2.jpg/6f03eb85463c.jpg");
+    // background-image: url("https://www.instagram.com/static/images/homepage/screenshot3.jpg/f0c687aa6ec2.jpg") 
+    // background-image: url("https://www.instagram.com/static/images/homepage/screenshot1.jpg/d6bf0c928b5a.jpg"); 
+    // background-image: url("https://www.instagram.com/static/images/homepage/screenshot4.jpg/842fe5699220.jpg");
+    // background-image: url("https://www.instagram.com/static/images/homepage/screenshot5.jpg/0a2d3016f375.jpg");
 
 .iphone-screen{
     
     background-size: 165px 306px;
     height: 307px;
     width: 166px;
-    // background-image: url("app/assets/images/jeffrey2.png");
-    // background-image: url("https://www.instagram.com/static/images/homepage/screenshot2.jpg/6f03eb85463c.jpg");
     margin: 70px 0px 0px 102px;
     border-radius: 3px;
-    // background-image: url("https://www.instagram.com/static/images/homepage/screenshot1.jpg/d6bf0c928b5a.jpg"); 
-    // background-image: url("https://www.instagram.com/static/images/homepage/screenshot3.jpg/f0c687aa6ec2.jpg");
-    // background-image: url("https://www.instagram.com/static/images/homepage/screenshot4.jpg/842fe5699220.jpg");
-    // background-image: url("https://www.instagram.com/static/images/homepage/screenshot5.jpg/0a2d3016f375.jpg");
-    transition: background-image 0.2s ease-in-out;
 }
 
-.bg1 { background-image: url("https://www.instagram.com/static/images/homepage/screenshot2.jpg/6f03eb85463c.jpg"); }
-.bg2 { background-image: url("https://www.instagram.com/static/images/homepage/screenshot1.jpg/d6bf0c928b5a.jpg"); }
+@keyframes screenSaver {
+    0% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0;
+    }
+    40%{
+        opacity: 0
+    }
+    60% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}    
+
+.bg1, .bg2, .bg3, .bg4, .bg5{
+    width: 166px;
+    height: 307px;
+    position: absolute;
+    animation-name: screenSaver;
+    animation-duration: 20s;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    // animation-delay: -4s;
+}
+
+.bg4 {
+    animation-delay: 16s;
+}
+
+.bg5 {
+    animation-delay: 12s;
+}
+.bg3 {
+    animation-delay: 8s;
+}
+
+.bg2 {
+    animation-delay: 4s;
+}
+.bg1 {
+    animation-delay: -10s;
+}
+
+
+// .bg1 { background-image: url("https://www.instagram.com/static/images/homepage/screenshot1.jpg/d6bf0c928b5a.jpg"); }
+// .bg2 { background-image: url("https://www.instagram.com/static/images/homepage/screenshot2.jpg/6f03eb85463c.jpg"); }
+// .bg3 { background-image: url("https://www.instagram.com/static/images/homepage/screenshot3.jpg/f0c687aa6ec2.jpg"); }
+// .bg4 { background-image: url("https://www.instagram.com/static/images/homepage/screenshot4.jpg/842fe5699220.jpg"); }
+// .bg5 { background-image: url("https://www.instagram.com/static/images/homepage/screenshot5.jpg/0a2d3016f375.jpg:"); }
 
 
 .login-form-container {
