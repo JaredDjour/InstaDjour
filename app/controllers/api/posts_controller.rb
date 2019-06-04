@@ -22,7 +22,7 @@ class API::PostsController < ApplicationController
         if @post
             render "/api/posts/:id"
         else
-            @post.errors.full_messages, status: 404
+            render json: @post.errors.full_messages, status: 404
         end
     end
 
