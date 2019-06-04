@@ -7,7 +7,7 @@ export const fetchPost = id => {
     );
 };
 
-export const fetchPosts = () => {
+export const fetchAllPosts = () => {
     return (
         $.ajax({
             url: `/api/posts`,
@@ -16,10 +16,10 @@ export const fetchPosts = () => {
     );
 };
 
-export const fetchUserPosts = id => {
+export const fetchUserPosts = userId => {
     return (
         $.ajax({
-           url: `/api/users/${id}/posts`,
+           url: `/api/users/${userId}/posts`,
            method: "GET" 
         })
     );

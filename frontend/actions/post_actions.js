@@ -5,14 +5,28 @@ export const RECEIVE_POST = "RECEIVE_POST";
 export const REMOVE_POST = "REMOVE_POST";
 
 export const fetchAllPosts = () => dispatch => {
-   return PostApiUtil.fetchPosts().then(posts => dispatch(receiveAllPosts(posts))); 
+   return PostApiUtil.fetchAllPosts().then(posts => dispatch(receiveAllPosts(posts))); 
 };
 
-export const fetchPost = post => dispacth => {
-    return PostApiUtil.fetchPost(post).then()
-}
+export const fetchPost = post => dispatch => {
+    return PostApiUtil.fetchPost(post).then(post => dispatch(receivePost(post)));
+};
 
+export const createPost = post => dispatch => {
+    return PostApiUtil.createPost(post).then(post => dispatch(receivePost(post)));
+};
 
+export const updatePost = post => dispatch => {
+    return PostApiUtil.updatePost(post).then(post => dispatch(receivePost(post)));
+};
+
+export const deletePost = postId => dispatch => {
+    return PostApiUtil.deletePost(postId).then(() => dispatch(removePost(postId)));
+};
+
+export const fetchUserPosts = userId => dispatch => {
+    return PostApiUtil.fetchUserPosts(userId).then(posts => dispatch(receiveAllPosts(posts)));
+};
 
 
 
