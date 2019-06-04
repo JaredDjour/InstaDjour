@@ -174,6 +174,13 @@ class SessionForm extends React.Component {
               </div> 
             </div>
       </div>
+      <div className="nav-bar-bottom">
+        <a href="https://www.linkedin.com/in/jared-djourabchi-7a2932160/" className="nav-bar-bottom-text">LinkedIn </a>
+        <a href="https://www.instagram.com/" className="nav-bar-bottom-text">Instagram</a>
+        <a href="https://www.linkedin.com/in/jared-djourabchi-7a2932160/" className="nav-bar-bottom-text">My Website</a>
+        <a href="https://github.com/JaredDjour" className="nav-bar-bottom-text">Github</a>
+      </div>
+      <h4 className="trademark">© 2019 INSTADJOUR</h4>
     </div>
     );
   };
