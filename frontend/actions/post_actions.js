@@ -6,6 +6,7 @@ export const REMOVE_POST = "REMOVE_POST";
 
 export const fetchAllPosts = () => dispatch => {
    return PostApiUtil.fetchAllPosts().then(posts => dispatch(receiveAllPosts(posts))); 
+   
 };
 
 export const fetchPost = post => dispatch => {
@@ -40,7 +41,7 @@ const receiveAllPosts = posts => {
 const receivePost = post => {
     return {
         type: RECEIVE_POST,
-        posts
+        post
     };
 };
 

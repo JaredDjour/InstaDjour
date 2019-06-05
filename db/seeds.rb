@@ -5,4 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Post.destroy_all
+
 demo_user = User.create({username: "DemoUser", password: "DemoUser", full_name: "Demo User"});
+
+Post.create!(caption: "Will this show up", user_id: demo_user.id)
+Post.create!(caption: "I sure hope so", user_id: demo_user.id)
+Post.create!(caption: "Oh it showed up", user_id: demo_user.id)
+Post.create!(caption: "Wowww", user_id: demo_user.id)
+Post.create!(caption: "Will this show up", user_id: demo_user.id)
+Post.create!(caption: "I sure hope so", user_id: demo_user.id)
+Post.create!(caption: "Oh it showed up", user_id: demo_user.id)
+Post.create!(caption: "Wowww", user_id: demo_user.id)

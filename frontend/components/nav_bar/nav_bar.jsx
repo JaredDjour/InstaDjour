@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+import PostIndexContainer from "../posts/post_index_container";
 const NavBar = ({currentUser, logout, loggedIn}) => {
 
     let ha;
@@ -27,6 +27,7 @@ const NavBar = ({currentUser, logout, loggedIn}) => {
               </div>
                 </div>
             </div>
+            <PostIndexContainer />
         </div>
       ) : ha = null;
 

@@ -4,20 +4,16 @@ import CreatePostFormContainer from './create_post_form_container';
 
 
 class PostIndex extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = this.props;
-    }
 
     componentDidMount(){
-        this.state.fetchAllPosts();
+        this.props.fetchAllPosts();
     }
 
     render(){
-        const posts = this.state.posts.map((post) => <PostIndexItem key={post.id} post={post} deletePost={this.state.deletePost}/>);
+        const posts = this.props.posts.map((post) => <PostIndexItem key={post.id} post={post} deletePost={this.props.deletePost}/>);
     
         return (
-        <div>
+        <div className="all-posts">
             <ul>{posts}</ul>
             <CreatePostFormContainer />
         </div>

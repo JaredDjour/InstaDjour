@@ -4,6 +4,7 @@
 
 .post-index-item-caption{
     background-color: blue;
+    color: white;
 }
 
 .post-index-item-delete-button{
@@ -12,4 +13,13 @@
 
 .post-index-item-edit {
    background-color: yellow;
+}
+
+.all-posts {
+    display: flex;
+    justify-content: center;
+    padding: 50PX;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    align-content: center;
 }

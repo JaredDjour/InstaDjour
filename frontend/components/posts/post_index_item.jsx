@@ -1,12 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PostIndexItem = props => (
-    <div>
-        <Link className="post-index-item-caption" to={`/api/posts/${props.post.id}`}>{props.post.caption}</Link>
-        <Link className="post-index-item-edit" to={`/api/posts/${props.post.id}/edit`}>Edit Post</Link>
-        <button className="post-index-item-delete-button" type="button" onClick={props.deletePost(props.post.id)}>Delete Post</button>
-    </div>
-);
+
+class PostIndexItem extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = this.props.post;
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    handleChange(field){
+        return e => this.setState({[field]: e.target.value});
+    }
+
+    handleSubmit(e){
+        e.preventDefault();
+        this.props.deletePost(this.state.id);
+    }
+
+    render(){
+
+        return (
+            <div>
+                <Link className="post-index-item-caption" to={`/api/posts/${this.state.id}`}>{this.state.caption}</Link>
+                <Link className="post-index-item-edit" to={`/api/posts/${this.state.id}/edit`}>Edit Post</Link>
+                <button className="post-index-item-delete-button" type="button" onClick={this.handleSubmit}>Delete Post</button>
+            </div>
+        )
+    }
+
+};
 
 export default PostIndexItem

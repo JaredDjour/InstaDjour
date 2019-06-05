@@ -16,6 +16,7 @@ export const fetchAllPosts = () => {
     );
 };
 
+
 export const fetchUserPosts = userId => {
     return (
         $.ajax({
@@ -45,10 +46,10 @@ export const createPost = post => {
     );
 };
 
-export const deletePost = id => {
+export const deletePost = postId => {
     return (
         $.ajax({
-            url: `api/posts/${id}`,
+            url: `api/posts/${postId}`,
             method: "DELETE"
         })
     );
