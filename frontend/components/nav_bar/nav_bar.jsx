@@ -1,6 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import PostIndexContainer from "../posts/post_index_container";
+
+
 const NavBar = ({currentUser, logout, loggedIn}) => {
 
     let ha;
@@ -27,20 +29,22 @@ const NavBar = ({currentUser, logout, loggedIn}) => {
               </div>
                 </div>
             </div>
-            <PostIndexContainer />
         </div>
-      ) : ha = null;
-
+      ) : ha = (
+        <div>
+          <div className="nav-bar-bottom">
+            <a href="https://www.linkedin.com/in/jared-djourabchi-7a2932160/" className="nav-bar-bottom-text">LINKEDIN </a>
+            <a href="https://www.instagram.com/" className="nav-bar-bottom-text">INSTAGRAM</a>
+            <a href="https://www.linkedin.com/in/jared-djourabchi-7a2932160/" className="nav-bar-bottom-text">MY WEBSITE</a>
+            <a href="https://github.com/JaredDjour" className="nav-bar-bottom-text">GITHUB</a>
+          </div>
+          <h4 className="trademark">© 2019 INSTADJOUR</h4>
+        </div>
+      );
+      
       return (
         <div>
           {ha}
-          <div className="nav-bar-bottom">
-            <a href="https://www.linkedin.com/in/jared-djourabchi-7a2932160/" className="nav-bar-bottom-text">LinkedIn </a>
-            <a href="https://www.instagram.com/" className="nav-bar-bottom-text">Instagram</a>
-            <a href="https://www.linkedin.com/in/jared-djourabchi-7a2932160/" className="nav-bar-bottom-text">My Website</a>
-            <a href="https://github.com/JaredDjour" className="nav-bar-bottom-text">Github</a>        
-          </div>
-          <h4 className="trademark">© 2019 INSTADJOUR</h4>
         </div>
       )
   }

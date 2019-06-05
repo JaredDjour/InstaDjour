@@ -21,8 +21,9 @@ class PostIndexItem extends React.Component {
 
         return (
             <div>
-                <Link className="post-index-item-caption" to={`/api/posts/${this.state.id}`}>{this.state.caption}</Link>
-                <Link className="post-index-item-edit" to={`/api/posts/${this.state.id}/edit`}>Edit Post</Link>
+                <Link className="post-index-item-caption" to={`/posts/${this.state.id}`}>{this.state.caption}</Link>
+                <Link className="post-index-item-user" to={`/posts/${this.state.id}`}>{this.state.user_id}</Link>
+                <Link className="post-index-item-edit" to={`/posts/${this.state.id}/edit`}>Edit Post</Link>
                 <button className="post-index-item-delete-button" type="button" onClick={this.handleSubmit}>Delete Post</button>
             </div>
         )

@@ -20,8 +20,10 @@ class Api::PostsController < ApplicationController
 
     def show
         @post = current_user.posts.find(params[:id])
-
+        
+        # render:show
         if @post
+            
             render :show
         else
             render json: @post.errors.full_messages, status: 404
@@ -41,11 +43,14 @@ class Api::PostsController < ApplicationController
     def destroy
         @post = current_user.posts.find(params[:id])
 
-        if @post.destroy
-            render :index, @posts = Post.all
-        else
-            render json: @post.errors.full_messages, status: 422
-        end
+        @post.destroy
+        render :show
+        # if @post.destroy
+        #     @posts = Post.all
+        #     render :index
+        # else
+        #     render json: @post.errors.full_messages, status: 422
+        # end
     end
 
     private

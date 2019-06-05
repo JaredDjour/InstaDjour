@@ -23,7 +23,7 @@ class PostForm extends React.Component {
            <div>
                <form onSubmit={this.handleSubmit}>
                     <input type="text" value={this.state.caption} onChange={this.handleChange("caption")} />
-                    <input type="submit" value="Submit"/>
+                    <input className="post-submit" type="submit" value="Submit"/>
                </form>
            </div>
        )

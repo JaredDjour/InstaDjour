@@ -5,7 +5,7 @@ import PostIndex from "./post_index";
 
 const msp = state => {
     return {
-        posts: Object.values(state.posts),
+        posts: Object.values(state.entities.posts),
     };
 };
 
@@ -13,7 +13,7 @@ const mdp = dispatch => {
     return {
         fetchAllPosts: () => dispatch(fetchAllPosts()),
         deletePost: id => dispatch(deletePost(id)),
-        
+
     };
 };
 

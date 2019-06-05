@@ -4,8 +4,7 @@ import PostShow from "./post_show";
 
 const msp = (state, ownProps) => {
     return {
-        post: state.posts[ownProps.match.params.postId],
-        userId: state.posts[ownProps.match.params.userId],
+        post: state.entities.posts[ownProps.match.params.postId],
     };
 };
 

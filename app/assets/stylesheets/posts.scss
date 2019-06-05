@@ -1,18 +1,27 @@
 .post-show-caption {
     background-color: red;
+    margin: 2px;
 }
 
+.post-show-auth {
+    background-color: purple;
+    color: white;
+    margin: 2px;
+}
 .post-index-item-caption{
     background-color: blue;
     color: white;
+    margin: 2px;
 }
 
 .post-index-item-delete-button{
     background-color: green;
+       margin: 2px;
 }
 
 .post-index-item-edit {
    background-color: yellow;
+      margin: 2px;
 }
 
 .all-posts {
@@ -22,4 +31,27 @@
     flex-wrap: wrap;
     margin-top: 100px;
     align-content: center;
+}
+
+.post-index-item-user {
+    background-color: purple;
+    color: white;
+       margin: 2px;
+}
+
+.post-submit {
+    
+}
+
+.post-show-container {
+   display: flex;
+    justify-content: center;
+    padding: 50PX;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    align-content: center; 
+}
+
+.feed-button {
+
 }
