@@ -15,10 +15,10 @@ class PostShow extends React.Component {
         return (
             <div className="post-show-container">
                 <div className="post-auth-container"> 
-                    <p className="post-show-auth">{this.props.post.user_id}</p>
+                    <p className="post-auth">{this.props.post.user_id}</p>
                 </div>
                 <div className="post-caption-container">
-                    <p className="post-show-caption">{this.props.post.caption}</p>
+                    <p className="post-caption">{this.props.post.caption}</p>
                 </div>
          
                 <img className="photos" src={this.props.post.photoUrl}></img>

@@ -1,19 +1,23 @@
-.post-show-caption {
-    background-color: red;
-    margin: 2px;
-}
-
-
-.post-show-auth {
-    background-color: purple;
-    color: white;
+.post-auth {
     margin: 2px;
     width: 100%;
 }
-.post-index-item-caption{
-    background-color: blue;
-    color: white;
+
+.post-auth-container {
+    width: 100%;
+    background-color: white;
+}
+
+.post-photo-container {
+
+}
+
+.post-caption {
+    background-color: red;
     margin: 2px;
+}
+.post-caption-container {
+
 }
 
 .post-index-item-delete-button{
@@ -36,13 +40,7 @@
     align-content: center;
 }
 
-.post-index-item-user {
-    background-color: purple;
-    color: white;
-       margin: 2px;
-}
-
-.post-button {
+.add-post-button {
     
 }
 
@@ -122,15 +120,3 @@
 //     height: 100%;
 // }
 
-
-.post-auth-container {
-
-}
-
-.post-photo-container {
-
-}
-
-.post-caption-container {
-
-}
