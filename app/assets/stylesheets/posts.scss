@@ -4,7 +4,7 @@
     width: 100%;
     text-decoration: none;
     color: black;
-    font-size: 11px;
+    font-size: 10px;
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-weight: 600; 
 }
@@ -49,11 +49,25 @@
 }
 
 .post-caption {
-    margin: 2px;
+    display: inline-block;
     color: black;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 10px;
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    margin-left: 6px;
+    margin-top: 4px;    
+}
+
+.post-caption-auth {
+    display: inline-block;
+    overflow: hidden;
+    font-size: 10px;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 600; 
+    margin-left: 8px;
+    width: auto;
+    margin-top: 4px;
 
 }
 .post-caption-container {
@@ -62,7 +76,7 @@
     width: 100%;
     height: 20px;
     padding-top: 5px;
-
+    display: flex;
 }
 
 .post-options{
@@ -70,26 +84,49 @@
     border-right: solid #e6e6e6 1px; 
     height: 20px;
     width: 100%;
+    padding-top: 7px;
 }
-
+[class*="post-options-"] {
+  display: inline-block;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  overflow: hidden;
+  padding-top: 5px;
+}
 .post-options-heart {
     background-image: url("https://images.vexels.com/media/users/3/147091/isolated/preview/5f8a1ea9c90ceed8d92999bc824417eb-instagram-heart-icon-by-vexels.png");
     background-size: 20px 18px;
     width: 20px;
     height: 18px;
     cursor: pointer;
+    margin-left: 6px;
 }
 
-.post-option-comment {
-
+.post-options-comment {
+    background-image: url("https://images.vexels.com/media/users/3/147091/isolated/preview/5f8a1ea9c90ceed8d92999bc824417eb-instagram-heart-icon-by-vexels.png");
+    background-size: 20px 18px;
+    width: 20px;
+    height: 18px;
+    cursor: pointer;
+    margin-left: 10px;
 }
 
-.post-option-share {
-
+.post-options-share {
+    background-image: url("https://images.vexels.com/media/users/3/147091/isolated/preview/5f8a1ea9c90ceed8d92999bc824417eb-instagram-heart-icon-by-vexels.png");
+    background-size: 20px 18px;
+    width: 20px;
+    height: 18px;
+    cursor: pointer;
+    margin-left: 10px;
 }
 
 .post-options-bookmark {
-
+    background-image: url("https://images.vexels.com/media/users/3/147091/isolated/preview/5f8a1ea9c90ceed8d92999bc824417eb-instagram-heart-icon-by-vexels.png");
+    background-size: 20px 18px;
+    width: 20px;
+    height: 18px;
+    cursor: pointer;
+    margin-left: 282px;
 }
 .post-index-item-delete-button{
     background-color: green;
@@ -153,6 +190,7 @@
     display: flex;
     justify-content: center;
     margin: auto;
+    // object-fit: 
     width: 100%;
     height: 400px;
 }

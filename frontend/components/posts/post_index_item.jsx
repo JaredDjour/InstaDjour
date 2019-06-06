@@ -36,6 +36,7 @@ class PostIndexItem extends React.Component {
                     <div className="post-options-bookmark"></div> 
                 </div>
                 <div className="post-caption-container">
+                    <h4 className="post-caption-auth" >{this.props.username}</h4>
                     <Link className="post-caption" to={`/posts/${this.state.id}`}>{this.state.caption}</Link>
                 </div>
                  <div className="post-edit-delete">

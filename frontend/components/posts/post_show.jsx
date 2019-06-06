@@ -27,6 +27,7 @@ class PostShow extends React.Component {
                     <div className="post-options-bookmark"></div> 
                 </div>
                 <div className="post-caption-container">
+                    <h4 className="post-caption-auth" >{this.props.username}</h4>
                     <p className="post-caption">{this.props.post.caption}</p>
                 </div>
          
