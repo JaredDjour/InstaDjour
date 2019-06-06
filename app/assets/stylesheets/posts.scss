@@ -1,11 +1,33 @@
 .post-auth {
-    margin: 2px;
     width: 100%;
+    text-decoration: none;
+    color: black;
+    font-size: 11px;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 600; 
 }
-
+.post-auth-image {
+    display: flex;
+    align-content: center;
+    background-position: center;
+    margin-left: 5px;
+    margin-top: 4px;
+    background-image: url("https://cdn1.iconfinder.com/data/icons/instagram-ui-colored/48/JD-18-512.png");
+    background-size: 30px 25px;
+    height: 25px;
+    width: 30px;
+    border-radius: 50px;
+    background-color: #fafafa;
+    border: solid #e6e6e6 1px; 
+}
 .post-auth-container {
+    display: flex;
+    align-items: flex-start;
     width: 100%;
-    background-color: white;
+    height: 36px;
+    background-color:white; 
+    border: solid #e6e6e6 1px; 
+    text-align: start;
 }
 
 .post-photo-container {
@@ -36,7 +58,7 @@
     padding: 50PX;
     flex-wrap: wrap;
     margin: auto;
-    margin-top: 100px;
+    // margin-top: 50px;
     align-content: center;
 }
 
@@ -49,7 +71,7 @@
     justify-content: center;
     padding: 50PX;
     flex-wrap: wrap;
-    margin-top: 100px;
+    // margin-top: 50px;
     align-content: center; 
     width: 400px;
 }
@@ -74,7 +96,7 @@
     justify-content: center;
     margin: auto;
     width: 400px;
-    margin-top: 75px;
+    // margin-top: 50px;
     padding-top: 10%; 
 }
 

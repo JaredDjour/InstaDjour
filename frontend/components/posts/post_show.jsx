@@ -13,8 +13,9 @@ class PostShow extends React.Component {
 
     render() {
         return (
-            <div className="post-show-container">
+            <div className="individual-post">
                 <div className="post-auth-container"> 
+                    <div className="post-auth-image"></div>
                     <p className="post-auth">{this.props.post.user_id}</p>
                 </div>
                 <div className="post-caption-container">

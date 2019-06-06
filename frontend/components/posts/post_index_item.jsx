@@ -22,6 +22,7 @@ class PostIndexItem extends React.Component {
         return (
             <div className="individual-post">
                 <div className="post-auth-container">
+                    <div className="post-auth-image"></div>
                     <Link className="post-auth" to={`/posts/${this.state.id}`}>{this.state.user_id}</Link>
                 </div>
                 <div className="post-photo-container">

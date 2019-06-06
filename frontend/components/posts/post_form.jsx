@@ -54,7 +54,7 @@ class PostForm extends React.Component {
 
    render(){
        return (
-           <div class="post-form">
+           <div className="post-form">
                <form onSubmit={this.handleSubmit}>
                    <input type="text" value={this.state.caption} onChange={this.handleChange("caption")} />
                    <input className="create-post" type="file" onChange={this.handleFile} />
