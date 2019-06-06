@@ -29,6 +29,8 @@ const NavBar = ({currentUser, logout, loggedIn}) => {
               </div>
                 </div>
             </div>
+            <div className="index-left"></div>
+            <div className="index-right"></div>
         </div>
       ) : ha = (
         <div>

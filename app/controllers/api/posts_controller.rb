@@ -4,6 +4,7 @@ class Api::PostsController < ApplicationController
 
     def create
         @post = current_user.posts.new(post_params)
+        # @post = Post.new(post_params)
         if @post.save
             # render "/api/posts/show"
             render :show
@@ -13,17 +14,17 @@ class Api::PostsController < ApplicationController
     end
 
     def index
-        @posts = current_user.posts
+        @posts = Post.all
+        # @posts = current_user.posts
         # render "/api/posts/index"
         render :index
     end
 
     def show
-        @post = current_user.posts.find(params[:id])
-        
+        # @post = current_user.posts.find(params[:id])
+       @post = Post.find(params[:id])
         # render:show
         if @post
-            
             render :show
         else
             render json: @post.errors.full_messages, status: 404
@@ -31,12 +32,12 @@ class Api::PostsController < ApplicationController
     end
 
     def update
-    @post = current_user.posts.find(params[:id])
+        @post = current_user.posts.find(params[:id])
 
         if @post.update(post_params)
-        render :show
+            render :show
         else
-        render @post.errors.full_messages, status: 401
+            render @post.errors.full_messages, status: 401
         end
     end
 
@@ -56,7 +57,7 @@ class Api::PostsController < ApplicationController
     private
 
     def post_params
-        params.require(:post).permit(:caption)
+        params.require(:post).permit(:caption, :photo)
     end
 
 end

@@ -11,10 +11,23 @@
 
 class Post < ApplicationRecord
     validates :user_id, :caption, presence: true
-    
+   
+    # validate :has_photo
+
     belongs_to :user,
     primary_key: :id,
     foreign_key: :user_id,
     class_name: :User
 
+    has_one_attached :photo
+
+    #  delegate :filename, to: :photo, allow_nil: true
+    
+    # def has_photo
+    #     if !self.photo.attached?
+    #         errors[:photo] << "attach a photo"
+    #     end
+    # end
+ 
 end
+

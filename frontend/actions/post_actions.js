@@ -9,6 +9,12 @@ export const fetchAllPosts = () => dispatch => {
    
 };
 
+// export const fetchAllPosts = () => dispatch => {
+//     return PostApiUtil.fetchAllPosts().then((posts) => {
+//         debugger
+//         return dispatch(receiveAllPosts(posts));
+//     });
+// };
 export const fetchPost = post => dispatch => {
     return PostApiUtil.fetchPost(post).then(post => dispatch(receivePost(post)));
 };

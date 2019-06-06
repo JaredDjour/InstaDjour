@@ -6,6 +6,12 @@ import {withRouter} from 'react-router-dom';
 const msp = state => {
     return {
         post: {caption: ""}
+        // post: {    
+        //     caption: "",
+        //     photoFile: null,
+        //     photoUrl: null,
+        //     user_id: null,
+        // }
     };
 };
 
