@@ -1,33 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {connect} from 'react-redux';
 
+const msp = (state, ownProps) => {
+    return {
+        username: state.entities.posts[ownProps.post.id].username
+    };
+};
 
 class PostIndexItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.post;
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-    handleChange(field){
-        return e => this.setState({[field]: e.target.value});
     }
 
-    handleSubmit(e){
-        e.preventDefault();
-        this.props.deletePost(this.state.id);
-    }
-
+ 
     render(){
 
         return (
             <div className="individual-post">
                 <div className="post-auth-container">
                     <div className="post-auth-image"></div>
-                    <Link className="post-auth" to={`/posts/${this.state.id}`}>{this.state.user_id}</Link>
+                    {/* <Link className="post-auth" to={`/posts/${this.state.id}`}>{this.props.username}</Link> */}
+                    <h2 className="post-auth" >{this.props.username}</h2>
+                    {/* <h2 className="post-auth" >{this.props.user_id}</h2> */}
+                    <div className="post-auth-options"></div>
                 </div>
                 <div className="post-photo-container">
                     <img className="photos" src={this.state.photoUrl}></img> 
                 </div> 
+                <div className="post-options">
+                    <div className="post-options-heart"></div>
+                    <div className="post-options-comment"></div>
+                    <div className="post-options-share"></div>
+                    <div className="post-options-bookmark"></div> 
+                </div>
                 <div className="post-caption-container">
                     <Link className="post-caption" to={`/posts/${this.state.id}`}>{this.state.caption}</Link>
                 </div>
@@ -41,4 +48,6 @@ class PostIndexItem extends React.Component {
 
 };
 
-export default PostIndexItem
+  export default connect(msp, null)(PostIndexItem);
+
+// export default PostIndexItem;

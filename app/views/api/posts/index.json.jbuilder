@@ -9,3 +9,9 @@
    end
 end
 
+@posts.each do |post|
+   json.set! post.id do
+      json.extract! post.user, :username
+   end
+end
+
