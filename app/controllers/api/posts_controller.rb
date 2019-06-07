@@ -3,9 +3,10 @@ class Api::PostsController < ApplicationController
     before_action :ensure_logged_in
 
     def create
-        @post = current_user.posts.new(post_params)
-        # @post = Post.new(post_params)
-        if @post.save
+        # @post = current_user.posts.new(post_params)
+        @post = Post.new(post_params)
+        @post.user_id = current_user.id
+        if @post.save!
             # render "/api/posts/show"
             render :show
         else
@@ -15,6 +16,7 @@ class Api::PostsController < ApplicationController
 
     def index
         @posts = Post.all
+        # @posts = Post.with_attached_photo.all
         # @posts = current_user.posts
         # render "/api/posts/index"
         render :index
@@ -56,8 +58,9 @@ class Api::PostsController < ApplicationController
 
     private
 
-    def post_params
+    def post_paramsr
         params.require(:post).permit(:caption, :photo)
+        # params.permit(:caption, :photo)
     end
 
 end

@@ -1,25 +1,25 @@
-# README
+# Production README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![InstaDjour Sign Up](https://raw.githubusercontent.com/JaredDjour/InstaDjour/master/Screen%20Shot%202019-06-07%20at%2010.34.39%20AM.png)
 
-Things you may want to cover:
+![Log in](https://github.com/JaredDjour/InstaDjour/blob/master/Screen%20Shot%202019-06-07%20at%2010.49.57%20AM.png?raw=true)
 
-* Ruby version
+![Content Page](https://github.com/JaredDjour/InstaDjour/blob/master/Screen%20Shot%202019-06-07%20at%2010.35.16%20AM.png?raw=true)
 
-* System dependencies
 
-* Configuration
+## InstaDjour
+  InstaDjour is a clone of the social-media platform Instagram. Users can sign up and upload photos to the site as 'posts'. Once logged in, users can 'follow' others to have their posts appear on their content feed. Users can like and comment on others' posts.
 
-* Database creation
+[Live Demo](https://instadjour.herokuapp.com/#/)
 
-* Database initialization
+## InstaDjour Design Documents
+ * [Schema](https://github.com/JaredDjour/InstaDjour/wiki/Schema)
+ * [MVP List](https://github.com/JaredDjour/InstaDjour/wiki/MVP-List)
+ * [Sample State](https://github.com/JaredDjour/InstaDjour/wiki/Sample-State)
+ * [Backend Routes](https://github.com/JaredDjour/InstaDjour/wiki/Backend-Routes)
+ * [Frontend Routes](https://github.com/JaredDjour/InstaDjour/wiki/Frontend-Routes)
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
-   
+## Overview 
+The app is hosted on Heroku, and its assets are hosted on Amazon Web Services (AWS). InstaDjour implements Ruby on Rails for its backend, PostgreSQL for its database, React and Redux for managing its frontend components, with jBuilders to render the content and CSS for styling each element.
