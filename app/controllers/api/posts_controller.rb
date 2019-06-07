@@ -32,8 +32,8 @@ class Api::PostsController < ApplicationController
     end
 
     def update
-        @post = current_user.posts.find(params[:id])
-
+        # @post = current_user.posts.find(params[:id])
+        @post = Post.find(params[:id])
         if @post.update(post_params)
             render :show
         else
@@ -42,8 +42,8 @@ class Api::PostsController < ApplicationController
     end
 
     def destroy
-        @post = current_user.posts.find(params[:id])
-
+        # @post = current_user.posts.find(params[:id])
+        @post = Post.find(params[:id])
         @post.destroy
         render :show
         # if @post.destroy

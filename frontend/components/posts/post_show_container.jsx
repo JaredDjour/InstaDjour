@@ -5,6 +5,7 @@ import PostShow from "./post_show";
 const msp = (state, ownProps) => {
     return {
         post: state.entities.posts[ownProps.match.params.postId],
+        username: state.entities.posts.username
     };
 };
 

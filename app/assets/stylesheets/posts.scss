@@ -1,5 +1,5 @@
 .post-auth {
-    margin-left: 9px;
+    margin-left: 4px;
     margin-top: 13px;
     width: 100%;
     text-decoration: none;
@@ -13,14 +13,16 @@
     align-content: center;
     background-position: center;
     margin-left: 7px;
-    margin-top: 7px;
-    background-image: url("https://cdn1.iconfinder.com/data/icons/instagram-ui-colored/48/JD-18-512.png");
-    background-size: 27px 22px;
-    height: 22px;
-    width: 27px;
-    border-radius: 50px;
-    background-color: #fafafa;
-    border: solid #e6e6e6 1px; 
+    margin-top: 3.5px;
+    // background-image: url("https://cdn1.iconfinder.com/data/icons/instagram-ui-colored/48/JD-18-512.png");
+    // background-image: url("https://i.ya-webdesign.com/images/vector-instagram-profile-1.png");
+    background-image: url("https://cdn1.iconfinder.com/data/icons/instagram-ui-colored/48/JD-17-512.png");
+    background-size: 30px 30px;
+    height: 30px;
+    width: 30px;
+    // border-radius: 50px;
+    // background-color: #fafafa;
+    // border: solid #e6e6e6 1px; 
 }
 
 .post-auth-options {
@@ -84,58 +86,72 @@
     border-right: solid #e6e6e6 1px; 
     height: 20px;
     width: 100%;
-    padding-top: 7px;
+    padding-top: 4px;
 }
 [class*="post-options-"] {
   display: inline-block;
   background-repeat: no-repeat;
   vertical-align: bottom;
   overflow: hidden;
-  padding-top: 5px;
+  padding-top: 3px;
 }
 .post-options-heart {
     background-image: url("https://images.vexels.com/media/users/3/147091/isolated/preview/5f8a1ea9c90ceed8d92999bc824417eb-instagram-heart-icon-by-vexels.png");
+    // background-image: url("https://cdn1.iconfinder.com/data/icons/instagram-ui-colored/48/JD-07-512.png");
     background-size: 20px 18px;
     width: 20px;
     height: 18px;
     cursor: pointer;
     margin-left: 6px;
+    margin-bottom: 8px;
 }
 
 .post-options-comment {
-    background-image: url("https://images.vexels.com/media/users/3/147091/isolated/preview/5f8a1ea9c90ceed8d92999bc824417eb-instagram-heart-icon-by-vexels.png");
-    background-size: 20px 18px;
+    // background-image: url("https://instalikes.shop/wp-content/uploads/2018/08/Instalike-shop-service-comments-instagram-280x280.png");
+    background-image: url("https://images.vexels.com/media/users/3/147084/isolated/preview/9722f60b799c49612d9325786a69555c-instagram-chat-bubble-icon-by-vexels.png");
+    background-size: 20px 19px;
     width: 20px;
-    height: 18px;
+    height: 19px;
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-bottom: 8px;
+
 }
 
-.post-options-share {
-    background-image: url("https://images.vexels.com/media/users/3/147091/isolated/preview/5f8a1ea9c90ceed8d92999bc824417eb-instagram-heart-icon-by-vexels.png");
-    background-size: 20px 18px;
-    width: 20px;
-    height: 18px;
-    cursor: pointer;
-    margin-left: 10px;
-}
+// .post-options-share {
+//     background-image: url("https://www.shareicon.net/download/2017/05/30/886557_add_512x512.png");
+//     background-size: 30px 30px;
+//     width: 30px;
+//     height: 30px;
+//     cursor: pointer;
+//     margin-left: 5px;
+    
+// }
 
 .post-options-bookmark {
-    background-image: url("https://images.vexels.com/media/users/3/147091/isolated/preview/5f8a1ea9c90ceed8d92999bc824417eb-instagram-heart-icon-by-vexels.png");
-    background-size: 20px 18px;
+    // background-image: url("https://www.shareicon.net/download/2017/05/30/886566_save_512x512.png");
+    background-image: url("https://images.vexels.com/media/users/3/147081/isolated/preview/8665e39f2880934120b3c37131210042-instagram-bookmark-icon-by-vexels.png");
+     background-size: 20px 21px;
     width: 20px;
-    height: 18px;
+    height: 21px;
     cursor: pointer;
-    margin-left: 282px;
-}
-.post-index-item-delete-button{
-    background-color: green;
-       margin: 2px;
+    margin-left: 316px;
+    margin-bottom: 4px;
 }
 
-.post-index-item-edit {
-   background-color: yellow;
-      margin: 2px;
+
+.add-comment{
+    border: solid 1px #dbdbdb;
+    color: #262626;;
+    padding: 6px 10px 6px 10px;
+    background-color: #fafafa;
+    height: 12px;
+    text-align: left;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 100;
+    width: 100%;
+    font-size: 9px;
+    margin-bottom: 7px;
 }
 
 .all-posts {
@@ -160,20 +176,66 @@
     // margin-top: 50px;
     align-content: center; 
     width: 400px;
+    height: auto
 }
 
+.post-edit-delete-container {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: -29px;
+}
+
+.post-index-item-edit {
+    color: white;
+    margin-top: 6px;
+    padding: 3px 16px;
+    text-decoration: none;
+    margin-left: 58px;
+    background-color: lightskyblue;
+    border: 2px solid #dbdbdb;
+    border-radius: 10px;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: 100;
+    width: 50%;
+}
+
+.post-index-item-delete-button{
+    color: white;
+    text-decoration: none;
+    margin-left: 108px;
+    width: 22%;
+    padding: 4px 4px;
+    font-size: 12px;
+    font-weight: 100;
+    background-color: lightskyblue;
+    border-radius: 10px;
+    border: 2px solid #dbdbdb;;
+}
+
+
+.feed-button-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 55px auto;
+}
 .feed-button {
-
+    align-text: center;
+    margin: 6px auto 0;
+    color: white;
+    margin-top: 6px;
+    padding: 3px 16px;
+    text-decoration: none;
+    background-color: lightskyblue;
+    border: 2px solid #dbdbdb;
+    border-radius: 10px;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: 100;
 }
 
-.create-post {
 
-}
-
-
-.post-edit-delete {
-
-}
 
 
 .individual-post {
@@ -181,9 +243,10 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
+    margin-top: -10px;
     width: 400px;
     // margin-top: 50px;
-    padding-top: 10%; 
+    padding-top: 7%; 
 }
 
 .photos {
@@ -192,7 +255,11 @@
     margin: auto;
     // object-fit: 
     width: 100%;
-    height: 400px;
+    // height: 400px;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 }
 
 // .photos {
@@ -259,10 +326,33 @@
     margin: 6px auto 3px;
 }
 
+
+.create-post {
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    padding: 5px;
+}
+
 .create-post-choose-file {
- margin: 3px auto;
+
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: 100;
+
 }
 
 .create-post-button {
     margin: 6px auto 0;
+    color: white;
+    margin-top: 6px;
+    padding: 3px 16px;
+    text-decoration: none;
+    margin-left: 58px;
+    background-color: lightskyblue;
+    border: 2px solid #dbdbdb;
+    border-radius: 10px;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: 100;
+    width: 50%;
 }

@@ -2,10 +2,10 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 class PostShow extends React.Component {
-    // constructor(props){
-    //     super(props);
-    //     this.state = this.props.post;
-    // }
+    constructor(props){
+        super(props);
+        this.state = this.props.post;
+    }
     componentDidMount(){
         this.props.fetchPost(this.props.match.params.postId);
     }
@@ -16,23 +16,31 @@ class PostShow extends React.Component {
             <div className="individual-post">
                 <div className="post-auth-container"> 
                     <div className="post-auth-image"></div>
-                    <p className="post-auth">{this.props.post.user_id}</p>
+                    <p className="post-auth">{this.state.username}</p>
                     <div className="post-auth-options"></div>
                 </div>
-                <img className="photos" src={this.props.post.photoUrl}></img>
-                <div className="post-options">
-                    <div className="post-options-heart"></div>
+                <div className="post-photo-container">
+                    <img className="photos" src={this.state.photoUrl}></img>
+                </div> 
+                 <div className="post-options">
+                   <div className="post-options-heart"></div>
                     <div className="post-options-comment"></div>
                     <div className="post-options-share"></div>
                     <div className="post-options-bookmark"></div> 
                 </div>
                 <div className="post-caption-container">
-                    <h4 className="post-caption-auth" >{this.props.username}</h4>
-                    <p className="post-caption">{this.props.post.caption}</p>
+                    <h4 className="post-caption-auth" >{this.state.username}</h4>
+                    <h4 className="post-caption">{this.state.caption}</h4>
                 </div>
-         
-              
-                <Link className="feed=button" to="/">Feed</Link>
+                <input className="add-comment" type="text" placeholder="Add a comment..." />
+
+                <div className="post-edit-delete-container">
+                    <Link className="post-index-item-edit" to={`/posts/${this.state.id}/edit`}>Edit Post</Link>
+                    <button className="post-index-item-delete-button" type="button" onClick={this.handleSubmit}>Delete Post</button>
+                </div> 
+             <div className="feed-button-container">
+                <Link className="feed-button" to="/">Feed</Link>
+            </div> 
             </div>
         )
     }

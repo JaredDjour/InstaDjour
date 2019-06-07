@@ -12,7 +12,15 @@ class PostIndexItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.post;
+        this.handleDelete = this.handleDelete.bind(this);
     }
+
+    handleDelete(e) {
+        e.preventDefault();
+        this.props.deletePost(this.state.id);
+        // .then(() => this.props.history.push("/"));
+    }
+ 
 
  
     render(){
@@ -21,9 +29,7 @@ class PostIndexItem extends React.Component {
             <div className="individual-post">
                 <div className="post-auth-container">
                     <div className="post-auth-image"></div>
-                    {/* <Link className="post-auth" to={`/posts/${this.state.id}`}>{this.props.username}</Link> */}
                     <h2 className="post-auth" >{this.props.username}</h2>
-                    {/* <h2 className="post-auth" >{this.props.user_id}</h2> */}
                     <div className="post-auth-options"></div>
                 </div>
                 <div className="post-photo-container">
@@ -39,9 +45,12 @@ class PostIndexItem extends React.Component {
                     <h4 className="post-caption-auth" >{this.props.username}</h4>
                     <Link className="post-caption" to={`/posts/${this.state.id}`}>{this.state.caption}</Link>
                 </div>
-                 <div className="post-edit-delete">
+                
+                <input className="add-comment" type="text" placeholder="Add a comment..." /> 
+            
+                 <div className="post-edit-delete-container">
                     <Link className="post-index-item-edit" to={`/posts/${this.state.id}/edit`}>Edit Post</Link>
-                    <button className="post-index-item-delete-button" type="button" onClick={this.handleSubmit}>Delete Post</button>
+                    <button className="post-index-item-delete-button" type="button" onClick={this.handleDelete}>Delete Post</button>
                 </div>
             </div>
         )
