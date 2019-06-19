@@ -11,7 +11,8 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
     return {
-        fetchPost: id => dispatch(fetchPost(id))
+        fetchPost: id => dispatch(fetchPost(id)),
+        action: id => dispatch(deletePost(id))
     };
 };
 

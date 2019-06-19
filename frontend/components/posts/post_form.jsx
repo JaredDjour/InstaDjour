@@ -3,12 +3,14 @@ import React from 'react';
 class PostForm extends React.Component {
    constructor(props){
        super(props);
-       this.state = {
-           caption: "",
-           photoFile: null,
-           photoUrl: null,
-           user_id: null,
-       };
+    //    this.state = {
+    //        caption: "",
+    //        photoFile: null,
+    //        photoUrl: null,
+    //        user_id: null
+    //    };
+       this.state = this.props.post;
+    //    debugger
        this.handleSubmit = this.handleSubmit.bind(this);
        this.handleChange = this.handleChange.bind(this);
        this.handleFile = this.handleFile.bind(this);
@@ -17,28 +19,26 @@ class PostForm extends React.Component {
    handleSubmit(e){
        e.preventDefault();
 
-        console.log("Help! I've fallen down and I can't stop plagiarizing back up!")
-
        const formData = new FormData();
        formData.append('post[caption]', this.state.caption);
-       formData.append('post[user_id]', this.state.user_id);
+       formData.append('post[userId]', this.state.userId);
+
+      
         if (this.state.photoFile) {
+            // debugger
             formData.append('post[photo]', this.state.photoFile);
         }
+        // debugger
+        this.props.action(formData);
+        // .then(() => this.props.history.push("/"));
 
-        this.props.action(formData).then(() => this.props.history.push("/"));
-    //    $.ajax({
-    //        url: `/api/posts`,
-    //        method: "POST",
-    //        data: post,
-    //        contentType: false,
-    //        processData: false
-    //    });
    }
 
    //What's the difference between e.target vs e.currentTarget?
    handleChange(field){
        return e => this.setState({[field]: e.target.value});
+        // debugger
+    
    }
 
 

@@ -37,11 +37,14 @@ export const updatePost = post => {
 };
 
 export const createPost = post => {
+    // console.log(post);
+    // debugger
     return (
         $.ajax({
             url: `/api/posts`,
             method: "POST",
-            data: {post},
+            // data: {post},
+            data: post,
             contentType: false,
             processData: false
         })

@@ -5,11 +5,16 @@ class PostShow extends React.Component {
     constructor(props){
         super(props);
         this.state = this.props.post;
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount(){
         this.props.fetchPost(this.props.match.params.postId);
     }
-    // didUpdate
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.action(this.state.id).then(() => this.props.history.push("/"));
+    }
+
 
     render() {
         return (

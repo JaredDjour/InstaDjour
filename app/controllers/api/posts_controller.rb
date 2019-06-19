@@ -3,19 +3,20 @@ class Api::PostsController < ApplicationController
     before_action :ensure_logged_in
 
     def create
-        # @post = current_user.posts.new(post_params)
-        @post = Post.new(post_params)
-        @post.user_id = current_user.id
-        if @post.save!
+        @post = current_user.posts.new(post_params)
+        # @post = Post.new(post_params)
+        # @post.user_id = current_user.id
+        if @post.save
             # render "/api/posts/show"
             render :show
+            # render :index
         else
             render json:  @post.errors.full_messages, status: 422
         end
     end
 
     def index
-        @posts = Post.all
+        @posts = Post.all.with_attached_photo
         # @posts = Post.with_attached_photo.all
         # @posts = current_user.posts
         # render "/api/posts/index"
@@ -59,7 +60,9 @@ class Api::PostsController < ApplicationController
     private
 
     def post_params
+        # params.permit(:caption, :photo)
         params.require(:post).permit(:caption, :photo)
+        # params.require(:post).permit(:caption)
         # params.permit(:caption, :photo)
     end
 

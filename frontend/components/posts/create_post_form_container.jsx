@@ -5,13 +5,13 @@ import {withRouter} from 'react-router-dom';
 
 const msp = state => {
     return {
-        post: {caption: ""}
-        // post: {    
-        //     caption: "",
-        //     photoFile: null,
-        //     photoUrl: null,
-        //     user_id: null,
-        // }
+        // post: {caption: ""}
+        post: {    
+            caption: "",
+            photoFile: null,
+            photoUrl: null,
+            userI: state.entities.users.id
+        }
     };
 };
 
@@ -21,4 +21,5 @@ const mdp = dispatch => {
     };
 };
 
+// export default withRouter(connect(null, mdp)(PostForm));
 export default withRouter(connect(msp, mdp)(PostForm));
