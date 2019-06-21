@@ -47,9 +47,16 @@ const receiveAllPosts = posts => {
 const receivePost = post => {
     return {
         type: RECEIVE_POST,
-        post
+        post, 
+
     };
 };
+// const receivePost = ({post}) => {
+//     return {
+//         type: RECEIVE_POST,
+//         post
+//     };
+// };
 
 const removePost = post=> {
     return {

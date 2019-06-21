@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 const msp = (state, ownProps) => {
     return {
         username: state.entities.posts[ownProps.post.id].username
+        // username: state.entities.posts[ownProps.post.id].username
     };
 };
 

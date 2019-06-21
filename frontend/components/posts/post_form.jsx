@@ -16,7 +16,27 @@ class PostForm extends React.Component {
        this.handleFile = this.handleFile.bind(this);
    }
 
-   handleSubmit(e){
+   componentDidMount() {
+        this.props.fetchAllPosts();
+   }
+
+//    componentDidUpdate() {
+//        this.setState({ [post[caption]]: this.state.caption });
+//        this.setState({ [post[userId]]: this.state.userId });
+
+//    }
+//    componentWillMount() {
+//         this.props.fetchAllPosts();
+//         // to do: udnerstand what willMount vs didMount
+//    }
+
+
+
+//    clearField() {
+//     document.getElementById("create-post-form").reset();
+//    }
+
+   handleSubmit(e) {
        e.preventDefault();
 
        const formData = new FormData();
@@ -25,17 +45,17 @@ class PostForm extends React.Component {
 
       
         if (this.state.photoFile) {
-            // debugger
+          
             formData.append('post[photo]', this.state.photoFile);
         }
-        // debugger
-        this.props.action(formData);
+     
+        this.props.action(formData)
         // .then(() => this.props.history.push("/"));
 
    }
 
    //What's the difference between e.target vs e.currentTarget?
-   handleChange(field){
+   handleChange(field) {
        return e => this.setState({[field]: e.target.value});
         // debugger
     
@@ -56,12 +76,13 @@ class PostForm extends React.Component {
         }
     }
 
-   render(){
+   render() { 
        return (
            <div className="index-right">
-               <form>
+               <form id="creat-post-form">
                    <input className="create-post-choose-file" type="file" onChange={this.handleFile} />
                    <input className="create-post-caption" type="text" placeholder="Caption" value={this.state.caption} onChange={this.handleChange("caption")} />
+
                    <button type="button" onClick={this.handleSubmit} className="create-post-button">Add Post</button>
                </form>
            </div>

@@ -25,7 +25,7 @@ class Api::PostsController < ApplicationController
 
     def show
         # @post = current_user.posts.find(params[:id])
-       @post = Post.find(params[:id])
+        @post = Post.find(params[:id])
         # render:show
         if @post
             render :show
@@ -61,7 +61,7 @@ class Api::PostsController < ApplicationController
 
     def post_params
         # params.permit(:caption, :photo)
-        params.require(:post).permit(:caption, :photo)
+        params.require(:post).permit(:caption, :username, :photo)
         # params.require(:post).permit(:caption)
         # params.permit(:caption, :photo)
     end

@@ -15,8 +15,9 @@ class PostShow extends React.Component {
         this.props.action(this.state.id).then(() => this.props.history.push("/"));
     }
 
-
     render() {
+        if (!this.state) return null;
+        
         return (
             <div className="individual-post">
                 <div className="post-auth-container"> 
