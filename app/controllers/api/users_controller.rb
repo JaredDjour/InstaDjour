@@ -4,7 +4,8 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login(@user)
-      render "/api/users/show"
+      # render "/api/users/show"
+      render :show
     else
       render json: @user.errors.full_messages, status: 422
     end
@@ -12,13 +13,15 @@ class Api::UsersController < ApplicationController
 
   def index
     @users = User.all
-    render "/api/users"
+    # render "/api/users"
+    render :index
   end
 
   def show
     @user = User.find(params[:id])
       if @user
-        render "/api/users/:id"
+        # render "/api/users/:id"
+        render :show
       else
         render json: @user.errors.full_messages, status: 404
       end
@@ -28,7 +31,8 @@ class Api::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      render "/api/users/:id"
+      # render "/api/users/:id"
+      render :show
     else
       render json: @user.errors.full_messages, status: 422
     end

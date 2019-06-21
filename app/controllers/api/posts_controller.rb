@@ -7,8 +7,8 @@ class Api::PostsController < ApplicationController
         # @post = Post.new(post_params)
         # @post.user_id = current_user.id
         if @post.save
-            # render "/api/posts/show"
             render :show
+            # @posts = Post.all.with_attached_photo
             # render :index
         else
             render json:  @post.errors.full_messages, status: 422
@@ -17,9 +17,7 @@ class Api::PostsController < ApplicationController
 
     def index
         @posts = Post.all.with_attached_photo
-        # @posts = Post.with_attached_photo.all
-        # @posts = current_user.posts
-        # render "/api/posts/index"
+        # @posts = current_user.posts.with_attached_photo  -- This is for user show page!!!
         render :index
     end
 
@@ -30,7 +28,8 @@ class Api::PostsController < ApplicationController
         if @post
             render :show
         else
-            render json: @post.errors.full_messages, status: 404
+            render :index
+            # render json: @post.errors.full_messages, status: 404
         end
     end
 
@@ -45,16 +44,15 @@ class Api::PostsController < ApplicationController
     end
 
     def destroy
-        # @post = current_user.posts.find(params[:id])
-        @post = Post.find(params[:id])
-        @post.destroy
-        render :show
-        # if @post.destroy
-        #     @posts = Post.all
-        #     render :index
-        # else
-        #     render json: @post.errors.full_messages, status: 422
-        # end
+        @post = current_user.posts.find(params[:id])
+        # @post = Post.find(params[:id])
+        if @post.destroy
+            # @posts = Post.all.with_attached_photo
+            # render :index
+            render :show
+        else
+            render json: @post.errors.full_messages, status: 422
+        end
     end
 
     private

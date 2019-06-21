@@ -17,14 +17,18 @@ class PostForm extends React.Component {
    }
 
    componentDidMount() {
+       console.log(this.props)
         this.props.fetchAllPosts();
+    //    this.props.fetchPost(this.state)
    }
 
-//    componentDidUpdate() {
-//        this.setState({ [post[caption]]: this.state.caption });
-//        this.setState({ [post[userId]]: this.state.userId });
+   componentDidUpdate() {
+    //    this.setState({ [post[caption]]: this.state.caption });
+    //    this.setState({ [post[userId]]: this.state.userId });
+    // Add this.props.fetchAllPosts() so that will display the new post created
+    // this.props.fetchAllPosts();
 
-//    }
+   }
 //    componentWillMount() {
 //         this.props.fetchAllPosts();
 //         // to do: udnerstand what willMount vs didMount

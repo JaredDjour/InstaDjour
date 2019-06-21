@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 
 class PostShow extends React.Component {
     constructor(props){
@@ -7,9 +7,9 @@ class PostShow extends React.Component {
         this.state = this.props.post;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    componentDidMount(){
-        this.props.fetchPost(this.props.match.params.postId);
-    }
+    // componentDidMount(){
+    //     this.props.fetchPost(this.props.match.params.postid);
+    // }
     handleSubmit(e) {
         e.preventDefault();
         this.props.action(this.state.id).then(() => this.props.history.push("/"));
@@ -17,6 +17,7 @@ class PostShow extends React.Component {
 
     render() {
         if (!this.state) return null;
+        // if (!this.state) return <Redirect to=""></Redirect>
         
         return (
             <div className="individual-post">
