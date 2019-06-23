@@ -20,6 +20,7 @@ class PostShow extends React.Component {
         // if (!this.state) return <Redirect to=""></Redirect>
         
         return (
+            
             <div className="individual-post">
                 <div className="post-auth-container"> 
                     <div className="post-auth-image"></div>
