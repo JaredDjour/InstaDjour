@@ -17,7 +17,7 @@ const NavBar = ({currentUser, logout, loggedIn}) => {
               </div> 
               <div className="nav-center">
                 <span className="icon-search"></span>
-              <input className="search-bar" type="text" placeholder="Search" /> 
+              <input className="search-bar" type="text" placeholder="This doesn't really work" /> 
               </div>
               <div className="nav-right">
                 <Link className="icon-explore" to="/"></Link>

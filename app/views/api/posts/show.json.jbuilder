@@ -5,5 +5,5 @@ json.partial! 'api/posts/post', post: @post
 #    json.photoUrl url_for(@post.photo)
 # end 
    # json.set! @post.id do
-      json.extract! @post.user, :username
+      # json.extract! @post.user, :username
    # end

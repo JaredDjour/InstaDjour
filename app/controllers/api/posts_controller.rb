@@ -34,10 +34,11 @@ class Api::PostsController < ApplicationController
     end
 
     def update
-        # @post = current_user.posts.find(params[:id])
-        @post = Post.find(params[:id])
+        @post = current_user.posts.find(params[:id])
+        # @post = Post.find(params[:id])
         if @post.update(post_params)
             render :show
+            # render :edit
         else
             render @post.errors.full_messages, status: 401
         end

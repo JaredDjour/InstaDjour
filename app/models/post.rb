@@ -20,8 +20,11 @@ class Post < ApplicationRecord
 
     has_one_attached :photo
 
-    #  delegate :filename, to: :photo, allow_nil: true
-    
+    has_many :comments,
+    primary_key: :id,
+    foreign_key: :post_id,
+    class_name: :Comment
+
     def has_photo
         if !self.photo.attached?
             errors[:photo] << "attach a photo"
