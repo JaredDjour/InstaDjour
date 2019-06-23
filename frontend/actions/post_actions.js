@@ -9,12 +9,6 @@ export const fetchAllPosts = () => dispatch => {
    
 };
 
-// export const fetchAllPosts = () => dispatch => {
-//     return PostApiUtil.fetchAllPosts().then((posts) => {
-//         debugger
-//         return dispatch(receiveAllPosts(posts));
-//     });
-// };
 export const fetchPost = post => dispatch => {
     return PostApiUtil.fetchPost(post).then(post => dispatch(receivePost(post)));
 };
@@ -58,7 +52,7 @@ const receivePost = post => {
 //     };
 // };
 
-const removePost = post=> {
+const removePost = post => {
     return {
         type: REMOVE_POST,
         postId: post.id

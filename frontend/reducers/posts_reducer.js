@@ -1,5 +1,5 @@
 import { RECEIVE_ALL_POSTS, RECEIVE_POST, REMOVE_POST } from "../actions/post_actions";
-import merge from "lodash/merge";
+import merge from "lodash/merge"; // or import {merge} from "lodash";
 
 
 const postsReducer = (state = {}, action) => {
