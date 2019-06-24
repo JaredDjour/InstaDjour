@@ -11,11 +11,11 @@ export const fetchAllComments = () => dispatch => {
 export const createComment = (comment) => dispatch => {
     return CommentApiUtil.createComment(comment).then(comment => dispatch(receiveComment(comment)));
 };
-export const updateComment = (comment) => dispatch => {
-    return CommentApiUtil.updateComment(comment).then(comment => dispatch(receiveComment(comment)));
-};
+// export const updateComment = (comment) => dispatch => {
+//     return CommentApiUtil.updateComment(comment).then(comment => dispatch(receiveComment(comment)));
+// };
 export const deleteComment = (commentId) => dispatch => {
-    return CommentApiUtil.deleteComment(commentId).then(comment => dispatch(removeComment(comment)));
+    return CommentApiUtil.deleteComment(commentId).then((comment) => dispatch(removeComment(comment)));
 
 };
 

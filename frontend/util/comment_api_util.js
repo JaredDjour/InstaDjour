@@ -19,19 +19,19 @@ export const createComment = (comment) => {
      $.ajax({
          url: `/api/comments`,
          method: "POST",
-         data: comment, 
+         data: {comment} 
      })
  );
 };
-export const updateComment = (comment) => {
- return (
-     $.ajax({
-         url: `/api/comments/${comment.id}`,
-         method: "PATCH",
-         data: comment 
-     })
- );
-};
+// export const updateComment = (comment) => {
+//  return (
+//      $.ajax({
+//          url: `/api/comments/${comment.id}`,
+//          method: "PATCH",
+//          data: comment 
+//      })
+//  );
+// };
 export const deleteComment = (commentId) => {
  return (
      $.ajax({

@@ -6,7 +6,7 @@ import {fetchAllComments} from "../../actions/comment_actions";
 
 const msp = (state, ownProps) => {
     return {
-        // username: state.entities.posts[ownProps.post.id].username,
+        username: state.entities.posts[ownProps.post.id].username,
         // username: state.entities.posts[ownProps.post.id].username
         // comments: state.entities.posts[ownProps.comments],
         // comments: Object.values(state.entities.comments),
@@ -43,7 +43,6 @@ class PostIndexItem extends React.Component {
  
     render(){
         // const comments = this.props.posts.comments.reverse().map((comment) => <CommentContainer key={comment.id} comment={comment} deleteComment={this.props.deleteComment} />);
-console.log(this.props.post)
         return (
             <div className="individual-post">
                 <div className="post-auth-container">
@@ -71,7 +70,7 @@ console.log(this.props.post)
                     <Link className="post-index-item-edit" to={`/posts/${this.state.id}/edit`}>Edit Post</Link>
                     <button className="post-index-item-delete-button" type="button" onClick={this.handleDelete}>Delete Post</button>
                 </div>
-               {/* {comments} */}
+                <CommentContainer />
             </div>
         )
     }

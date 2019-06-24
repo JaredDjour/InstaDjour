@@ -7,7 +7,7 @@ const msp = (state, ownProps) => {
         comment: {
             body: "",
             userId: state.session.currentUser,
-            postId: state.entities.posts[ownProps.postId],
+            // postId: state.entities.posts[ownProps.postId],
         },
         // currentUser: state.session.id,
         // username: state.users.id.username
