@@ -1,22 +1,27 @@
-// import { connect } from "react-redux";
-// import { createComment  } from "../../actions/comment_actions";
-// import CommentForm from "./comment_form";
+import { createComment } from "../../actions/comment_actions";
+import { connect } from "react-redux";
+import CommentForm from "./comment";
 
 // const msp = (state, ownProps) => {
 //     return {
 //         comment: {
 //             body: "",
-//             userId: state.session.id,
-//             postId: state.entities.posts[ownProps.postId]
+//             userId: state.session.currentUser,
+//             postId: ownProps.postId
+//             // postId: state.entities.posts[ownProps.postId],
 //         },
-//         username: state.entities.users.username
+//         // currentUser: state.session.id,
+//         // username: state.users.id.username
 //     };
 // };
 
-// const mdp = dispatch => {
-//     return {
-//         createComment: comment => dispatch(createComment(comment))
-//     };
-// };
+const mdp = dispatch => {
+    return {
+        // fetchAllComments: () => dispatch(fetchAllComments()),
+        createComment: comment => dispatch(createComment(comment)),
+        // updateComment: commentId => dispatch(updateComment(commentId)),
+        // deleteComment: commentId => dispatch(deleteComment(commentId)),
+    };
+};
 
-// export default connect(msp, mdp)(CommentForm);
+export default connect(null, mdp)(CommentForm);

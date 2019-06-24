@@ -17,13 +17,13 @@ class Api::PostsController < ApplicationController
 
     def index
         @posts = Post.all.with_attached_photo.includes(:comments)
-        @comments = []
+        # @comments = []
 
-        @posts.each do |post|
-            post.comments.each do |comment|
-                @comments << comment
-            end
-        end
+        # @posts.each do |post|
+        #     post.comments.each do |comment|
+        #         @comments << comment
+        #     end
+        # end
         # @posts = current_user.posts.with_attached_photo  -- This is for user show page!!!
         render :index
     end
@@ -31,7 +31,8 @@ class Api::PostsController < ApplicationController
     def show
         # @post = current_user.posts.find(params[:id])
         @post = Post.find(params[:id]).with_attached_photo.includes(:comments)
-        # render:show
+        # render :show
+
         if @post
             render :show
         else

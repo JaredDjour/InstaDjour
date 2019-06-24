@@ -1,15 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
-import CommentContainer  from '../comments/comment_container';
+import CreateCommentFormContainer  from '../comments/create_comment_form_container';
 import {fetchAllComments} from "../../actions/comment_actions"; 
 
 const msp = (state, ownProps) => {
     return {
         username: state.entities.posts[ownProps.post.id].username,
-        // username: state.entities.posts[ownProps.post.id].username
-        // comments: state.entities.posts[ownProps.comments],
-        // comments: Object.values(state.entities.comments),
     };
 };
 
@@ -63,14 +60,14 @@ class PostIndexItem extends React.Component {
                     <h4 className="post-caption-auth" >{this.props.username}</h4>
                     <Link className="post-caption" to={`/posts/${this.state.id}`}>{this.state.caption}</Link>
                 </div>
-               {/* <CommentForm postId={this.state.id} />  */}
+                {/* <CommentForm postId={this.state.id} />  */}
                 {/* <input className="add-comment" type="text" placeholder="Add a comment..." />  */}
             
+                <CreateCommentFormContainer postId={this.props.post.id}/>
                  <div className="post-edit-delete-container">
                     <Link className="post-index-item-edit" to={`/posts/${this.state.id}/edit`}>Edit Post</Link>
                     <button className="post-index-item-delete-button" type="button" onClick={this.handleDelete}>Delete Post</button>
                 </div>
-                <CommentContainer />
             </div>
         )
     }

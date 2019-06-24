@@ -1,7 +1,5 @@
 import React from 'react';
 import CommentIndexItem from "./comment_index_item";
-import CreateCommentFormContainer from './create_comment_form_container';
-
 
 class CommentIndex extends React.Component {
     constructor(props) {
@@ -14,11 +12,18 @@ class CommentIndex extends React.Component {
 
 
     render() {
-        console.log(this.props);
         // const comments = this.props.comment.reverse().map((comment) => <CommentIndexItem key={comment.id} comment={comment} deleteComment={this.props.deleteComment} />);
+        // const {comments} = this.props;
+        const comments = this.props.comments.map( (comment, idx) => {
+        <CommentIndexItem 
+        key={idx}
+        deleteComment={deleteComment}
+        comment={comment}/>
+        }); 
         return (
-            <div className="all">
-                {/* <ul>{comments}</ul> */}
+            <div className="all-comments">
+                
+                <ul>{comments}</ul>
                 {/* <CreateCommentFormContainer /> */}
             </div>
         )

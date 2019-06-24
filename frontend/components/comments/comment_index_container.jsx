@@ -1,12 +1,14 @@
 import { connect } from "react-redux";
+import {withRouter} from "react-router-dom";
 import { fetchAllComments, deleteComment } from "../../actions/comment_actions";
 import CommentIndex from "./comment_index";
 
 
-const msp = state => {
+const msp = (state, ownProps) => {
+    const comments = ownProps.post.comment_ids.map(id => state.entities.comments[id]); 
     return {
-        // comments: Object.values(state.entities.posts.comments),
-
+        // comments: ownProps.post.comment_ids.map(id => state.entities.comments[id]),
+        comments
     };
 };
 
@@ -19,4 +21,4 @@ const mdp = dispatch => {
 };
 
 
-export default connect(null, mdp)(CommentIndex);
+export default withRouter(connect(msp, mdp)(CommentIndex));

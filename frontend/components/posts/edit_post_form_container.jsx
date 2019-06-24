@@ -1,42 +1,43 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PostForm from './post_form';
-import {connect} from "react-redux";
-import { withRouter } from "react-router-dom";
-import {fetchPost, updatePost} from "../../actions/post_actions";
+import { fetchPost, updatePost } from '../../actions/post_actions';
 
+const mapStateToProps = (state, ownProps) => {
+  const defaultPost = { title: '', body: '' };
+  const post = state.posts[ownProps.match.params.postId] || defaultPost;
+  const formType = 'Update Post';
 
-const msp = (state, ownProps) => {
-    // const default = { }
-    return {
-        post: state.posts[ownProps.match.params.postId]
-    };
+  return { post, formType };
 };
 
-const mdp = dispatch => {
-    return {
-        fetchPost: id => dispatch(fetchPost(id)),
-        updatePost: post => dispatch(updatePost(post)) 
-    };
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchPost: id => dispatch(fetchPost(id)),
+    action: post => dispatch(updatePost(post)),
+  };
 };
-
 
 class EditPostForm extends React.Component {
-    
-    componentDidMount(){
-        this.props.fetchPost(this.props.match.params.postId);
-    }
+  componentDidMount() {
+    this.props.fetchPost(this.props.match.params.postId);
+  }
 
-    render(){
-        console.log(this.props);
-        return (
-            <PostForm 
-            action={this.props.updatePost} 
-            formType={this.props.formType} 
-            post={this.props.post}
-            />
-        )
-
+  componentDidUpdate(prevProps) {
+    if (prevProps.post.id != this.props.match.params.postId) {
+      this.props.fetchPost(this.props.match.params.postId);
     }
+  }
+
+  render() {
+    const { action, formType, post } = this.props;
+    return (
+      <PostForm
+        action={action}
+        formType={formType}
+        post={post} />
+    );
+  }
 }
 
-export default withRouter(connect(msp, mdp)(EditPostForm));
+export default connect(mapStateToProps, mapDispatchToProps)(EditPostForm);

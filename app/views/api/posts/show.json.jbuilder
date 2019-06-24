@@ -8,8 +8,8 @@ json.partial! 'api/posts/post', post: @post
       # json.extract! @post.user, :username
    # end
 
-@post.comments.each do |comment|
-   json.set! comment.id do 
-      json.extract! comment, :id, :user_id, :post_id, :body
-   end
-end
+# @post.comments.each do |comment|
+#    json.set! comment.id do 
+#       json.extract! comment, :id, :user_id, :post_id, :body
+#    end
+# end
