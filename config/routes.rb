@@ -7,11 +7,11 @@ Rails.application.routes.draw do
     resources :users, only:[:create, :index, :show, :update] do
       resources :posts, only:[:index]
     end
-    resources :posts, only:[:create, :show, :index, :update, :destroy] do
-      resources :comments, only:[:create, :index, :update, :destroy]
-    end
-    # resources :posts, only:[:create, :show, :index, :update, :destroy]
-    # resources :comments, only:[:create, :index, :update, :destroy]
+    # resources :posts, only:[:create, :show, :index, :update, :destroy] do
+    #   resources :comments, only:[:create, :index, :update, :destroy]
+    # end
+    resources :posts, only:[:create, :show, :index, :update, :destroy]
+    resources :comments, only:[:create, :index, :update, :destroy]
 
   end
 

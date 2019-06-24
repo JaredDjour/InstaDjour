@@ -1,13 +1,16 @@
-class Api::CommentsController < ApplicatioController
+class Api::CommentsController < ApplicationController
 
     before_action :ensure_logged_in
 
     def create
-        @comment = current_user.comments.new(comment_params)
+        # @comment = current_user.comments.new(comment_params)
+        @comment = Comment.new(comment_params)
+        @comment.post_id = params[:user_id]
         @comment.post_id = params[:post_id]
             if @comment.save
                 @post = @comment.post
-                render :show
+                # render :show
+                render 
             else
                 render json:  @comment.errors.full_messages, status: 422 
             end

@@ -10,25 +10,23 @@ class PostForm extends React.Component {
     //        user_id: null
     //    };
        this.state = this.props.post;
-    //    debugger
        this.handleSubmit = this.handleSubmit.bind(this);
        this.handleChange = this.handleChange.bind(this);
        this.handleFile = this.handleFile.bind(this);
    }
 
-   componentDidMount() {
-       console.log(this.props)
-        this.props.fetchAllPosts();
-    //    this.props.fetchPost(this.state)
-   }
+//    componentDidMount() {
+//         this.props.fetchAllPosts();
+//     //    this.props.fetchPost(this.state)
+//    }
 
-   componentDidUpdate() {
-    //    this.setState({ [post[caption]]: this.state.caption });
-    //    this.setState({ [post[userId]]: this.state.userId });
-    // Add this.props.fetchAllPosts() so that will display the new post created
-    // this.props.fetchAllPosts();
+//    componentDidUpdate() {
+//     //    this.setState({ [post[caption]]: this.state.caption });
+//     //    this.setState({ [post[userId]]: this.state.userId });
+//     // Add this.props.fetchAllPosts() so that will display the new post created
+//     // this.props.fetchAllPosts();
 
-   }
+//    }
 //    componentWillMount() {
 //         this.props.fetchAllPosts();
 //         // to do: udnerstand what willMount vs didMount
@@ -53,8 +51,13 @@ class PostForm extends React.Component {
             formData.append('post[photo]', this.state.photoFile);
         }
      
-        this.props.action(formData)
+        this.props.action(formData);
         // .then(() => this.props.history.push("/"));
+       this.setState({
+           caption: "", 
+           photoFile: null,
+           photoUrl: null,
+           userId: state.session.id });
 
    }
 
@@ -86,8 +89,7 @@ class PostForm extends React.Component {
                <form id="creat-post-form">
                    <input className="create-post-choose-file" type="file" onChange={this.handleFile} />
                    <input className="create-post-caption" type="text" placeholder="Caption" value={this.state.caption} onChange={this.handleChange("caption")} />
-
-                   <button type="button" onClick={this.handleSubmit} className="create-post-button">Add Post</button>
+                   <button type="button" onClick={this.handleSubmit} className="create-post-button">Post</button>
                </form>
            </div>
        )

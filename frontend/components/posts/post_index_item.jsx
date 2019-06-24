@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
+import {CommentForm} from "../comments/create_comment_form_container";
 
 const msp = (state, ownProps) => {
     return {
@@ -46,8 +47,8 @@ class PostIndexItem extends React.Component {
                     <h4 className="post-caption-auth" >{this.props.username}</h4>
                     <Link className="post-caption" to={`/posts/${this.state.id}`}>{this.state.caption}</Link>
                 </div>
-                
-                <input className="add-comment" type="text" placeholder="Add a comment..." /> 
+               {/* <CommentForm postId={this.state.id} />  */}
+                {/* <input className="add-comment" type="text" placeholder="Add a comment..." />  */}
             
                  <div className="post-edit-delete-container">
                     <Link className="post-index-item-edit" to={`/posts/${this.state.id}/edit`}>Edit Post</Link>
