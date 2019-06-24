@@ -1,14 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
-import {CommentForm} from "../comments/create_comment_form_container";
+import CommentContainer  from '../comments/comment_container';
+import {fetchAllComments} from "../../actions/comment_actions"; 
 
 const msp = (state, ownProps) => {
     return {
-        username: state.entities.posts[ownProps.post.id].username
+        // username: state.entities.posts[ownProps.post.id].username,
         // username: state.entities.posts[ownProps.post.id].username
+        // comments: state.entities.posts[ownProps.comments],
+        // comments: Object.values(state.entities.comments),
     };
 };
+
+const mdp = dispatch => {
+    return {
+        fetchAllComments: () => dispatch(fetchAllComments()),
+        deleteComment: id => dispatch(deleteComment(id)),
+
+    };
+};
+
+
 
 class PostIndexItem extends React.Component {
     constructor(props) {
@@ -17,16 +30,20 @@ class PostIndexItem extends React.Component {
         this.handleDelete = this.handleDelete.bind(this);
     }
 
+    componentDidMount() {
+        this.props.fetchAllComments();
+    }
+
     handleDelete(e) {
         e.preventDefault();
         this.props.deletePost(this.state.id);
         // .then(() => this.props.history.push("/"));
     }
  
-
  
     render(){
-
+        // const comments = this.props.posts.comments.reverse().map((comment) => <CommentContainer key={comment.id} comment={comment} deleteComment={this.props.deleteComment} />);
+console.log(this.props.post)
         return (
             <div className="individual-post">
                 <div className="post-auth-container">
@@ -54,12 +71,13 @@ class PostIndexItem extends React.Component {
                     <Link className="post-index-item-edit" to={`/posts/${this.state.id}/edit`}>Edit Post</Link>
                     <button className="post-index-item-delete-button" type="button" onClick={this.handleDelete}>Delete Post</button>
                 </div>
+               {/* {comments} */}
             </div>
         )
     }
 
 };
 
-  export default connect(msp, null)(PostIndexItem);
+  export default connect(msp, mdp)(PostIndexItem);
 
 // export default PostIndexItem;

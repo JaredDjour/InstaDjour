@@ -22,7 +22,12 @@ class User < ApplicationRecord
     primary_key: :id,
     foreign_key: :user_id,
     class_name: :Post
-  
+ 
+  has_many :comments,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Comment
+     
     after_initialize :ensure_session_token
     attr_reader :password
 
