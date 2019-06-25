@@ -4,15 +4,15 @@ import { connect } from 'react-redux';
 
 const msp = (state, ownProps) => {
     return {
-        username: state.entities.users.username
-        // username: state.entities.posts[ownProps.post.id].username
+        username: state.entities.users[state.session.id].username,
+        // username: state.entities.posts[ownProps.post.id].username,
     };
 };
 
 class CommentIndexItem extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = this.props.comment;
+        this.state = this.props.comment;
         this.handleDelete = this.handleDelete.bind(this);
     }
 
@@ -26,11 +26,10 @@ class CommentIndexItem extends React.Component {
 
 
     render() {
-
         return (
             <div className="individual_comment">
                 <div className="comment-auth-container">
-                    <div> className="comment-auth" >{this.props.username}</div>
+                    <div className="comment-auth">{this.props.username}</div>
                 </div>
                 <div className="comment-body-container">
                     <div className="comment-body">{this.props.comment.body}</div>

@@ -1,4 +1,5 @@
 import { createComment } from "../../actions/comment_actions";
+import { fetchPost } from "../../actions/post_actions";
 import { connect } from "react-redux";
 import CommentForm from "./comment_form";
 
@@ -18,6 +19,7 @@ import CommentForm from "./comment_form";
 const mdp = dispatch => {
     return {
         // fetchAllComments: () => dispatch(fetchAllComments()),
+        fetchPost: (id) => dispatch(fetchPost(id)),
         createComment: comment => dispatch(createComment(comment)),
         // updateComment: commentId => dispatch(updateComment(commentId)),
         // deleteComment: commentId => dispatch(deleteComment(commentId)),
