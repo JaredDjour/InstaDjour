@@ -8,7 +8,7 @@ const msp = (state, ownProps) => {
         // username: state.entities.posts[ownProps.post.id].username,
     };
 };
-
+ 
 class CommentIndexItem extends React.Component {
     constructor(props) {
         super(props);
@@ -21,7 +21,7 @@ class CommentIndexItem extends React.Component {
     // }
     handleDelete(e) {
         e.preventDefault();
-        this.props.deleteComment(this.props.comment);
+        this.props.deleteComment(this.props.comment.id);
     }
 
 
@@ -34,6 +34,7 @@ class CommentIndexItem extends React.Component {
                 <div className="comment-body-container">
                     <div className="comment-body">{this.props.comment.body}</div>
                 </div>
+                <button className="comment-index-item-delete-button" type="button" onClick={this.handleDelete}>Delete</button>
             </div>
         )
     }

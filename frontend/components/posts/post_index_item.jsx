@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
-import CreateCommentFormContainer  from '../comments/create_comment_form_container';
+// import CreateCommentFormContainer  from '../comments/create_comment_form_container';
 import CommentIndexContainer from "../comments/comment_index_container";
 import {fetchAllComments} from "../../actions/comment_actions"; 
 const msp = (state, ownProps) => {
@@ -65,7 +65,7 @@ class PostIndexItem extends React.Component {
                 </div>
                 {/* <input className="add-comment" type="text" placeholder="Add a comment..." />  */}
                 <CommentIndexContainer post={this.props.post} postId={this.props.post.id}/>
-                <CreateCommentFormContainer postId={this.props.post.id}/>
+                {/* <CreateCommentFormContainer postId={this.props.post.id}/> */}
                  <div className="post-edit-delete-container">
                     <Link className="post-index-item-edit" to={`/posts/${this.state.id}/edit`}>Edit Post</Link>
                     <button className="post-index-item-delete-button" type="button" onClick={this.handleDelete}>Delete Post</button>

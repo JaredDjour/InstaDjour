@@ -9,13 +9,24 @@
    margin-top: -10 
 }
 
-
-.individual_comment {
+.all-comments {
+    width: 100%;
 
 }
 
-.comment-auth-container {
+.individual_comment {
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 600; 
+    // display: inline-block;
+    flex-wrap: wrap;
+    margin: 5px 0 3px 5px;
+}
 
+.comment-auth-container {
+    margin-right: 3px;
 }
 
 .comment-auth {
@@ -23,9 +34,13 @@
 }
 
 .comment-body-container {
-
+font-weight: 400;
 }
 
 .comment-body {
+
+}
+
+.comment-index-item-delete-button {
 
 }
