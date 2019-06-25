@@ -15,10 +15,10 @@ class PostForm extends React.Component {
        this.handleFile = this.handleFile.bind(this);
    }
 
-   componentDidMount() {
-    this.props.fetchAllPosts();
-    //    this.props.fetchPost(this.state);
-   }
+//    componentDidMount() {
+//     this.props.fetchAllPosts();
+//     //    this.props.fetchPost(this.state);
+//    }
 
 //    componentDidUpdate() {
 //     //    this.setState({ [post[caption]]: this.state.caption });
