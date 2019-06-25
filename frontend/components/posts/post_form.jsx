@@ -10,6 +10,7 @@ class PostForm extends React.Component {
     //        user_id: null
     //    };
        this.state = this.props.post;
+       this.setState = this.setState.bind(this);
        this.handleSubmit = this.handleSubmit.bind(this);
        this.handleChange = this.handleChange.bind(this);
        this.handleFile = this.handleFile.bind(this);
@@ -53,11 +54,12 @@ class PostForm extends React.Component {
      
         this.props.action(formData);
         // .then(() => this.props.history.push("/"));
-    //    this.setState({
-    //        caption: "", 
-    //        photoFile: null,
-    //        photoUrl: null,
-    //        userId: state.session.id });
+        // debugger
+       this.setState({
+           caption: "", 
+           photoFile: null,
+           photoUrl: null,
+           userId: state.session.id, });
 
    }
 

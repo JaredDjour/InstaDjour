@@ -5,14 +5,11 @@ import CommentIndex from "./comment_index";
 
 
 const msp = (state, ownProps) => {
-    // const comments = state.entities.posts[ownProps.postId].comments
-    // .map(id => state.entities.comments[id]);
-   
-    // const comments = ownProps.post.comments
-    // .map( (id) => state.entities.comments[id]); 
+
     return {
         // comments: ownProps.post.comments.map(id => state.entities.comments[id]),
-        comments: Object.values(state.entities.comments)
+        comments: Object.values(state.entities.comments),
+        post_id: ownProps.post_id, 
     };
 };
 

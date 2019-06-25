@@ -6,21 +6,20 @@ class CommentIndex extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        this.props.fetchAllComments();
-    }
+    // componentDidMount() {
+    //     this.props.fetchAllComments();
+    // }
 
 
     render() {
         // const comments = this.props.comment.reverse().map((comment) => <CommentIndexItem key={comment.id} comment={comment} deleteComment={this.props.deleteComment} />);
         // const {comments} = this.props;
-        const comments = this.props.comments.map( (comment) => {
-            if(this.props.post.id === comment.post_id) {
+        // debugger
+        const comments = this.props.comments.map( (comment) => { 
                 <CommentIndexItem
                     key={comment.id}
                     comment={comment}
                     deleteComment={this.props.deleteComment} />
-            }
         });
 
 
