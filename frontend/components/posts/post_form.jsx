@@ -15,10 +15,10 @@ class PostForm extends React.Component {
        this.handleFile = this.handleFile.bind(this);
    }
 
-//    componentDidMount() {
-//         this.props.fetchAllPosts();
-//     //    this.props.fetchPost(this.state)
-//    }
+   componentDidMount() {
+    this.props.fetchAllPosts();
+    //    this.props.fetchPost(this.state);
+   }
 
 //    componentDidUpdate() {
 //     //    this.setState({ [post[caption]]: this.state.caption });
@@ -53,18 +53,17 @@ class PostForm extends React.Component {
      
         this.props.action(formData);
         // .then(() => this.props.history.push("/"));
-       this.setState({
-           caption: "", 
-           photoFile: null,
-           photoUrl: null,
-           userId: state.session.id });
+    //    this.setState({
+    //        caption: "", 
+    //        photoFile: null,
+    //        photoUrl: null,
+    //        userId: state.session.id });
 
    }
 
    //What's the difference between e.target vs e.currentTarget?
    handleChange(field) {
        return e => this.setState({[field]: e.target.value});
-        // debugger
     
    }
 

@@ -5,14 +5,6 @@ import merge from "lodash/merge";
 const commentsReducer = (state = {}, action) => {
     let oldState = Object.freeze(state);
     switch (action.type) {
-        // case RECEIVE_ALL_POSTS:
-        //     if (action.payload.comments === undefined) {
-        //         return state;
-        //     } else {
-        //         return action.payload.comments;
-        //     }
-        // case RECEIVE_POST:
-        //     return merge({}, state, action.payload.comments);
         case RECEIVE_ALL_COMMENTS:
             return action.comments;
         case RECEIVE_COMMENT:

@@ -2,21 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 import CreateCommentFormContainer  from '../comments/create_comment_form_container';
+import CommentIndexContainer from "../comments/comment_index_container";
 import {fetchAllComments} from "../../actions/comment_actions"; 
-
 const msp = (state, ownProps) => {
     return {
         username: state.entities.posts[ownProps.post.id].username,
+        // state.entities.posts[Ow]
     };
 };
 
-const mdp = dispatch => {
-    return {
-        fetchAllComments: () => dispatch(fetchAllComments()),
-        deleteComment: id => dispatch(deleteComment(id)),
+// const mdp = dispatch => {
+//     return {
+//         fetchAllComments: () => dispatch(fetchAllComments()),
+//         deleteComment: id => dispatch(deleteComment(id)),
 
-    };
-};
+//     };
+// };
 
 
 
@@ -28,12 +29,13 @@ class PostIndexItem extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchAllComments();
+        // this.props.fetchAllComments();
     }
 
     handleDelete(e) {
+
         e.preventDefault();
-        this.props.deletePost(this.state.id);
+        this.props.deletePost(this.state.id)
         // .then(() => this.props.history.push("/"));
     }
  
@@ -62,8 +64,8 @@ class PostIndexItem extends React.Component {
                 </div>
                 {/* <CommentForm postId={this.state.id} />  */}
                 {/* <input className="add-comment" type="text" placeholder="Add a comment..." />  */}
-            
-                <CreateCommentFormContainer postId={this.props.post.id}/>
+                {/* <CommentIndexContainer post={this.props.post} postId={this.props.post.id}/>
+                <CreateCommentFormContainer postId={this.props.post.id}/> */}
                  <div className="post-edit-delete-container">
                     <Link className="post-index-item-edit" to={`/posts/${this.state.id}/edit`}>Edit Post</Link>
                     <button className="post-index-item-delete-button" type="button" onClick={this.handleDelete}>Delete Post</button>
@@ -74,6 +76,6 @@ class PostIndexItem extends React.Component {
 
 };
 
-  export default connect(msp, mdp)(PostIndexItem);
+  export default connect(msp, null)(PostIndexItem);
 
 // export default PostIndexItem;

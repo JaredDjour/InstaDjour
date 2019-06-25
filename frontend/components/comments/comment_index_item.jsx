@@ -12,25 +12,29 @@ const msp = (state, ownProps) => {
 class CommentIndexItem extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.comment;
+        // this.state = this.props.comment;
         this.handleDelete = this.handleDelete.bind(this);
     }
 
+    // componentDidMount() {
+    //    this.props.comment. =  
+    // }
     handleDelete(e) {
         e.preventDefault();
-        this.props.deleteComment(this.state.id);
+        this.props.deleteComment(this.props.comment);
     }
 
 
-
     render() {
-        console.log(this.props)
+
         return (
             <div className="individual_comment">
                 <div className="comment-auth-container">
-                    <h2 className="comment-auth" >{this.props.username}</h2>
+                    <div> className="comment-auth" >{this.props.username}</div>
                 </div>
-              <h2>CommentIndexItem</h2>
+                <div className="comment-body-container">
+                    <div className="comment-body">{this.props.comment.body}</div>
+                </div>
             </div>
         )
     }

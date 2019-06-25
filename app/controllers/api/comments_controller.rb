@@ -9,13 +9,13 @@ class Api::CommentsController < ApplicationController
         # @comment.post_id = params[:post_id]
         # @comment.user_id = current_user.id
             if @comment.save
-                # debugger
+               
                 # @post = @comment.post
                 # render :index
                 render :show
                 # render "api/posts/show"
             else
-                # debugger
+              
                 render json:  @comment.errors.full_messages, status: 422 
             end
     end

@@ -20,8 +20,8 @@ const msp = state => {
 
 const mdp = dispatch => {
     return {
-        // fetchPost: (id) => dispatch(fetchPost(id)),
-        // fetchAllPosts: () => dispatch(fetchAllPosts()),
+        fetchPost: (id) => dispatch(fetchPost(id)),
+        fetchAllPosts: () => dispatch(fetchAllPosts()),
         action: post => dispatch(createPost(post)),
         openModal: modal => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal()),

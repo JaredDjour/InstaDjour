@@ -16,35 +16,29 @@ class Api::PostsController < ApplicationController
     end
 
     def index
-        @posts = Post.all.with_attached_photo.includes(:comments)
-        # @comments = []
+        @posts = Post.all.with_attached_photo
 
-        # @posts.each do |post|
-        #     post.comments.each do |comment|
-        #         @comments << comment
-        #     end
-        # end
         # @posts = current_user.posts.with_attached_photo  -- This is for user show page!!!
         render :index
     end
 
     def show
         # @post = current_user.posts.find(params[:id])
-        @post = Post.find(params[:id]).with_attached_photo.includes(:comments)
+        @post = Post.find(params[:id])
         # render :show
 
         if @post
             render :show
         else
-            # render :index
-            render json: @post.errors.full_messages, status: 404
+            render :index
+            # render json: @post.errors.full_messages, status: 404
         end
     end
 
     def update
         # @post = current_user.posts.find(params[:id]) 
         @post = Post.find(params[:id])
-        if @post.update(post_params) && post.user_id == current_user.id
+        if @post.update(post_params)
             render :show
             # render :edit
         else

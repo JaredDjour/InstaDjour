@@ -1,6 +1,6 @@
 import { createComment } from "../../actions/comment_actions";
 import { connect } from "react-redux";
-import CommentForm from "./comment";
+import CommentForm from "./comment_form";
 
 // const msp = (state, ownProps) => {
 //     return {
