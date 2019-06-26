@@ -49,11 +49,10 @@ class PostForm extends React.Component {
         
         reader.onloadend = () => 
             this.setState({ photoUrl: reader.result, photoFile: file });
-       
         if (file) {
             reader.readAsDataURL(file);
         } else {
-            this.setState({ photoUrl: "", photoFile: null });
+            this.setState({ photoUrl: "", photoFile: null});
         }
     }
 
