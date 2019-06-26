@@ -14,17 +14,19 @@ class CommentForm extends React.Component {
 
     // componentDidMount() {
     //     // this.props.fetchAllComments();
-    //     this.props.fetchPost(this.state.post_id);
+    //     // this.props.fetchPost(this.state.post_id);
+    //     this.props.fetchComment(this.state)
     // }
     handleSubmit(e) {
         e.preventDefault();
         // this.props.createComment({comment: this.state});
         this.props.createComment(this.state);
-        // this.setState({body: "", user_id: this.props.userId, postId: this.props.postId});
-        this.setState({ content: "" });
-       
-        this.props.fetchPost(this.state.post_id);
-
+        this.setState({body: "", user_id: this.props.userId, postId: this.props.postId});
+        // this.props.fetchComment(this.state.id);
+        // this.setState({
+        //     body: "",
+        //     post_id: this.props.postId });
+        // this.props.fetchPost(this.state.post_id);
     }
 
     handleChange(field) {

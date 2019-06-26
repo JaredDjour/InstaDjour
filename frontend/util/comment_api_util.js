@@ -6,6 +6,14 @@ export const fetchAllComments = () => {
      })
  );
 };
+export const fetchComment = (id) => {
+ return (
+     $.ajax({
+         url: `/api/comments/${id}`,
+         method: "GET"
+     })
+ );
+};
 // export const fetchPostComments = (postId) => {
 //  return (
 //      $.ajax({

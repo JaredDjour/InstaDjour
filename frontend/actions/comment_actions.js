@@ -8,6 +8,10 @@ export const fetchAllComments = () => dispatch => {
     return CommentApiUtil.fetchAllComments().then(comments => dispatch(receiveAllComments(comments)));
 
 };
+export const fetchComment = (comment) => dispatch => {
+    return CommentApiUtil.fetchComment(comment).then(comment => dispatch(receiveComment(comment)));
+};
+
 export const createComment = (comment) => dispatch => {
     return CommentApiUtil.createComment(comment).then(comment => dispatch(receiveComment(comment)));
 };
