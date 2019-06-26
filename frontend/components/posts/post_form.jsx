@@ -3,41 +3,17 @@ import React from 'react';
 class PostForm extends React.Component {
    constructor(props){
        super(props);
-    //    this.state = {
-    //        caption: "",
-    //        photoFile: null,
-    //        photoUrl: null,
-    //        user_id: null
-    //    };
-       this.state = this.props.post;
-       this.setState = this.setState.bind(this);
+       this.state = {
+           caption: "",
+           photoFile: null,
+           photoUrl: null,
+           user_id: null
+       };
+    //    this.state = this.props.post;
        this.handleSubmit = this.handleSubmit.bind(this);
        this.handleChange = this.handleChange.bind(this);
        this.handleFile = this.handleFile.bind(this);
    }
-
-//    componentDidMount() {
-//     this.props.fetchAllPosts();
-//     //    this.props.fetchPost(this.state);
-//    }
-
-//    componentDidUpdate() {
-//     //    this.setState({ [post[caption]]: this.state.caption });
-//     //    this.setState({ [post[userId]]: this.state.userId });
-//     // Add this.props.fetchAllPosts() so that will display the new post created
-//     // this.props.fetchAllPosts();
-
-//    }
-//    componentWillMount() {
-//         this.props.fetchAllPosts();
-//         // to do: udnerstand what willMount vs didMount
-//    }
-
-
-
-//    clearField() {
-//     document.getElementById("create-post-form").reset();
-//    }
 
    handleSubmit(e) {
        e.preventDefault();
@@ -53,13 +29,10 @@ class PostForm extends React.Component {
         }
      
         this.props.action(formData);
-        // .then(() => this.props.history.push("/"));
-        // debugger
-       this.setState({
-           caption: "", 
-           photoFile: null,
-           photoUrl: null,
-           userId: state.session.id, });
+        this.setState({ caption: "", photoFile: null, photoUrl: null, userId: null });
+    
+    //  this.setState({caption: "", photoFile: null, photoUrl: null, userId: state.session.id});
+        
 
    }
 
