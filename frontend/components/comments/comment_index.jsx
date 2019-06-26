@@ -29,7 +29,7 @@ class CommentIndex extends React.Component {
         });
         return (
             <div className="all-comments"> 
-                <ul>{comments}</ul>
+                <ul className="all-comments-ul">{comments}</ul>
                 <CreateCommentFormContainer postId={post_id} />
                 {/* <CreateCommentFormContainer postId={this.props.post.id} /> */}
             </div>

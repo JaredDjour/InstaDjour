@@ -8,13 +8,14 @@ const msp = ( {errors} ) => {
   const clearErrors = () => {
     return errors["session"] = []; 
   };
+  
   return {
     errors: errors.session,
     formType: 'Log In',
     navLink: <div> Don't have an account? <Link className="session-switch-link" to="/signup">Sign up</Link></div>,
     clearErrors: clearErrors()
-  }
-}
+  };
+};
 
 const mdp = dispatch => {
   return {

@@ -1,30 +1,57 @@
+// .everything{
+//     display: flex;
+//     flex-direction: row;
+//     // align-content: center;
+//     // width: 100%;
+//     // position: fixed;
+//     justify-content: space-between;
+//     // padding-bottom: 44px;
+//     // font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+//     // margin: 37px auto 10px auto;
+    
+//     // flex-direction: row;
+//     margin: 45px auto 10px auto;
+//     // max-width: 935px;
+//     padding-bottom: 44px;
+//     // width: 100%;
+// }
+
 .everything{
     display: flex;
-    flex-direction: row;
-    // align-content: center;
-    // width: 100%;
-    // position: fixed;
-    justify-content: space-between;
-    // padding-bottom: 44px;
-    // font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    // margin: 37px auto 10px auto;
-    
-    // flex-direction: row;
-    margin: 45px auto 10px auto;
-    // max-width: 935px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: 30px 330px 0;
+    max-width: 550px;
     padding-bottom: 44px;
-    // width: 100%;
+    width: 100%;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
     
+// .iphone-container{
+//     display: flex;
+//     width: 420px;
+//     height: 615px;
+//     margin: 60px 0px auto auto;
+// }
 .iphone-container{
     display: flex;
-    width: 420px;
-    height: 615px;
-    margin: 60px 0px auto auto;
+    width: 310px;
+    height: 440px;
+    margin: 40px 0px auto auto;
 }
+// .iphone {
+//     background-image: url("https://www.instagram.com/static/images/homepage/home-phones.png/43cc71bb1b43.png");
+//     background-size: 420px 615px;
+//     height: 100%;
+//     width: 100%;
+//     align-self: center;
+//     background-position: 0 0;
+//     flex-basis: 454px;
+// }
 .iphone {
     background-image: url("https://www.instagram.com/static/images/homepage/home-phones.png/43cc71bb1b43.png");
-    background-size: 420px 615px;
+    background-size: 310px 440px;
     height: 100%;
     width: 100%;
     align-self: center;
@@ -37,13 +64,22 @@
     // background-image: url("https://www.instagram.com/static/images/homepage/screenshot4.jpg/842fe5699220.jpg");
     // background-image: url("https://www.instagram.com/static/images/homepage/screenshot5.jpg/0a2d3016f375.jpg");
 
-.iphone-screen{ 
-    background-size: 225px 440px;
-    height: 430px;
-    width: 250px;
-    margin: 98px 0px 0px 139px;
+// .iphone-screen{ 
+//     background-size: 225px 440px;
+//     height: 430px;
+//     width: 250px;
+//     margin: 98px 0px 0px 139px;
+//     border-radius: 3px;
+// }
+
+.iphone-screen {  
+    background-size: 165px 306px;
+    height: 307px;
+    width: 166px;
+    margin: 70px 0px 0px 102px;
     border-radius: 3px;
 }
+
 
 @keyframes screenSaver {
     0% {
@@ -66,9 +102,20 @@
     }
 }    
 
+// .bg1, .bg2, .bg3, .bg4, .bg5{
+//     width: 223px;
+//     height: 427px;
+//     position: absolute;
+//     animation-name: screenSaver;
+//     animation-duration: 15s;
+//     animation-direction: alternate;
+//     animation-timing-function: ease-in-out;
+//     animation-iteration-count: infinite;
+//     // animation-delay: -4s;
+// }
 .bg1, .bg2, .bg3, .bg4, .bg5{
-    width: 223px;
-    height: 427px;
+    width: 166px;
+    height: 307px;
     position: absolute;
     animation-name: screenSaver;
     animation-duration: 15s;
@@ -77,7 +124,6 @@
     animation-iteration-count: infinite;
     // animation-delay: -4s;
 }
-
 .bg5 {
     animation-delay: 3s;
 }
@@ -103,38 +149,51 @@
 // .bg5 { background-image: url("https://www.instagram.com/static/images/homepage/screenshot5.jpg/0a2d3016f375.jpg:"); }
 
 
+// .login-form-container {
+//     // display: flex;
+//     // flex-direction: column;
+//     // justify-content: right;
+//     // width: 350px;
+//     // height: 560px;
+//     // margin: -4px -68px 0 0;
+//     // padding: auto;
+//     // background-color: #ffff;
+//     // border: solid #e6e6e6 1px;
+//     // border-radius: 1px;
+//     // z-index: 1
+
+//     color: #262626;
+//     -webkit-box-flex: 1;
+//     -webkit-flex-grow: 1;
+//     -ms-flex-positive: 1;
+//     flex-grow: 1;
+//     -webkit-box-pack: center;
+//     -webkit-justify-content: center;
+//     -ms-flex-pack: center;
+//     justify-content: center;
+//     margin-top: 12px;
+//     max-width: 350px;
+//     width: 100%;
+//     background-color: #fff;
+//     border: 1px solid #e6e6e6;
+//     border-radius: 1px;
+//     margin: 0 0 10px;
+//     padding: 10px 0;
+// }
+
 .login-form-container {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: right;
-    // width: 350px;
-    // height: 560px;
-    // margin: -4px -68px 0 0;
-    // padding: auto;
-    // background-color: #ffff;
-    // border: solid #e6e6e6 1px;
-    // border-radius: 1px;
-    // z-index: 1
-
-    color: #262626;
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    margin-top: 12px;
-    max-width: 350px;
-    width: 100%;
-    background-color: #fff;
-    border: 1px solid #e6e6e6;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    width: 220px;
+    height: 380;
+    margin: -4px -68px 0 0;
+    padding: auto;
+    background-color: #ffff;
+    border: solid #e6e6e6 1px;
     border-radius: 1px;
-    margin: 0 0 10px;
-    padding: 10px 0;
+    z-index: 1
 }
-
 
 .session-errors{
     display: flex;
@@ -183,7 +242,8 @@
     z-index: 1;
 }
 .main{
-    margin-bottom: 0 0 0 -8px;
+    margin: 30px -10px 0 0px;
+    // margin: 0 0 0 -8px;
 }
 .or {
     display: flex;
@@ -212,14 +272,28 @@
 
 
 
+// .login-input {
+//     display: flex;
+//     align-content: center;
+//     background: #fafafa;
+//     border: solid #efefef 1px;
+//     border-radius: 5px;
+//     height: 40px;
+//     width: 270px;
+//     margin: 0px auto 6px;
+//     font-size: 10px;
+//     font-weight: 100;
+//     padding: 1px 5px;
+// }
+
 .login-input {
     display: flex;
     align-content: center;
     background: #fafafa;
     border: solid #efefef 1px;
     border-radius: 5px;
-    height: 40px;
-    width: 270px;
+    height: 20px;
+    width: 165px;
     margin: 0px auto 6px;
     font-size: 10px;
     font-weight: 100;

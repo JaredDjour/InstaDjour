@@ -63,8 +63,10 @@ class PostIndexItem extends React.Component {
                     <h4 className="post-caption-auth" >{this.props.username}</h4>
                     <Link className="post-caption" to={`/posts/${this.state.id}`}>{this.state.caption}</Link>
                 </div>
+                <div className="comment-index-container"> 
+                    <CommentIndexContainer post={this.props.post} postId={this.props.post.id}/>
+                </div>
                 {/* <input className="add-comment" type="text" placeholder="Add a comment..." />  */}
-                <CommentIndexContainer post={this.props.post} postId={this.props.post.id}/>
                 {/* <CreateCommentFormContainer postId={this.props.post.id}/> */}
                  <div className="post-edit-delete-container">
                     <Link className="post-index-item-edit" to={`/posts/${this.state.id}/edit`}>Edit Post</Link>

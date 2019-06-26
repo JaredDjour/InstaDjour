@@ -152,12 +152,13 @@ body {
 
 .nav-bar-bottom {
     display: flex;
-    flex-direction: row;
-    justify-content: center; 
-    width: 100%;
+    // flex-direction: row;
+    justify-content: center;
+    width: 295px;
     padding: 15px;
     position: fixed;
     bottom: 0;
+    margin-left: 450px;
 }
 
 .nav-bar-bottom-text{
@@ -179,6 +180,6 @@ body {
     color: #999;
     font-weight: 500;
     width: 100%;
-    margin: 10px 0px 0 -72px;
+    margin: 15px 0 0 -132px;
     padding: 10px;
 }

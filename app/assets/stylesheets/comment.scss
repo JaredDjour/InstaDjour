@@ -1,32 +1,41 @@
-.comment-form {
-    width: 100%;
-    margin-bottom: 20px;
+
+.comment-index-container {
+    width: 398px;
+    // border-left: solid #e6e6e6 1px; 
+    // border-right: solid #e6e6e6 1px; 
+    margin-bottom: 5px;
 }
+// .all-comments {
+//        width: 100%;
+//     border-left: solid #e6e6e6 1px;
+//     border-right: solid #e6e6e6 1px;
+//     margin: -6px 0 0px -1px;;
+// }
 
-.create-comment_button {
-   text-decoration: none;
-   border: none;
-   margin-top: -10 
-}
-
-.all-comments {
-    width: 100%;
-
+.all-comments-ul {
+       width: 100%;
+    border-left: solid #e6e6e6 1px;
+    border-right: solid #e6e6e6 1px;
+    margin: -6px 0 0px -1px;
+    padding-bottom: 3px; 
 }
 
 .individual_comment {
     display: flex;
     flex-direction: row;
+    max-width: 400px;
+    flex-wrap: wrap;
     font-size: 10px;
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-weight: 600; 
     // display: inline-block;
     flex-wrap: wrap;
-    margin: 5px 0 3px 5px;
+    margin: 3px 0 3px 0px;
+       padding: 3px 8px;
 }
 
 .comment-auth-container {
-    margin-right: 3px;
+    // margin-right: 3px;
 }
 
 .comment-auth {
@@ -34,13 +43,62 @@
 }
 
 .comment-body-container {
-font-weight: 400;
+    font-weight: 400;
+    margin-left: 7px;
 }
 
 .comment-body {
-
+    max-width: 270px;
+    flex-wrap: wrap;
+}
+.comment-form {
+    width: 378px;
+    margin: 0 0 12px -1px;
+    font-size: 14px;
+    // line-height: 1px;
 }
 
-.comment-index-item-delete-button {
+// .comment-form-precise {
+//     width: 278px;
+//     font-size: 14px;
+//     line-height: 18px;
+//     min-height: 56px;
+// }
 
+
+.comment-index-item-delete-button {
+    margin: 0 0px 0 338px;
+    position: absolute;
+    padding: 0px 5px 0 5px;
+    // background: #87cdfa;
+    // color: white;
+    color: #3897f0;
+    background: #fafafa;
+    // border-radius: 5px;
+    border: none;
+    font-size: 10px;
+}
+
+.add-comment{
+    border: solid 1px #dbdbdb;
+    color: #262626;
+    padding: 6px 10px 6px 10px;
+    background-color: #fafafa;
+    min-height: 25px;
+    /* text-align: left; */
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 100;
+    width: 100%;
+    font-size: 10px;
+    margin-bottom: 7px;
+    margin-top: -4px;
+}
+.create-comment_button {
+    color: #3897f0;
+    background: #fafafa;
+    border: 0;
+    display: inline;
+    padding: 0;
+    position: absolute;
+    margin: -34px 0 0 356px;
 }

@@ -31,8 +31,6 @@ class PostForm extends React.Component {
         this.props.action(formData);
         this.setState({ caption: "", photoFile: null, photoUrl: null, userId: null });
     
-    //  this.setState({caption: "", photoFile: null, photoUrl: null, userId: state.session.id});
-        
 
    }
 
@@ -57,10 +55,17 @@ class PostForm extends React.Component {
     }
 
    render() { 
+       const preview_img = this.state.photoUrl ?
+            <img className="create-post-img-preview" src={this.state.photoUrl}></img> :
+            null;
+
        return (
            <div className="index-right">
                <form id="creat-post-form">
-                   <input className="create-post-choose-file" type="file" onChange={this.handleFile} />
+                   <label create-post-choose-file>
+                        <input type="file" onChange={this.handleFile} />
+                    </label>
+                    {preview_img}
                    <input className="create-post-caption" type="text" placeholder="Caption" value={this.state.caption} onChange={this.handleChange("caption")} />
                    <button type="button" onClick={this.handleSubmit} className="create-post-button">Post</button>
                </form>
