@@ -55,18 +55,25 @@ class PostForm extends React.Component {
     }
 
    render() { 
+    //    const preview_img = this.state.photoUrl ?
+    //         <img className="create-post-img-preview" src={this.state.photoUrl}></img> :
+    //         <div className="img-preview-space"></div>;
        const preview_img = this.state.photoUrl ?
             <img className="create-post-img-preview" src={this.state.photoUrl}></img> :
             null;
 
        return (
            <div className="index-right">
-               <form id="creat-post-form">
-                   <label create-post-choose-file>
-                        <input type="file" onChange={this.handleFile} />
+               <form className="create-post-form">
+                        <h4 className="upload-post">Upload Post</h4>
+                   <label className="create-post-choose-file" >
+                        Choose File
+                        <input className="create-post-file-input" type="file" onChange={this.handleFile} />
                     </label>
                     {preview_img}
-                   <input className="create-post-caption" type="text" placeholder="Caption" value={this.state.caption} onChange={this.handleChange("caption")} />
+                    <label className="create-post-caption-container">
+                        <input className="create-post-caption" type="text" placeholder="Caption" value={this.state.caption} onChange={this.handleChange("caption")} />
+                    </label>
                    <button type="button" onClick={this.handleSubmit} className="create-post-button">Post</button>
                </form>
            </div>

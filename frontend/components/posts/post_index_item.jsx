@@ -33,6 +33,7 @@ class PostIndexItem extends React.Component {
     //     this.props.fetchAllComments();
     // }
 
+    // addEvent
     handleDelete(e) {
 
         e.preventDefault();
@@ -66,12 +67,17 @@ class PostIndexItem extends React.Component {
                 <div className="comment-index-container"> 
                     <CommentIndexContainer post={this.props.post} postId={this.props.post.id}/>
                 </div>
-                {/* <input className="add-comment" type="text" placeholder="Add a comment..." />  */}
-                {/* <CreateCommentFormContainer postId={this.props.post.id}/> */}
-                 <div className="post-edit-delete-container">
-                    <Link className="post-index-item-edit" to={`/posts/${this.state.id}/edit`}>Edit Post</Link>
+                {/* <ul className="post-auth-options-list">
+                    <li className="post-edit-delete-container">
+                        <button className="post-index-item-delete-button" type="button" onClick={this.handleDelete}>Delete Post</button>
+                    </li>
+                </ul> */}
+                < div className = "post-edit-delete-container" >
                     <button className="post-index-item-delete-button" type="button" onClick={this.handleDelete}>Delete Post</button>
                 </div>
+                {/* <CreateCommentFormContainer postId={this.props.post.id}/> */}
+    
+                        {/* <Link className="post-index-item-edit" to={`/posts/${this.state.id}/edit`}>Edit Post</Link*/}
             </div>
         )
     }
