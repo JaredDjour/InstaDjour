@@ -1,7 +1,8 @@
 class Api::PostsController < ApplicationController
 
     before_action :ensure_logged_in
-
+    # , :ensure_photo
+    # before_action :esnure
     def create
         @post = current_user.posts.new(post_params)
         # @post = Post.new(post_params)
@@ -66,5 +67,11 @@ class Api::PostsController < ApplicationController
         # params.require(:post).permit(:caption)
         # params.permit(:caption, :photo)
     end
+
+    # def ensure_photo
+    #     if !params[:photo]
+    #         render json: "Attach a photo", status: 422
+    #     end
+    # end
 
 end
