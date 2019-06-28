@@ -37,8 +37,14 @@
     cursor: pointer;
 }
 
+.post-auth-options-list:hover {
+    background: blue;
+}
 .post-auth-options-list {
+}
 
+.post-auth-options-delete {
+    display: hidden;
 }
 
 .post-auth-container {
