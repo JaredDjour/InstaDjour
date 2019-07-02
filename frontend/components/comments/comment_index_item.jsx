@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const msp = (state, ownProps) => {
+    debugger
     return {
-        username: state.entities.users[state.session.id].username,
+        // username: state.entities.users[state.session.id].username,
         // username: state.entities.posts[ownProps.post.id].username,
+        username: state.entities.comments[ownProps.comment.id].username,
     };
 };
  
