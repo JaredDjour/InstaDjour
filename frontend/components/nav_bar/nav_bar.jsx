@@ -32,18 +32,19 @@ const NavBar = ({currentUser, logout, loggedIn}) => {
             <div className="index-left"></div>
       
         </div>
-      ) : ha = (
-        <div>
-          <div className="nav-bar-bottom">
-            <a href="https://www.linkedin.com/in/jared-djourabchi-7a2932160/" className="nav-bar-bottom-text">LINKEDIN </a>
-            <a href="https://www.instagram.com/" className="nav-bar-bottom-text">INSTAGRAM</a>
-            <a href="https://www.linkedin.com/in/jared-djourabchi-7a2932160/" className="nav-bar-bottom-text">MY WEBSITE</a>
-            <a href="https://github.com/JaredDjour" className="nav-bar-bottom-text">GITHUB</a>
-          </div>
-          <h4 className="trademark">© 2019 INSTADJOUR</h4>
-        </div>
-      );
-      
+      ) 
+      // : ha = (
+      //   <div>
+      //     <div className="nav-bar-bottom">
+      //       <a href="https://www.instagram.com/" className="nav-bar-bottom-text">REAL INSTAGRAM</a>
+      //       <a href="https://www.linkedin.com/in/jared-djourabchi-7a2932160/" className="nav-bar-bottom-text">LINKEDIN </a>
+      //       <a href="https://github.com/JaredDjour" className="nav-bar-bottom-text">GITHUB</a>
+      //       <a href="https://www.linkedin.com/in/jared-djourabchi-7a2932160/" className="nav-bar-bottom-text">PORTFOLIO SITE</a>
+      //     </div>
+      //     <h4 className="trademark">© 2019 INSTADJOUR</h4>
+      //   </div>
+      // );
+     : null; 
       return (
         <div>
           {ha}

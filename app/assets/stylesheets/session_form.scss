@@ -410,3 +410,45 @@
     background-size: 91px 30px;
     margin: 3px;
 }
+
+
+.session-form-footer {
+    display: flex;
+    // flex-direction: row;
+    justify-content: center;
+    // width: 295px;
+    width: 100%;
+    padding: 15px;
+    // position: fixed;
+    position: absolute;
+    bottom: 0;
+    // margin-left: 450px;
+    // margin: 5px auto auto auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.session-form-footer-text{
+    margin: 10px;
+    color: #003569;
+    text-decoration: none;
+    font-size: 10px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 600;
+} 
+
+.trademark{
+    display: flex;
+    flex-direction: row;
+    bottom: 0;
+    // position: fixed;
+    position: absolute;
+    justify-content: center;
+    font-size: 9px;
+    color: #999;
+    font-weight: 500;
+    width: 100%;
+    // margin: 15px 0 0 -132px;
+    margin: 5px auto auto auto;
+    padding: 10px;
+}

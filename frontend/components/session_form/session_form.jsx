@@ -140,6 +140,7 @@ class SessionForm extends React.Component {
         
   
     return(
+      <div>
       <div className="everything">
         {left}
         <div className="main">
@@ -168,15 +169,24 @@ class SessionForm extends React.Component {
               </div>
             </div>
             <div> 
-            <div className="get-app-text"> Get the app.
-              </div>
+              <div className="get-app-text"> Get the app.</div>
               <div className="app-links">
               <a href="https://itunes.apple.com/app/instagram/id389801252?mt=8&vt=lo" alt="Available on the App Store" className="get-app-apple"></a>
               <a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DsignupPage%26ig_mid%3DW2TFUwAEAAGxVCg5GeSvCw1XTrHT%26utm_content%3Dlo%26utm_medium%3Dbadge" className="get-app-google" alt="Available on Google Play"></a>
               </div> 
             </div>
-      </div>
+        </div>
+          <div>
     </div>
+            <div className="session-form-footer">
+              <a href="https://www.instagram.com/" className="session-form-footer-text">REAL INSTAGRAM</a>
+              <a href="https://www.linkedin.com/in/jared-djourabchi-7a2932160/" className="session-form-footer-text">LINKEDIN </a>
+              <a href="https://github.com/JaredDjour" className="session-form-footer-text">GITHUB</a>
+              <a href="https://www.linkedin.com/in/jared-djourabchi-7a2932160/" className="session-form-footer-text">PORTFOLIO SITE</a>
+            </div>
+            <h4 className="trademark">© 2019 INSTADJOUR</h4>
+          </div>
+        </div>
     );
   };
 
