@@ -7,18 +7,29 @@ import CommentIndexContainer from "../comments/comment_index_container";
 class PostShow extends React.Component {
     constructor(props){
         super(props);
+        debugger
         this.state = this.props.post;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     // componentDidMount(){
-    //     this.props.fetchPost(this.props.match.params.postid);
+    //     this.props.fetchPost(this.props.match.params.postId);
     // }
+    componentDidMount(){
+        this.props.fetchPost(this.props.match.params.postId);
+    }
+    componentDidUpdate(prevProps){
+        if (this.props.match.params.postId !== prevProps.match.params.postId) {
+            this.props.fetchPost(this.props.match.params.postId); 
+        }
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         this.props.action(this.state.id).then(() => this.props.history.push("/"));
     }
 
     render() {
+        // if (this.state === undefined) return null;
         if (!this.state) return null;
         // if (!this.state) return <Redirect to=""></Redirect>
         

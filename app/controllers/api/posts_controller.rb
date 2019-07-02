@@ -24,14 +24,14 @@ class Api::PostsController < ApplicationController
     end
 
     def show
-        # @post = current_user.posts.find(params[:id])
+        # debugger
         @post = Post.find(params[:id])
         # render :show
 
         if @post
             render :show
         else
-            render :index
+            # render :index
             # render json: @post.errors.full_messages, status: 404
         end
     end

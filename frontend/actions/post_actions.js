@@ -38,7 +38,8 @@ const receiveAllPosts = posts => {
     };
 };
 
-const receivePost = post => {
+const receivePost = (post) => {
+    // debugger
     return {
         type: RECEIVE_POST,
         post, 

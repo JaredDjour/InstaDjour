@@ -4,6 +4,7 @@ import {fetchPost, deletePost} from "../../actions/post_actions";
 import PostShow from "./post_show";
 
 const msp = (state, ownProps) => {
+    debugger
     return {
         post: state.entities.posts[ownProps.match.params.postId],
         // post: state.entities.posts[ownProps.match.params.postId],

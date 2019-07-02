@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import CommentIndexContainer from "../comments/comment_index_container";
 import {fetchAllComments} from "../../actions/comment_actions"; 
 const msp = (state, ownProps) => {
-    debugger
+    // debugger
     return {
         username: state.entities.posts[ownProps.post.id].username,
         currentUser: state.entities.users[state.session.id].username 
@@ -58,7 +58,7 @@ class PostIndexItem extends React.Component {
                     <div className="post-auth-options"></div>
                     <ul className="post-auth-options-list">
                             {deletePost}
-                        <li><a href="/posts/${this.state.id">Show Post</a></li> 
+                        <li><a href="/posts/${this.state.id}">Show Post</a></li> 
                     </ul>
                 </div>
                 <div className="post-photo-container">
