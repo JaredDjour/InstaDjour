@@ -18,16 +18,21 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
 
-  has_many :posts,
+    has_many :posts,
     primary_key: :id,
     foreign_key: :user_id,
     class_name: :Post
  
-  has_many :comments,
+    has_many :comments,
     primary_key: :id,
     foreign_key: :user_id,
     class_name: :Comment
-     
+    
+    has_many :likes,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Like 
+
     after_initialize :ensure_session_token
     attr_reader :password
 

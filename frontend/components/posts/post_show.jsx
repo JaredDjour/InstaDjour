@@ -7,7 +7,6 @@ import CommentIndexContainer from "../comments/comment_index_container";
 class PostShow extends React.Component {
     constructor(props){
         super(props);
-        debugger
         this.state = this.props.post;
         this.handleSubmit = this.handleSubmit.bind(this);
     }

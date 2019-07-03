@@ -36,23 +36,20 @@ class Api::PostsController < ApplicationController
         end
     end
 
-    def update
-        # @post = current_user.posts.find(params[:id]) 
-        @post = Post.find(params[:id])
-        if @post.update(post_params)
-            render :show
-            # render :edit
-        else
-            render @post.errors.full_messages, status: 401
-        end
-    end
+    # def update
+    #     # @post = current_user.posts.find(params[:id]) 
+    #     @post = Post.find(params[:id])
+    #     if @post.update(post_params)
+    #         render :show
+    #     else
+    #         render @post.errors.full_messages, status: 401
+    #     end
+    # end
 
     def destroy
         @post = current_user.posts.find(params[:id])
         # @post = Post.find(params[:id])
         if @post.destroy
-            # @posts = Post.all.with_attached_photo
-            # render :index
             render :show
         else
             render json: @post.errors.full_messages, status: 422
@@ -62,16 +59,9 @@ class Api::PostsController < ApplicationController
     private
 
     def post_params
-        # params.permit(:caption, :photo)
-        params.require(:post).permit(:caption, :username, :photo)
-        # params.require(:post).permit(:caption)
-        # params.permit(:caption, :photo)
-    end
+        # params.require(:post).permit(:caption, :username, :photo)
+        params.require(:post).permit(:caption, :photo)
 
-    # def ensure_photo
-    #     if !params[:photo]
-    #         render json: "Attach a photo", status: 422
-    #     end
-    # end
+    end
 
 end

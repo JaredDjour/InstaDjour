@@ -23,6 +23,13 @@ class Comment < ApplicationRecord
     foreign_key: :post_id,
     class_name: :Post
 
+    # has_many :likes,
+    # primary_key: :id,
+    # foreign_key: :comment_id,
+    # class_name: :Like 
+   
+    has_many :likes, 
+    as: :likeable
 
  
 end

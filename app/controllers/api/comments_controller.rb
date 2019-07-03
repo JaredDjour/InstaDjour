@@ -4,18 +4,11 @@ class Api::CommentsController < ApplicationController
 
     def create
         @comment = current_user.comments.new(comment_params)
-        # @comment = Comment.new(comment_params)
-        # @comment.user_id = params[:user_id]
-        # @comment.post_id = params[:post_id]
-        # @comment.user_id = current_user.id
-            if @comment.save
-            #   @comments = Comment.all
-                # render :index
-                render :show
-            else
-              
-                render json:  @comment.errors.full_messages, status: 422 
-            end
+        if @comment.save
+            render :show
+        else 
+            render json:  @comment.errors.full_messages, status: 422 
+        end
     end
 
     def index
@@ -25,10 +18,7 @@ class Api::CommentsController < ApplicationController
     end
 
     def show
-        # @post = current_user.posts.find(params[:id])
         @comment = Comment.find(params[:id])
-        # render :show
-
         if @comment
             render :show
         else
@@ -63,7 +53,7 @@ class Api::CommentsController < ApplicationController
     private
 
     def comment_params
-        params.require(:comment).permit(:body, :user_id, :post_id)
+        params.require(:comment).permit(:body, :user_id, :post_id, :username)
     end
 
 
