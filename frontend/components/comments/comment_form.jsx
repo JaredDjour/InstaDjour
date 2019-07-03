@@ -27,7 +27,8 @@ class CommentForm extends React.Component {
         return (
             <div className="comment-form">
                 <form>
-                    <input className="add-comment" type="text" placeholder="Add a comment..." value={this.state.body} onChange={this.handleChange("body")} />
+                    {/* <input className="add-comment" type="text" placeholder="Add a comment..." value={this.state.body} onChange={this.handleChange("body")} /> */}
+                    <textarea className="add-comment" type="text" placeholder="Add a comment..." value={this.state.body} onChange={this.handleChange("body")} />      
                     <button className="create-comment_button" type="button" onClick={this.handleSubmit}>Post</button>
                 </form>
             </div>
