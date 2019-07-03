@@ -82,9 +82,9 @@ class PostIndexItem extends React.Component {
                         <button className="post-index-item-delete-button" type="button" onClick={this.handleDelete}>Delete Post</button>
                     </li>
                 </ul> */}
-                < div className = "post-edit-delete-container" >
+                {/* < div className = "post-edit-delete-container" >
                     <button className="post-index-item-delete-button" type="button" onClick={this.handleDelete}>Delete Post</button>
-                </div>
+                </div> */}
                 {/* <CreateCommentFormContainer postId={this.props.post.id}/> */}
     
                         {/* <Link className="post-index-item-edit" to={`/posts/${this.state.id}/edit`}>Edit Post</Link*/}

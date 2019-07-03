@@ -16,7 +16,7 @@ class Like < ApplicationRecord
 
     validates :user_id, :comment_id, :post_id, :likeable_id, :likeable_type, presence: true
 
-    belongs_to :likeable, polymoprhic: true
+    belongs_to :likeable, polymorphic: true
 
     belongs_to :user,
     primary_key: :id,

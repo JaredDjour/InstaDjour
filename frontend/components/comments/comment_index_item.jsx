@@ -7,6 +7,7 @@ const msp = (state, ownProps) => {
         // username: state.entities.users[state.session.id].username,
         // username: state.entities.posts[ownProps.post.id].username,
         username: state.entities.comments[ownProps.comment.id].username,
+        currentUser: state.entities.users[state.session.id].username 
     };
 };
  
@@ -27,6 +28,10 @@ class CommentIndexItem extends React.Component {
 
 
     render() {
+        const deleteComment = (this.props.username === this.props.currentUser) ?
+            <button className="comment-index-item-delete-button" type="button" onClick={this.handleDelete}>Delete</button>
+            : null;
+
         return (
             <div className="individual_comment">
                 <div className="comment-auth-container">
@@ -35,7 +40,7 @@ class CommentIndexItem extends React.Component {
                 <div className="comment-body-container">
                     <div className="comment-body">{this.props.comment.body}</div>
                 </div>
-                <button className="comment-index-item-delete-button" type="button" onClick={this.handleDelete}>Delete</button>
+                    {deleteComment}
             </div>
         )
     }
