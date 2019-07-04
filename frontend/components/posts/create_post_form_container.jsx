@@ -11,7 +11,6 @@ const msp = state => {
             caption: "",
             photoFile: null,
             photoUrl: null,
-            // userId: state.entities.users.id,
             userId: state.session.id,
             // username: state.entities.posts.id.username
         }
