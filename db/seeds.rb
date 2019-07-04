@@ -120,7 +120,7 @@ post13 = Post.create!(caption: "Enjoy the view", user_id: john.id)
 post14 = Post.create!(caption: "Sightseeing", user_id: demo_user.id)
 post15 = Post.create!(caption: "Travel with anyone other than John", user_id: jane.id)
 post16 = Post.create!(caption: "Under my umberrrella ella ella ", user_id: john.id)
-post17 = Post.create!(caption: "Thank you, thank you.", user_id: demo_user.id)
+# post17 = Post.create!(caption: "Thank you, thank you.", user_id: demo_user.id)
 
 
 file1 = open('https://instadjour-seeds.s3.us-east-2.amazonaws.com/balloons.jpg')
