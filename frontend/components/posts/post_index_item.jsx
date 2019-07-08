@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 // import CreateCommentFormContainer  from '../comments/create_comment_form_container';
 import CommentIndexContainer from "../comments/comment_index_container";
-import {fetchAllComments} from "../../actions/comment_actions"; 
+import LikesContainer from "../likes/likes_container";
+// import {fetchAllComments} from "../../actions/comment_actions"; 
 const msp = (state, ownProps) => {
     // debugger
     return {
@@ -64,12 +65,15 @@ class PostIndexItem extends React.Component {
                 <div className="post-photo-container">
                     <img className="photos" src={this.state.photoUrl}></img> 
                 </div> 
-                <div className="post-options">
+                {/* <div className="post-options">
                     <div className="post-options-heart"></div>
                     <div className="post-options-comment"></div>
                     <div className="post-options-share"></div>
                     <div className="post-options-bookmark"></div> 
-                </div>
+                </div> */}
+
+                <LikesContainer post={this.props.post} postId={this.props.post.id}/>
+
                 <div className="post-caption-container">
                     <h4 className="post-caption-auth" >{this.props.username}</h4>
                     <Link className="post-caption" to={`/posts/${this.state.id}`}>{this.state.caption}</Link>
