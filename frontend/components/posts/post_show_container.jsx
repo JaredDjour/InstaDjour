@@ -6,7 +6,7 @@ import PostShow from "./post_show";
 const msp = (state, ownProps) => {
     return {
         post: state.entities.posts[ownProps.match.params.postId],
-        // post: state.entities.posts[ownProps.match.params.postId],
+        likes: state.entities.likes,
         // username: state.entities.posts.username
         
     };

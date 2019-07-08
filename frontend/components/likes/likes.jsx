@@ -3,12 +3,12 @@ import React from 'react';
 class Likes extends React.Component {
     constructor(props) {
         super(props);
-        this.getLikeId = this.getLikeId.bind(this);
+        this.getLike = this.getLike.bind(this);
         this.liked = this.liked.bind(this);
         this.handleLike = this.handleLike.bind(this);
     }
 
-    getLikeId(likeableId) {
+    getLike(likeableId) {
         const likes = Object.values(this.props.likes);
 
         for (let i = 0; i < likes.length; i++) {
@@ -39,13 +39,12 @@ class Likes extends React.Component {
         };
 
         if (this.liked(like.likeable_id)) {
-            const likeId = this.getLikeId(like.likeable_id);
+            const likeId = this.getLike(like.likeable_id);
             this.props.deleteLike(likeId);
         } else {
             this.props.createLike(like);
         }
     }
-
 
 
     render() {

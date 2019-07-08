@@ -59,6 +59,17 @@
    
 }
 
+.post-show-auth-container {
+    display: flex;
+    align-items: flex-start;
+    height: 36px;
+    background-color:white; 
+    border: solid #e6e6e6 1px; 
+    text-align: start;
+    margin-top: 15px;
+   
+}
+
 .post-photo-container {
   border: solid #e6e6e6 1px; 
 }
@@ -96,34 +107,17 @@
     padding-bottom: 8px;
     // margin-bottom: 5px;
 }
-.post-show-caption-container {
-    border: solid #e6e6e6 1px;
-    border-bottom: none;
-    border-top: none; 
-    width: 100%;
-    height: 20px;
-    padding-top: 5px;
-    display: flex;
-    padding-bottom: 8px;
-    // margin-bottom: 5px;
-}
+
 
 .post-options{
     border-left: solid #e6e6e6 1px; 
     border-right: solid #e6e6e6 1px; 
     height: 20px;
-    width: 100%;
+    // width: 100%;
+    width: 398px;
     padding-top: 4px;
 }
-.post-show-options{
-    border-left: solid #e6e6e6 1px; 
-    border-right: solid #e6e6e6 1px;
-    // margin-top: 15px; 
-    height: 20px;
-    width: 100%;
-    padding-top: 4px;
-    padding-bottom: 23px;
-}
+
 [class*="post-options-"] {
   display: inline-block;
   background-repeat: no-repeat;
@@ -134,8 +128,8 @@
 .post-options-heart {
     background-image: url("https://images.vexels.com/media/users/3/147091/isolated/preview/5f8a1ea9c90ceed8d92999bc824417eb-instagram-heart-icon-by-vexels.png");
     // background-image: url("https://cdn1.iconfinder.com/data/icons/instagram-ui-colored/48/JD-07-512.png");
-    background-size: 20px 18px;
-    width: 20px;
+    background-size: 22px 18px;
+    width: 22px;
     height: 18px;
     cursor: pointer;
     margin-left: 6px;
@@ -147,7 +141,7 @@
     width: 31px;
     height: 24px;
     cursor: pointer;
-    margin: -5px -7px 8px 2px;
+    margin: -5px -5px 8px 2px;
 }
 
 
@@ -447,11 +441,8 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
-    // margin-top: -10px;
     margin-top: 25px;
-    // width: 400px;
     width: 100%;
-    // margin-top: 50px;
     padding-top: 7%; 
 }
 .post-show-left {
@@ -461,11 +452,38 @@
 }
 
 .post-show-right {
-      height: inherit;
+    height: inherit;
     margin: -14px 0px 0 -2px;
 }
 
-.post-show-comments {
-    margin: 0 0 0 1px;
+.post-show-caption-container {
+    border: solid #e6e6e6 1px;
+    border-bottom: none;
+    border-top: none; 
+    // width: 100%;
+    height: 20px;
+    padding-top: 5px;
+    display: flex;
+    padding-bottom: 8px;
+    margin-bottom: -12px;;
+}
+.post-show-options{
+    border-left: solid #e6e6e6 1px; 
+    border-right: solid #e6e6e6 1px;
+    // margin-top: 15px; 
+    // height: 20px;
+    // width: 100%;
+    padding-top: 4px;
+    padding-bottom: 23px;
+}
+.post-show-space {
     width: 398px;
+    height: 25px;
+    border-left: solid #e6e6e6 1px;
+    border-right: solid #e6e6e6 1px;
+}
+
+.post-show-comments {
+    width: 398px;
+    margin-left: 1px;
 }
