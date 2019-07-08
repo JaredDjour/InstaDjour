@@ -116,6 +116,7 @@
     // width: 100%;
     width: 398px;
     padding-top: 4px;
+    display: inherit;
 }
 
 [class*="post-options-"] {
@@ -272,10 +273,8 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
-    margin-top: -10px;
     width: 400px;
-    // margin-top: 50px;
-    padding-top: 7%; 
+  
 }
 
 .photos {
@@ -300,11 +299,9 @@
 //     max-height: 400px;
 //     max-width: 400px;
 // }
-// .all {
-//     display: flex;
-//     margin: auto;
-//     justify-content: center;
-// }
+.all {
+    padding-top: 7%
+}
 
 // .post-form {
 //     display: flex;
@@ -443,7 +440,7 @@
     margin: auto;
     margin-top: 25px;
     width: 100%;
-    padding-top: 7%; 
+    // padding-top: 7%; 
 }
 .post-show-left {
     width: 400px;
@@ -486,4 +483,12 @@
 .post-show-comments {
     width: 398px;
     margin-left: 1px;
+}
+
+.like-count {
+    color: black;
+    font-size: 14px;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    margin: 6px 0 0 0;
 }

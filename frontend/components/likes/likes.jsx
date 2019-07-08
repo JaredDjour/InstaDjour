@@ -10,7 +10,6 @@ class Likes extends React.Component {
 
     getLike(likeableId) {
         const likes = Object.values(this.props.likes);
-
         for (let i = 0; i < likes.length; i++) {
             const match = (likes[i].user_id === this.props.currentUser && likes[i].likeable_id === likeableId);
             if (match) {
@@ -48,11 +47,19 @@ class Likes extends React.Component {
 
 
     render() {
-      
+        const likes = Object.values(this.props.likes);
+        const likeCount = likes.filter(like => like.likeable_id === this.props.postId).length;
+
+        const count = (likeCount !== 0) ? 
+            likeCount 
+            :
+            null;
+       
         if (this.liked(this.props.postId)) {
             return (
                 <div className="post-options">
                     <div className="post-options-heart-filled" onClick={this.handleLike}></div>
+                    <div className="like-count">{count}</div>
                     <div className="post-options-comment"></div>
                     {/* <div className="post-options-bookmark"></div> */}
                 </div>
@@ -62,6 +69,7 @@ class Likes extends React.Component {
             return (
                 <div className="post-options">
                     <div className="post-options-heart" onClick={this.handleLike}></div>
+                    <div className="like-count">{count}</div>
                     <div className="post-options-comment"></div>
                     {/* <div className="post-options-bookmark"></div> */}
                 </div>
