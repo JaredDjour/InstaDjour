@@ -3,6 +3,7 @@ class Api::LikesController < ApplicationController
 
     def create
         @like = current_user.likes.new(like_params)
+        # debugger
             if @like.save
                 render :show
             else 
@@ -37,7 +38,8 @@ class Api::LikesController < ApplicationController
     private
 
     def like_params
-        params.require(:like).permit(:likeable_type, :likeable_id, :user_id, :post_id, :comment_id)
+        # params.require(:like).permit(:likeable_type, :likeable_id, :user_id, :post_id, :comment_id)
+        params.require(:like).permit(:likeable_type, :likeable_id, :user_id)
     end
 
 end

@@ -33,8 +33,9 @@ class Likes extends React.Component {
 
     handleLike() {
         const like = {
-            likeableId: this.props.postId,
-            likeableType: "Post",
+            likeable_id: this.props.postId,
+            likeable_type: "Post",
+            user_id: this.props.currentUser,
         };
 
         if (!this.liked(like.likeableId)) {
@@ -66,7 +67,6 @@ class Likes extends React.Component {
                 <div className="post-options">
                     <div className="post-options-heart-filled" onClick={this.handleLike}></div>
                     <div className="post-options-comment"></div>
-                    <div className="post-options-share"></div>
                     <div className="post-options-bookmark"></div>
                 </div>
             )} 
@@ -75,7 +75,6 @@ class Likes extends React.Component {
                 <div className="post-options">
                     <div className="post-options-heart" onClick={this.handleLike}></div>
                     <div className="post-options-comment"></div>
-                    <div className="post-options-share"></div>
                     <div className="post-options-bookmark"></div>
                 </div>
             )}
