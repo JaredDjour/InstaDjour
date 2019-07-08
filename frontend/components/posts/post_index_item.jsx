@@ -9,8 +9,9 @@ const msp = (state, ownProps) => {
     // debugger
     return {
         username: state.entities.posts[ownProps.post.id].username,
-        currentUser: state.entities.users[state.session.id].username 
+        currentUser: state.entities.users[state.session.id].username, 
         // state.entities.posts[Ow]
+        likes: state.entities.likes,
         
     };
 };
@@ -72,7 +73,7 @@ class PostIndexItem extends React.Component {
                     <div className="post-options-bookmark"></div> 
                 </div> */}
 
-                <LikesContainer post={this.props.post} postId={this.props.post.id}/>
+                <LikesContainer post={this.props.post} postId={this.props.post.id} likes={this.props.likes}/>
 
                 <div className="post-caption-container">
                     <h4 className="post-caption-auth" >{this.props.username}</h4>

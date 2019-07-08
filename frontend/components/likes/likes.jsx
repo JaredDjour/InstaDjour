@@ -8,24 +8,23 @@ class Likes extends React.Component {
         this.getLike = this.getLike.bind(this);
     }
 
-    liked(likeable) {
+    liked(likeableId, userId) {
 
-        const postLikes = this.props.postLikes;
-        // const commentLikes = this.props.commentLikes;
+        const likes = this.props.likes;
         const likeableArr = [];
         const userArr = [];
 
-        if (postLikes.length !== 0 && postLikes.constructor === Object) {
-           for (let i = 0; i < postLikes.length; i++) {
-               if (postLikes[i].user_id === this.props.currentUser) {
-                   likeableArr.push(postLikes[i].likeable_id);
-                   userArr.push(postLikes[i].user_id);
-
+        if (Object.keys(likes).length !== 0 && likes.constructor === Object) {
+           for (let i = 0; i < Object.values(likes).length; i++) {
+            //    if (likes[i].user_id === this.props.currentUser) {
+               if (Object.values(likes)[i].user_id === userId) {
+                   likeableArr.push(Object.values(likes)[i].likeable_id);
+                   userArr.push(Object.values(likes)[i].user_id);
                }
            } 
         }
 
-        if (likeableArr.includes(likeable)) {
+        if (likeableArr.includes(likeableId)) {
             return true;
         } else return false;
 
@@ -38,30 +37,31 @@ class Likes extends React.Component {
             user_id: this.props.currentUser,
         };
 
-        if (!this.liked(like.likeableId)) {
+        if (!this.liked(like.likeableId, like.user_id)) {
             this.props.createLike(like);
         } else {
-            const likeId = this.getLike(like.likeableId);
+            const likeId = this.getLike(like.likeable_id, like.user_id);
             this.props.deleteLike(likeId);
         }
     }
     
 
-    getLike(likeableId) {
-        const postLikes = this.props.postLikes;
-
-        if (postLikes.length !== 0 && postLikes.constructor === Object) {
-            for (let i = 0; i < postLikes.length; i++) {
-                const userMatch = (postLikes[i].user_id === this.props.currentUser);
-                const likeMatch = (postLikes[i].likeableId === likeableId); 
+    getLike(likeableId, userId) {
+        const likes = this.props.likes;
+     
+        if (Object.keys(likes).length !== 0 && likes.constructor === Object) {
+            for (let i = 0; i < Object.values(likes).length; i++) {
+                const userMatch = (Object.values(likes)[i].user_id === userId);
+                const likeMatch = (Object.values(likes)[i].likeable_id === likeableId); 
                 if (userMatch && likeMatch) {
-                    return postLikes[i].id;
+                    return Object.values(likes)[i].id;
                 }
             }
         }
     }
 
     render() {
+        // debugger
         if (this.liked(this.props.postId)) {
             return (
                 <div className="post-options">
