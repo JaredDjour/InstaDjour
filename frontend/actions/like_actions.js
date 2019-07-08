@@ -34,6 +34,6 @@ const receiveLike = like => {
 const removeLike = like => {
     return {
         type: REMOVE_LIKE,
-        likeId: comment.id
+        likeId: like.id
     };
 };

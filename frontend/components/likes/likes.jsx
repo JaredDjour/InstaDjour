@@ -37,11 +37,19 @@ class Likes extends React.Component {
             user_id: this.props.currentUser,
         };
 
-        if (!this.liked(like.likeableId, like.user_id)) {
-            this.props.createLike(like);
-        } else {
+        // if (!this.liked(like.likeableId, like.user_id)) {
+        //     debugger
+        //     this.props.createLike(like);
+        // } else {
+        //     const likeId = this.getLike(like.likeable_id, like.user_id);
+        //     this.props.deleteLike(likeId);
+        // }
+        if (this.liked(like.likeable_id, like.user_id)) {
             const likeId = this.getLike(like.likeable_id, like.user_id);
             this.props.deleteLike(likeId);
+        } 
+        if (!this.liked(like.likeable_id, like.user_id)) {
+            this.props.createLike(like);
         }
     }
     
@@ -62,7 +70,8 @@ class Likes extends React.Component {
 
     render() {
         // debugger
-        if (this.liked(this.props.postId)) {
+        if (this.liked(this.props.postId, this.props.currentUser)) {
+            // debugger
             return (
                 <div className="post-options">
                     <div className="post-options-heart-filled" onClick={this.handleLike}></div>
@@ -71,6 +80,7 @@ class Likes extends React.Component {
                 </div>
             )} 
         else {
+            // debugger
             return (
                 <div className="post-options">
                     <div className="post-options-heart" onClick={this.handleLike}></div>

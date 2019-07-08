@@ -13,7 +13,7 @@ const msp = (state, ownProps) => {
         // postLikers: state.entities.posts[ownProps.postId].liker_ids,
         // commentLikers: state.entities.comments[ownProps.commentId].liker_ids,
         // currentUser: state.entities.users[state.session.id].username 
-        currentUser: state.entities.users[state.session.id],
+        currentUser: state.entities.users[state.session.id].id,
         postId: ownProps.postId,
     });
 };
