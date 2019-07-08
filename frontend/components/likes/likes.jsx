@@ -10,7 +10,7 @@ class Likes extends React.Component {
 
     getLikeId(likeableId) {
         const likes = Object.values(this.props.likes);
-        
+
         for (let i = 0; i < likes.length; i++) {
             const match = (likes[i].user_id === this.props.currentUser && likes[i].likeable_id === likeableId);
             if (match) {
@@ -33,16 +33,15 @@ class Likes extends React.Component {
 
     handleLike() {
         const like = {
-            likeable_id: this.props.postId,
-            likeable_type: "Post",
             user_id: this.props.currentUser,
+            likeable_type: "Post",
+            likeable_id: this.props.postId,
         };
 
         if (this.liked(like.likeable_id)) {
             const likeId = this.getLikeId(like.likeable_id);
             this.props.deleteLike(likeId);
-        }
-        if (!this.liked(like.likeable_id)) {
+        } else {
             this.props.createLike(like);
         }
     }
