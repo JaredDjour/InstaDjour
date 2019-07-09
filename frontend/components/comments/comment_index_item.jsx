@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import LikesContainer from "../likes/likes_container";
+import CommentLikes from "../likes/comment_likes";
 
 const msp = (state, ownProps) => {
     return {
@@ -26,7 +26,7 @@ class CommentIndexItem extends React.Component {
 
     render() {
         const deleteComment = (this.props.username === this.props.currentUser) ?
-            <button className="comment-index-item-delete-button" type="button" onClick={this.handleDelete}>Delete</button>
+            <button className="comment-options" type="button" onClick={this.handleDelete}>Delete</button>
             : null;
 
         return (
@@ -38,7 +38,7 @@ class CommentIndexItem extends React.Component {
                     <div className="comment-body">{this.props.comment.body}</div>
                 </div>
                 {deleteComment}
-                {/* <LikesContainer comment={this.props.post} commentId={this.props.comment.id} likes={this.props.likes} /> */}
+                <CommentLikes className="comment-options" comment={this.props.comment} commentId={this.props.comment.id} likes={this.props.likes} />
             </div>
         )
     }
