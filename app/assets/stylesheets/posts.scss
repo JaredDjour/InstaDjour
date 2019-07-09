@@ -116,7 +116,7 @@
     // width: 100%;
     width: 398px;
     padding-top: 4px;
-    display: inherit;
+    display: flex;
 }
 
 [class*="post-options-"] {
@@ -144,8 +144,6 @@
     cursor: pointer;
     margin: -5px -5px 8px 2px;
 }
-
-
 
 .post-options-comment {
     // background-image: url("https://instalikes.shop/wp-content/uploads/2018/08/Instalike-shop-service-comments-instagram-280x280.png");
@@ -438,7 +436,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
-    margin-top: 25px;
+    margin-top: 85px;
     width: 100%;
     // padding-top: 7%; 
 }

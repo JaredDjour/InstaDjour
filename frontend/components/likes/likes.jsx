@@ -10,6 +10,7 @@ class Likes extends React.Component {
 
     getLike(likeableId) {
         const likes = Object.values(this.props.likes);
+
         for (let i = 0; i < likes.length; i++) {
             const match = (likes[i].user_id === this.props.currentUser && likes[i].likeable_id === likeableId);
             if (match) {
@@ -50,11 +51,11 @@ class Likes extends React.Component {
         const likes = Object.values(this.props.likes);
         const likeCount = likes.filter(like => like.likeable_id === this.props.postId).length;
 
-        const count = (likeCount !== 0) ? 
-            likeCount 
+        const count = (likeCount !== 0) ?
+            likeCount
             :
-            null;
-       
+            null; 
+
         if (this.liked(this.props.postId)) {
             return (
                 <div className="post-options">

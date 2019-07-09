@@ -1,16 +1,11 @@
 class Api::PostsController < ApplicationController
 
     before_action :ensure_logged_in
-    # , :ensure_photo
-    # before_action :esnure
+
     def create
         @post = current_user.posts.new(post_params)
-        # @post = Post.new(post_params)
-        # @post.user_id = current_user.id
         if @post.save
             render :show
-            # @posts = Post.all.with_attached_photo
-            # render :index
         else
             render json:  @post.errors.full_messages, status: 422
         end
@@ -18,22 +13,18 @@ class Api::PostsController < ApplicationController
 
     def index
         @posts = Post.all.with_attached_photo
-
-        # @posts = current_user.posts.with_attached_photo  -- This is for user show page!!!
         render :index
     end
 
     def show
-        # debugger
         @post = Post.find(params[:id])
-        # render :show
-
-        if @post
-            render :show
-        else
-            # render :index
-            # render json: @post.errors.full_messages, status: 404
-        end
+        render :show
+        # if @post
+        #     render :show
+        # else
+        #     # render :index
+        #     # render json: @post.errors.full_messages, status: 404
+        # end
     end
 
     # def update

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import LikesContainer from "../likes/likes_container";
 
 const msp = (state, ownProps) => {
     return {
-        // username: state.entities.users[state.session.id].username,
-        // username: state.entities.posts[ownProps.post.id].username,
         username: state.entities.comments[ownProps.comment.id].username,
-        currentUser: state.entities.users[state.session.id].username 
+        currentUser: state.entities.users[state.session.id].username, 
+        likes: state.entities.likes,
     };
 };
  
@@ -18,9 +18,6 @@ class CommentIndexItem extends React.Component {
         this.handleDelete = this.handleDelete.bind(this);
     }
 
-    // componentDidMount() {
-    //    this.props.comment. =  
-    // }
     handleDelete(e) {
         e.preventDefault();
         this.props.deleteComment(this.props.comment.id);
@@ -40,7 +37,8 @@ class CommentIndexItem extends React.Component {
                 <div className="comment-body-container">
                     <div className="comment-body">{this.props.comment.body}</div>
                 </div>
-                    {deleteComment}
+                {deleteComment}
+                {/* <LikesContainer comment={this.props.post} commentId={this.props.comment.id} likes={this.props.likes} /> */}
             </div>
         )
     }
