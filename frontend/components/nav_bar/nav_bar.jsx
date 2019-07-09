@@ -3,7 +3,7 @@ import {Link, Redirect} from 'react-router-dom';
 import PostIndexContainer from "../posts/post_index_container";
 
 
-const NavBar = ({currentUser, logout, loggedIn}) => {
+const NavBar = ({currentUser, id, logout, loggedIn}) => {
 
     let ha;
     (loggedIn) ?
@@ -22,7 +22,7 @@ const NavBar = ({currentUser, logout, loggedIn}) => {
               <div className="nav-right">
                 <Link className="icon-explore" to="/"></Link>
                 <Link className="icon-heart" to="/"></Link>
-                <Link className="icon-profile" to="/"></Link>
+                <Link className="icon-profile" to={`/users/${id}/posts`}></Link>
                 <div className="logout">
                   <button type="button" onClick={logout}>Logout</button>
                 </div>

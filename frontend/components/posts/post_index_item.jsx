@@ -7,6 +7,7 @@ import LikesContainer from "../likes/likes_container";
 const msp = (state, ownProps) => {
     return {
         username: state.entities.posts[ownProps.post.id].username,
+        userId: state.entities.posts[ownProps.post.id],
         currentUser: state.entities.users[state.session.id].username, 
         likes: state.entities.likes,
         
@@ -35,7 +36,7 @@ class PostIndexItem extends React.Component {
             <div className="individual-post">
                 <div className="post-auth-container">
                     <div className="post-auth-image"></div>
-                    <h2 className="post-auth" >{this.props.username}</h2>
+                    <Link className="post-auth" to={`/users/${this.state.user_id}/posts`}>{this.props.username}</Link>
                     <div className="post-auth-options"></div>
                     <ul className="post-auth-options-list">
                             {deletePost}
@@ -47,7 +48,7 @@ class PostIndexItem extends React.Component {
                 </div> 
                 <LikesContainer post={this.props.post} postId={this.props.post.id} likes={this.props.likes}/>
                 <div className="post-caption-container">
-                    <h4 className="post-caption-auth" >{this.props.username}</h4>
+                    <Link className="post-caption-auth" to={`/users/${this.state.user_id}/posts`}>{this.props.username}</Link>
                     <Link className="post-caption" to={`/posts/${this.state.id}`}>{this.state.caption}</Link>
                 </div>
                 <div className="comment-index-container"> 
