@@ -7,9 +7,11 @@ import Profile from "./profile";
 
 
 const msp = (state, ownProps) => {
+    debugger
     return {
-        // posts: Object.values(state.entities.posts).filter(post => post.user_id === ownProps.match.params.user_id), 
-        posts: Object.values(state.entities.posts).filter(post => post.user_id === state.session.id), 
+        posts: Object.values(state.entities.posts).filter(post => post.user_id === ownProps.match.params.user_id), 
+        // posts: Object.values(state.entities.posts).filter(post => post.user_id === state.session.id),
+        userId: ownProps.match.params.user_id, 
     };
 };
 

@@ -14,12 +14,10 @@ class PostShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchPost(this.props.match.params.postId);
-    }
-    componentDidUpdate(prevProps) {
-        if (this.props.match.params.postId !== prevProps.match.params.postId) {
-            this.props.fetchPost(this.props.match.params.postId); 
-        }
+        this.props.fetchAllComments();
+        this.props.fetchAllLikes();
+        this.props.fetchPost(this.props.match.params.postId)
+        .then(() => this.setState(this.props.post));
     }
 
     handleSubmit(e) {
@@ -28,10 +26,7 @@ class PostShow extends React.Component {
     }
 
     render() {
-      
         if (!this.state) return null;
-        // if (!this.state) return <Redirect to=""></Redirect>
-        
         return (
          
             <div className="individual-post-show">
@@ -45,12 +40,14 @@ class PostShow extends React.Component {
                 <div className="post-show-right">
                     <div className="post-show-auth-container">
                         <div className="post-auth-image"></div>
-                        <p className="post-auth">{this.state.username}</p>
+                        <Link className="post-auth" to={`/users/${this.state.user_id}/posts`}>{this.state.username}</Link>
                         <div className="post-auth-options"></div>
                     </div>
 
                     <div className="post-show-caption-container">
-                        <h4 className="post-caption-auth" >{this.state.username}</h4>
+                        {/* <h4 className="post-caption-auth" >{this.state.username}</h4> */}
+                        <Link className="post-caption-auth" to={`/users/${this.state.user_id}/posts`}>{this.state.username}</Link>
+
                         <h4 className="post-caption">{this.state.caption}</h4>
                     </div> 
                     <LikesContainer post={this.props.post} postId={this.props.post.id} likes={this.props.likes} />

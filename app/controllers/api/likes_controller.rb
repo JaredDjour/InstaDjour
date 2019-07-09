@@ -3,12 +3,11 @@ class Api::LikesController < ApplicationController
 
     def create
         @like = current_user.likes.new(like_params)
-        # debugger
-            if @like.save
-                render :show
-            else 
-                render json:  @like.errors.full_messages, status: 422 
-            end
+        if @like.save
+            render :show
+        else 
+            render json:  @like.errors.full_messages, status: 422 
+        end
     end
 
     def index

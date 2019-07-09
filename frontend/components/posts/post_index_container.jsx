@@ -1,5 +1,6 @@
 import {connect} from "react-redux";
 import {fetchAllPosts, deletePost} from "../../actions/post_actions";
+import {fetchAllUsers} from "../../actions/user_actions";
 import {fetchAllComments} from "../../actions/comment_actions";
 import {fetchAllLikes} from "../../actions/like_actions";
 import PostIndex from "./post_index";
@@ -16,7 +17,8 @@ const mdp = dispatch => {
         fetchAllComments: () => dispatch(fetchAllComments()),
         fetchAllPosts: () => dispatch(fetchAllPosts()),
         fetchAllLikes: () => dispatch(fetchAllLikes()),
-        deletePost: id => dispatch(deletePost(id))
+        deletePost: id => dispatch(deletePost(id)),
+        fetchAllUsers: () => dispatch(fetchAllUsers()),
     };
 };
 
