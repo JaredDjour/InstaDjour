@@ -11,9 +11,9 @@
 
 
 
-# demo_user = User.create({username: "DemoUser", password: "DemoUser", email: "DemoUser@gmail.com", full_name: "Demo User"});
-# jane = User.create({username: "JaneDoe", password: "JaneDoe", email: "JaneDoe@gmail.com", full_name: "Jane Doe"});
-# john = User.create({username: "JohnTho", password: "JohnTho", email: "JohnTho@gmail.com", full_name: "John Tho"});
+demo_user = User.create({username: "DemoUser", password: "DemoUser", email: "DemoUser@gmail.com", full_name: "Demo User"});
+jane = User.create({username: "JaneDoe", password: "JaneDoe", email: "JaneDoe@gmail.com", full_name: "Jane Doe"});
+john = User.create({username: "JohnTho", password: "JohnTho", email: "JohnTho@gmail.com", full_name: "John Tho"});
 
 # post1 = Post.create!(caption: "I think your house is flying", user_id: demo_user.id)
 # post2 = Post.create!(caption: "Beautiful sight", user_id: jane.id)
