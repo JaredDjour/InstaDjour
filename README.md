@@ -1,10 +1,15 @@
 # Production README
 
-![InstaDjour Sign Up](https://raw.githubusercontent.com/JaredDjour/InstaDjour/master/Screen%20Shot%202019-06-07%20at%2010.34.39%20AM.png)
+### Technologies
+ Ruby on Rails, PostgreSQL, ActiveStorage, AWS, React, Redux, Webpack, CSS, HTML, Heroku.
+
+![InstaDjour Gif] (https://github.com/JaredDjour/InstaDjour/blob/master/InstaDjourGif.gif?raw=true)
+
+<!-- ![InstaDjour Sign Up](https://raw.githubusercontent.com/JaredDjour/InstaDjour/master/Screen%20Shot%202019-06-07%20at%2010.34.39%20AM.png)
 
 ![Log in](https://github.com/JaredDjour/InstaDjour/blob/master/Screen%20Shot%202019-06-07%20at%2010.49.57%20AM.png?raw=true)
 
-![Content Page](https://github.com/JaredDjour/InstaDjour/blob/master/Screen%20Shot%202019-06-07%20at%2010.35.16%20AM.png?raw=true)
+![Content Page](https://github.com/JaredDjour/InstaDjour/blob/master/Screen%20Shot%202019-06-07%20at%2010.35.16%20AM.png?raw=true) -->
 
 
 ## InstaDjour
@@ -22,4 +27,4 @@
 
 
 ## Overview 
-The app is hosted on Heroku, and its assets are hosted on Amazon Web Services (AWS). InstaDjour implements Ruby on Rails for its backend, PostgreSQL for its database, React and Redux for managing its frontend components, with jBuilders to render the content and CSS for styling each element.
+The app is hosted on Heroku, and its assets are hosted on Amazon Web Services (AWS). InstaDjour implements Ruby on Rails for its backend, PostgreSQL for its database, React and Redux for managing its frontend components, jBuilders to render content, and CSS for styling each element.

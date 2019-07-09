@@ -28,7 +28,12 @@ class PostForm extends React.Component {
             formData.append('post[photo]', this.state.photoFile);
         }
      
-        this.props.action(formData);
+       this.props.action(formData).then(
+           (response) => console.log(response.message),
+           (response) => {
+               console.log(response.responseJSON);
+           }
+       );
         this.setState({ caption: "", photoFile: null, photoUrl: null, userId: null });
     
 
@@ -55,9 +60,7 @@ class PostForm extends React.Component {
     }
 
    render() { 
-    //    const preview_img = this.state.photoUrl ?
-    //         <img className="create-post-img-preview" src={this.state.photoUrl}></img> :
-    //         <div className="img-preview-space"></div>;
+
        const preview_img = this.state.photoUrl ?
             <img className="create-post-img-preview" src={this.state.photoUrl}></img> :
             null;
