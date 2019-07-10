@@ -7,11 +7,12 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
+        // debugger
+        this.props.fetchAllUsers();
         this.props.fetchAllPosts();
         // this.props.fetchUserPosts(this.props.userId);
         this.props.fetchAllComments();
         this.props.fetchAllLikes();
-        this.props.fetchAllUsers();
         // .then(() => this.setState(this.props.userId));
     }
 
@@ -31,7 +32,9 @@ class Profile extends React.Component {
         // } else profilePic = <img className="profile-pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQviq0vi_kFNfszVCvxMb8BKc26jnVeQtWTFoH1LxLhBO1PXP8O" />
     
         // if (this.props.userId !== this.props.match.params.user_id) return null;
+        // debugger
         if (!this.props.username) return null;
+
         const profilePic = <img className="profile-pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQviq0vi_kFNfszVCvxMb8BKc26jnVeQtWTFoH1LxLhBO1PXP8O" />
         
         const posts = this.props.posts.map(post => {
