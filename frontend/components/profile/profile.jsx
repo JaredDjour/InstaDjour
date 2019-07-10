@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import {FollowsContainer} from "../follows/follow_container";
+import FollowsContainer from "../follows/follow_container";
 class Profile extends React.Component {
     constructor(props) {
         super(props);

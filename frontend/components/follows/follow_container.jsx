@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 // import { withRouter } from 'react-router-dom';
-import { createFollow, deleteFollow } from '../../actions/like_actions';
+import { createFollow, deleteFollow } from '../../actions/follow_actions';
 import Follows from './follows';
 
 const msp = (state, ownProps) => {
