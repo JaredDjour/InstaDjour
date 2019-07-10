@@ -1,6 +1,6 @@
 import React from 'react';
-import {Link} from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import {FollowsContainer} from "../follows/follow_container";
 class Profile extends React.Component {
     constructor(props) {
         super(props);
@@ -57,6 +57,7 @@ class Profile extends React.Component {
                     </div>
                     <div className="right-profile-info">
                         <h1 className="username">{this.props.username}</h1>
+                        <FollowsContainer followingId={this.props.userId}/>
                         <h2 className="posts-count">{posts.length}
                             <div className="posts">posts</div>
                         </h2>
