@@ -39,11 +39,7 @@ class Api::CommentsController < ApplicationController
 
     def destroy
         @comment = current_user.comments.find(params[:id])
-        # @comment.destroy2
-        # render json: @comment.errors.full_messages, status: 404
         if @comment.destroy
-            # @comments = Comment.all
-            # render :index
             render :show
         else
             render json: @comment.errors.full_messages, status: 404

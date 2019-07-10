@@ -14,8 +14,7 @@ class Follow < ApplicationRecord
     validates :follower_id, :following_id, presence: true
 
     # follower_id is this current_user id
-    # following_id is the other user's id
- 
+    # following_id is the other user's id 
 
     belongs_to :follower,
     primary_key: :id,
