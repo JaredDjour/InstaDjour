@@ -9,13 +9,17 @@ import Profile from "./profile";
 
 const msp = (state, ownProps) => {
     const userId = parseInt(ownProps.match.params.user_id);
-    // const posts = Object.values(state.entities.posts).filter(post => post.user_id === userId); 
-    username = state.entities.users[ownProps.match.params.user_id].username
+    debugger
+    const username = state.entities.users[userId].username;
+    const fullName = state.entities.users[userId].full_name;
+    const email = state.entities.users[userId].email;
+    const posts = Object.values(state.entities.posts).filter(post => post.user_id === userId);
     return {
-        posts: Object.values(state.entities.posts).filter(post => post.user_id === userId),
         userId,
+        posts,
         username,
-        // username: state.entities.users[ownProps.match.params.user_id].username
+        fullName,
+        email,
     };
 };
 
