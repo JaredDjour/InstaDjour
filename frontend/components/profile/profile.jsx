@@ -1,28 +1,32 @@
 import React from 'react';
-import PostIndexItem from '../posts/post_index_item';
-// import CreatePostFormContainer from './create_post_form_container';
 
 class Profile extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     photoFile: null
-        // };
     }
+
     componentDidMount() {
-        debugger
+        // this.props.fetchAllPosts();
         this.props.fetchUserPosts(this.props.userId);
-        // this.props.fetchAllComments();
-        // this.props.fetchAllLikes();
+        this.props.fetchAllComments();
+        this.props.fetchAllLikes();
+        // this.props.fetchAllUsers();
     }
 
 
     render() {
-        debugger
-        const posts = this.props.posts.reverse().map((post) => <PostIndexItem key={post.id} post={post} deletePost={this.props.deletePost} />);
+        if (!this.props.userId) return null;
+            
+        const posts = this.props.posts.map(post => {
+            return (
+                <div key={post.id} className="individual-profile-photo-container">
+                    <img className="individual-profile-photo" src={post.photoUrl}></img>
+                    </div>
+        )}).reverse();
+ 
         return (
-            <div className="all">
-                <ul>{posts}</ul>
+            <div className="all-profile-photos-container">
+                <ul className="all-profile-photos">{posts}</ul>
             </div>
         )
     }

@@ -1,0 +1,19 @@
+.individual-profile-photo-container{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+    width: 400px;
+    flex-wrap: wrap;
+}
+
+.individual-profile-photo {
+    width: 100%;
+}
+
+.all-profile-photos-container {
+    display: flex;
+}
+
+.all-profile-photos {
+    display: flex;
+}
