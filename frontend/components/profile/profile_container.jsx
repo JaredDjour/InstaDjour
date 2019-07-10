@@ -9,9 +9,13 @@ import Profile from "./profile";
 
 const msp = (state, ownProps) => {
     const userId = parseInt(ownProps.match.params.user_id);
+    // const posts = Object.values(state.entities.posts).filter(post => post.user_id === userId); 
+    username = state.entities.users[ownProps.match.params.user_id].username
     return {
-        posts: Object.values(state.entities.posts).filter(post => post.user_id === userId), 
-        userId: parseInt(ownProps.match.params.user_id), 
+        posts: Object.values(state.entities.posts).filter(post => post.user_id === userId),
+        userId,
+        username,
+        // username: state.entities.users[ownProps.match.params.user_id].username
     };
 };
 

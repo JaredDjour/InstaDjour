@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 class Profile extends React.Component {
     constructor(props) {
@@ -10,7 +11,8 @@ class Profile extends React.Component {
         this.props.fetchUserPosts(this.props.userId);
         this.props.fetchAllComments();
         this.props.fetchAllLikes();
-        // this.props.fetchAllUsers();
+        this.props.fetchAllUsers()
+        // .then(() => this.setState(this.props.username));
     }
 
 
@@ -19,14 +21,17 @@ class Profile extends React.Component {
             
         const posts = this.props.posts.map(post => {
             return (
-                <div key={post.id} className="individual-profile-photo-container">
+                <Link key={post.id} className="individual-profile-photo-container" to={`/posts/${post.id}`}>
                     <img className="individual-profile-photo" src={post.photoUrl}></img>
-                    </div>
+                </Link>
         )}).reverse();
- 
+                // debugger
         return (
+            <div>
+                <h2>{this.props.username}</h2>
             <div className="all-profile-photos-container">
                 <ul className="all-profile-photos">{posts}</ul>
+            </div>
             </div>
         )
     }
