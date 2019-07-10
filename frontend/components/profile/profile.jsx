@@ -12,9 +12,15 @@ class Profile extends React.Component {
         this.props.fetchAllComments();
         this.props.fetchAllLikes();
         this.props.fetchAllUsers();
-        // .then(() => this.setState(this.props.username));
+        // .then(() => this.setState(this.props.userId));
     }
 
+    componentDidUpdate(prevProps) {
+        // if (parseInt(prevProps.match.params.user_id) !== this.props.userId) {
+        if (!this.props.username) {
+            this.props.fetchAllUsers();
+        }
+    }
 
     render() {
         // let profilePic;
@@ -23,9 +29,9 @@ class Profile extends React.Component {
         // } else if (this.props.username === "JohnTho") {
         //     profilePic = <img className="profile-pic-john" src="https://countrybutchers.co.uk/wp-content/uploads/2016/05/Man-Placeholder-768x512.jpg" /> 
         // } else profilePic = <img className="profile-pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQviq0vi_kFNfszVCvxMb8BKc26jnVeQtWTFoH1LxLhBO1PXP8O" />
-       
-       
-        if (!this.props.userId) return null;
+    
+        // if (this.props.userId !== this.props.match.params.user_id) return null;
+        if (!this.props.username) return null;
         const profilePic = <img className="profile-pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQviq0vi_kFNfszVCvxMb8BKc26jnVeQtWTFoH1LxLhBO1PXP8O" />
         
         const posts = this.props.posts.map(post => {

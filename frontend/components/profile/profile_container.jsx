@@ -9,7 +9,6 @@ import Profile from "./profile";
 
 const msp = (state, ownProps) => {
     const userId = parseInt(ownProps.match.params.user_id);
-    debugger
     const username = state.entities.users[userId].username;
     const fullName = state.entities.users[userId].full_name;
     const email = state.entities.users[userId].email;

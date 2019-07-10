@@ -3,3 +3,9 @@
       json.partial! 'api/posts/post', post: post
    end
 end
+
+@users.each do |user|
+   json.set! user.id do
+      json.extract! user, :id, :username, :full_name, :email
+   end
+end

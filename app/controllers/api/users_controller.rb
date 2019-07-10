@@ -19,14 +19,15 @@ class Api::UsersController < ApplicationController
 
   def show
     @users = User.all
-    render :index
+    # render :index
+    render :show
     # @user = User.find(params[:id])
-    #   if @user
-    #     # render "/api/users/:id"
-    #     render :show
-    #   else
-    #     render json: @user.errors.full_messages, status: 404
-    #   end
+      # if @user
+      #   # render "/api/users/:id"
+      #   render :show
+      # else
+      #   render json: @user.errors.full_messages, status: 404
+      # end
   end
 
 
