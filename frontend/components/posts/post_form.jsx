@@ -62,9 +62,11 @@ class PostForm extends React.Component {
    render() { 
 
        const preview_img = this.state.photoUrl ?
-            <img className="create-post-img-preview" src={this.photoUrl}></img> :
+            <img className="create-post-img-preview" src={this.state.photoUrl}></img> 
+            :
             null;
-        const error = (this.state.caption && !this.state.photoUrl) ?
+        
+            const error = (this.state.caption && !this.state.photoUrl) ?
         <div className="error">Attach a photo!</div>
         :
         null;
