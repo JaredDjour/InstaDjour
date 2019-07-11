@@ -13,7 +13,9 @@ const msp = state => {
             photoUrl: null,
             userId: state.session.id,
             // username: state.entities.posts.id.username
-        }
+        },
+        username: state.entities.users[state.session.id].username,
+        fullName: state.entities.users[state.session.id].full_name,
     };
 };
 

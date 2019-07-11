@@ -52,13 +52,13 @@ class Follows extends React.Component {
         .map(follower => {
             
             return (
-            <li key={follower.id}>{follower.follower_id}</li>
+                <li key={follower.id} className="follower-and-following-list-item">{follower.follower_id}</li>
             )});
 
         const following = follows.filter(follow => follow.follower_id === this.props.followingId)
         .map(followed => {
             return (
-                <li key={followed.id}>{followed.username}</li>
+                <li key={followed.id} className="follower-and-following-list-item">{followed.username}</li>
             )});
 
         const count = (followers.length) ?
@@ -86,12 +86,14 @@ class Follows extends React.Component {
                 <button className="follow-button" onClick={this.handleClick}>{follow}</button>
                 <div className="followers-and-following-container">
                     <h2 className="followers-count">{count}
-                        <div className="followers">{followerS}</div>
-                        <ul>{followers}</ul> 
+                        <div className="followers visible">{followerS}
+                        <ul className="hidden follower-and-following-list">{followers}</ul> 
+                        </div>
                     </h2>
                     <h2 className="following-count">{count2}
-                        <div className="following">following</div>
-                        <ul>{following}</ul>
+                        <div className="following visible">following
+                        <ul className="hidden follower-and-following-list">{following}</ul>
+                        </div>
                     </h2>
                 </div>
             </div>

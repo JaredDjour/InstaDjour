@@ -62,14 +62,33 @@ class PostForm extends React.Component {
    render() { 
 
        const preview_img = this.state.photoUrl ?
-            <img className="create-post-img-preview" src={this.state.photoUrl}></img> :
+            <img className="create-post-img-preview" src={this.photoUrl}></img> :
             null;
         const error = (this.state.caption && !this.state.photoUrl) ?
         <div className="error">Attach a photo!</div>
         :
         null;
+    
+       let userPic;
+       if (this.props.username === "JaneDoe") {
+           userPic = <img className="index-right-user-pic" src="https://image.flaticon.com/icons/svg/219/219990.svg" />
+       } else if (this.props.username === "JohnTho") {
+           userPic = <img className="index-right-user-pic" src="https://countrybutchers.co.uk/wp-content/uploads/2016/05/Man-Placeholder-768x512.jpg" />
+       } else if (this.props.username === "DemoUser") {
+           userPic = <img className="index-right-user-pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQviq0vi_kFNfszVCvxMb8BKc26jnVeQtWTFoH1LxLhBO1PXP8O" />
+       } else userPic = <img className="index-right-user-pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQviq0vi_kFNfszVCvxMb8BKc26jnVeQtWTFoH1LxLhBO1PXP8O" />
+
+       if (!this.props.username) return null
        return (
            <div className="index-right">
+               <div className="index-right-user-container">
+                {/* <div className="index-right-user-pic"></div> */}
+                {userPic}
+                <div className="index-right-user-names-container">
+                        <h2 className="index-right-current-user">{this.props.username}</h2>
+                        <h2 className="index-right-user-name">{this.props.fullName}</h2>
+                </div>
+               </div>
                <form className="create-post-form">
                         <h4 className="upload-post">Upload Post</h4>
                    <label className="create-post-choose-file" >

@@ -13,7 +13,7 @@ body {
     top: 0;
     position: fixed;
     width: 100%;
-    height: 50px;
+    height: 60px;
     border-bottom: solid #e6e6e6 1px; 
 }
 
@@ -33,15 +33,16 @@ body {
     // font-family: "Billabong";
     // src: local('Billabong'), url('Billabong.woff') format('woff'); 
     margin: 3px 10px 0;
-    padding: 0px 8px;
+    padding: 0px 10px;
     border-left: solid 1px black; 
 }
 
 .nav-left-icon {
-    background-size: 18px 18px;
-    width: 18px;
-    height: 18px;
-    background-image: url("http://grassyhillcountryclub.com/wp-content/uploads/2019/01/ig-logo-2.png");
+    background-size: 22px 22px;
+    width: 20px;
+    height: 20px;
+    // background-image: url("http://grassyhillcountryclub.com/wp-content/uploads/2019/01/ig-logo-2.png");
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Instagram_font_awesome.svg/240px-Instagram_font_awesome.svg.png");
     cursor: pointer;
 }
 
@@ -68,7 +69,7 @@ body {
     padding: 3px 10px 3px 26px;
     z-index: 2;
     background-color: #fafafa;
-    height: 12px;
+    height: 15px;
     text-align: left;
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-weight: 100;
@@ -91,37 +92,38 @@ body {
 }
 
 .icon-search{
-    background-image: url("https://images.vexels.com/media/users/3/147105/isolated/preview/5c38be8d63c0ae0ad034417daaef3bcb-instagram-search-icon-by-vexels.png");
-    background-size: 10px 10px;
-    height: 10px;
-    width: 10px;
+    // background-image: url("https://images.vexels.com/media/users/3/147105/isolated/preview/5c38be8d63c0ae0ad034417daaef3bcb-instagram-search-icon-by-vexels.png");
+    background-image: url("https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-512.png");
+    background-size: 12px 12px;
+    height: 14px;
+    width: 12px;
     z-index: 5;
-    margin: 6px -22px;
+    margin: 6px -24px 0 0;
 }
 .icon-explore {
-    // background-image: url("https://static.thenounproject.com/png/782776-200.png");
     // background-image: url("https://icons-for-free.com/iconfiles/png/512/explore+find+location+icon-1320184016962546925.png");
-    background-image: url("https://cdn1.iconfinder.com/data/icons/instagram-ui-flat/48/Instagram_UI-19-512.png");
-    background-size: 35px 35px;
-    width: 35px;
-    height: 35px;
-    margin-right: 10px;
+    // background-image: url(https://cdn1.iconfinder.com/data/icons/instagram-ui-flat/48/Instagram_UI-19-512.png);
+    background-image: url("https://www.freeiconspng.com/uploads/compass-icon-22.png");
+    background-size: 23px 23px;
+    width: 22px;
+    margin: 8px 19px 31px 0;
 }
 .icon-heart{
-    background-image: url("https://images.vexels.com/media/users/3/147091/isolated/preview/5f8a1ea9c90ceed8d92999bc824417eb-instagram-heart-icon-by-vexels.png");
-    background-size: 23px 20px;
-    width: 23px;
-    height: 20px;
-    margin-right: 14px;
+    // background-image: url("https://images.vexels.com/media/users/3/147091/isolated/preview/5f8a1ea9c90ceed8d92999bc824417eb-instagram-heart-icon-by-vexels.png");
+    background-image: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-heart-outline-512.png");
+    // filled-in heart:
+    //  background-image: url("https://cdn1.iconfinder.com/data/icons/instagram-ui-colored/48/JD-07-512.png")
+    background-size: 27px 27px;
+    width: 24px;
+    margin: 0 17px 27px 0;;
 }
 
 .icon-profile{
-    // background-image: url("https://images.vexels.com/media/users/3/147103/isolated/preview/e9bf9a44d83e00b1535324b0fda6e91a-instagram-profile-line-icon-by-vexels.png");
-    background-image: url("https://images.vexels.com/media/users/3/147102/isolated/preview/082213cb0f9eabb7e6715f59ef7d322a-instagram-profile-icon-by-vexels.png");
-    background-size: 20px 20px;
-    width: 20px;
-    height: 20px;
-    margin-right: 12px;
+    // background-image: url("https://cdn3.iconfinder.com/data/icons/picons-social/57/38-instagram-512.png");
+    background-image: url("https://cdn3.iconfinder.com/data/icons/instagram-18/512/200_Instagram_People_Profile_Sets_User-512.png");
+    background-size: 26px 26px;
+    width: 22px;
+    margin: 0 17px 27px 0;
 }
 
 // .icon-camera{

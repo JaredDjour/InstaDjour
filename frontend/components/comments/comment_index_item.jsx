@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CommentLikes from "../likes/comment_likes";
 
 const msp = (state, ownProps) => {
     return {
         username: state.entities.comments[ownProps.comment.id].username,
+        userId: state.entities.comments[ownProps.comment.id].user_id,
         currentUser: state.entities.users[state.session.id].username, 
         likes: state.entities.likes,
     };
@@ -32,7 +33,7 @@ class CommentIndexItem extends React.Component {
         return (
             <div className="individual_comment">
                 <div className="comment-auth-container">
-                    <div className="comment-auth">{this.props.username}</div>
+                    <Link className="comment-auth" to={`/users/${this.props.userId}/posts`}>{this.props.username}</Link>
                 </div>
                 <div className="comment-body-container">
                     <div className="comment-body">{this.props.comment.body}</div>
@@ -45,4 +46,4 @@ class CommentIndexItem extends React.Component {
 
 };
 
-export default connect(msp, null)(CommentIndexItem);
+export default withRouter(connect(msp, null)(CommentIndexItem));

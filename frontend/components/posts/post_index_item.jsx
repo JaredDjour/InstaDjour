@@ -37,9 +37,9 @@ class PostIndexItem extends React.Component {
                 <div className="post-auth-container">
                     <div className="post-auth-image"></div>
                     <Link className="post-auth" to={`/users/${this.state.user_id}/posts`}>{this.props.username}</Link>
-                    <div className="post-auth-options"></div>
-                    <ul className="post-auth-options-list">
-                            {deletePost}
+                    <div className="post-auth-options visible"></div>
+                    <ul className="post-auth-options-list hidden">
+                        {deletePost}
                         <li><a href="/posts/${this.state.id}">Show Post</a></li> 
                     </ul>
                 </div>
