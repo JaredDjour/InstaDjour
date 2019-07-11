@@ -26,7 +26,8 @@ class PostIndex extends React.Component {
             following.push(follow.following_id);
         });
 
-        const posts = this.props.posts.filter(post => following.includes(post.user_id))
+        const posts = this.props.posts
+        .filter(post => following.includes(post.user_id) || post.user_id === this.props.currentUser)
         .reverse().map((post) => <PostIndexItem key={post.id} post={post} deletePost={this.props.deletePost}/>);
         
         return (
