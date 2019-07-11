@@ -14,7 +14,7 @@ const msp = ( {errors} ) => {
     errors: errors.session,
     formType: 'Sign Up',
     navLink: <div> Have an account? <Link className="session-switch-link" to="/login">Log in</Link></div>,
-    clearErrors: clearErrors()
+    clearErrors: clearErrors(),
   }
 };
 

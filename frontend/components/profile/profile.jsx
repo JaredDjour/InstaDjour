@@ -14,6 +14,7 @@ class Profile extends React.Component {
         this.props.fetchAllComments();
         this.props.fetchAllLikes();
         // .then(() => this.setState(this.props.userId));
+        this.props.fetchAllFollows();
     }
 
     componentDidUpdate(prevProps) {
@@ -43,7 +44,17 @@ class Profile extends React.Component {
                     <img className="individual-profile-photo" src={post.photoUrl}></img>
                 </Link>
         )}).reverse();
-    
+   
+
+        const count = (posts.length > 0) ?
+            posts.length
+            :
+            "0";
+        const postsString = (count === 1) ?
+            "post"
+            :
+            "posts";
+
         return (
             <div>
                 <div className="space"></div>
@@ -57,9 +68,9 @@ class Profile extends React.Component {
                     </div>
                     <div className="right-profile-info">
                         <h1 className="username">{this.props.username}</h1>
-                        <FollowsContainer followingId={this.props.userId}/>
+                        <FollowsContainer followingId={this.props.userId} follows={this.props.follows}/>
                         <h2 className="posts-count">{posts.length}
-                            <div className="posts">posts</div>
+                            <div className="posts">{postsString}</div>
                         </h2>
                         <h2 className="full-name">{this.props.fullName}</h2>
                     </div>

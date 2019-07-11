@@ -3,12 +3,12 @@ import React from 'react';
 class Follows extends React.Component {
     constructor(props) {
         super(props);
-        this.getFollow = this.getFollow.bind(this);
-        this.followed = this.followed.bind(this);
-        this.handleFollow = this.handleFollow.bind(this);
+        this.fetchFollow = this.fetchFollow.bind(this);
+        this.following = this.following.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    getFollow(followingId) {
+    fetchFollow(followingId) {
         const follows = Object.values(this.props.follows);
 
         for (let i = 0; i < follows.length; i++) {
@@ -19,7 +19,7 @@ class Follows extends React.Component {
         }
     }
 
-    followed(followingId) {
+    following(followingId) {
         const follows = Object.values(this.props.follows);
 
         for (let i = 0; i < follows.length; i++) {
@@ -31,14 +31,14 @@ class Follows extends React.Component {
         return false;
     }
 
-    handleFollow() {
+    handleClick() {
         const follow = {
             follower_id: this.props.currentUser,
             following_id: this.props.followingId,
         };
 
-        if (this.followed(follow.following_id)) {
-            const followId = this.getFollow(follow.following_id);
+        if (this.following(follow.following_id)) {
+            const followId = this.fetchFollow(follow.following_id);
             this.props.deleteFollow(followId);
         } else {
             this.props.createFollow(follow);
@@ -47,18 +47,24 @@ class Follows extends React.Component {
 
 
     render() {
-        // const follows = Object.values(this.props.follows);
-        // // const followCount = follows.filter(follow => follow.following_id === this.props.postId).length;
+        const follows = Object.values(this.props.follows);
+        const followCount = follows.filter(follow => follow.following_id === this.props.followingId).length;
 
-        // const count = (followCount !== 0) ?
-        //     followCount
-        //     :
-        //     null;
-
+        const count = (followCount) ?
+            followCount
+            :
+            "0";
+        const followers = (count === 1) ?
+            "follower"
+            :
+            "followers";
 
         return (
             <div>
-                <button className="follow-button" onClick={this.handleLike}>Follow</button>
+                <button className="follow-button" onClick={this.handleClick}>Follow</button>
+                <h2 className="followers-count">{count}
+                    <div className="followers">{followers}</div>
+                </h2>
             </div>
         )
     }

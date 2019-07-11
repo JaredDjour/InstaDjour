@@ -5,7 +5,7 @@ import {Link, Redirect} from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {username: "", password: ""};
+    this.state = {email: "", fullName: "", username: "", password: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
     // this.changeBg = this.changeBg.bind(this);

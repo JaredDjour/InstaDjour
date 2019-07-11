@@ -4,6 +4,7 @@ import { fetchUserPosts, fetchAllPosts, deletePost } from "../../actions/post_ac
 import { fetchAllComments } from "../../actions/comment_actions";
 import { fetchAllLikes } from "../../actions/like_actions";
 import { fetchAllUsers } from "../../actions/user_actions";
+import { fetchAllFollows } from "../../actions/follow_actions";
 import Profile from "./profile";
 
 
@@ -19,6 +20,7 @@ const msp = (state, ownProps) => {
         username,
         fullName,
         email,
+        follows: state.entities.follows,
     };
 };
 
@@ -29,6 +31,7 @@ const mdp = dispatch => {
         fetchAllPosts: () => dispatch(fetchAllPosts()),
         fetchAllLikes: () => dispatch(fetchAllLikes()),
         fetchAllUsers: () => dispatch(fetchAllUsers()),
+        fetchAllFollows: () => dispatch(fetchAllFollows()),
         deletePost: id => dispatch(deletePost(id))
     };
 };
