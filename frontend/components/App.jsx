@@ -15,7 +15,7 @@ const App = () => {
   return (
   <div>
       <Modal />
-      <Route path="/" component={NavBarContainer} />
+      {/* <Route path="/" component={NavBarContainer} /> */}
       <Route exact path="/" component={SplashContainer} />
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer}/>

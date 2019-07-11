@@ -109,6 +109,7 @@ class PostForm extends React.Component {
                     </label>
                     {button}
                 </form>
+               <h4 className="trademark">© 2019 INSTADJOUR</h4>
            </div>
        )
    }

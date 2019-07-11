@@ -8,10 +8,12 @@ import PostIndex from "./post_index";
 
 
 const msp = state => {
-    // debugger
     return {
         posts: Object.values(state.entities.posts),
-        follows: state.entities.follows,
+        follows: Object.values(state.entities.follows),
+        users: Object.values(state.entities.users),
+        comments: Object.values(state.entities.comments),
+        likes: Object.values(state.entities.likes),
         currentUser: state.session.id,
     };
 };

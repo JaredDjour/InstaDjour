@@ -17,13 +17,21 @@ class NavBar extends React.Component {
       // if (this.props.users < 2) return null;
         // const exploreItems = this.props.users
        
-      //     .filter(user => user.id !== this.props.currentUser) 
-      //   .map(user => {
-      //       return (
-      //         <li key={user.id}>{user.username}</li>
-      //       )
-      //   })
+
+      const posts = this.props.posts;
+      const users = this.props.users
+        .filter(user => user.id !== this.props.currentUser) 
+        .map(user => {
+            return (
+              <li key={user.id} className="explore-list-item">
+                <Link className="explore-list-item-link" to={`/users/${user.id}/posts`}>{user.username}</Link>
+              </li>
+            )
+        })
     
+      const likes = this.props.likes;
+        
+
         let nav;
         (this.props.loggedIn) ?
         nav = (
@@ -39,10 +47,15 @@ class NavBar extends React.Component {
               <input className="search-bar" type="text" placeholder="Search" /> 
               </div>
               <div className="nav-right">
-                <div className="icon-explore visibile">
-                  {/* <ul className="hidden explore-list">{exploreItems}</ul>  */}
+
+                <div className="icon-explore visible">
+                  <ul className="hidden explore-list">
+                      <li className="discover-people">Discover People</li>
+                      {users}
+                  </ul> 
                 </div> 
-                <div className="icon-heart visibile">
+
+                <div className="icon-heart visible">
                   {/* <ul className="hidden heart-list">{heartItems}</ul> */}
                 </div>
                 <Link className="icon-profile" to={`/users/${this.props.id}/posts`}></Link>

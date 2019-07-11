@@ -3,7 +3,10 @@ body {
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     color: #262626;
 }
-
+.nav-bar-container {
+    // top: 0;
+    // position: fixed;
+}
 .nav-bar {
     display: flex;
     flex-direction: row;
@@ -109,6 +112,49 @@ body {
     margin: 8px 19px 31px 0;
     cursor: pointer;
 }
+
+.explore-list {
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    position: absolute;
+    display: none;
+    font-size: 14px;
+    position: absolute;
+    background: transparent;
+    overflow: scroll;
+    max-height: 125px;
+    margin-left: -38px;
+}
+
+.explore-list:hover {
+    margin-bottom: 10px;
+    z-index: 5
+}
+.discover-people {
+    margin-top: 23px;
+    font-weight: 500;
+    font-family: "Cookie", cursive;
+    font-size: 20px;
+    text-align: center
+}
+.explore-list-item {
+    padding: 4px 15px;
+    background: white;
+    border: 1px solid #ebebeb;
+    border-radius: 1px;
+    z-index: 5;
+    font-size: 10px;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.explore-list-item-link {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+
 .icon-heart{
     // background-image: url("https://images.vexels.com/media/users/3/147091/isolated/preview/5f8a1ea9c90ceed8d92999bc824417eb-instagram-heart-icon-by-vexels.png");
     background-image: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-heart-outline-512.png");

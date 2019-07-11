@@ -6,10 +6,11 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import {fetchAllFollows} from "../../actions/follow_actions";
 import {fetchAllUsers} from "../../actions/user_actions";
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state, ownProps) => { 
+
   const id = state.session.id;
   const currentUser = state.entities.users[state.session.id];
-  
+
   return {
     id,
     currentUser,
