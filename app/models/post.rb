@@ -11,7 +11,7 @@
 
 class Post < ApplicationRecord
     validates :user_id, :caption, presence: true 
-    validate :has_photo
+    # validate :has_photo
     
     has_one_attached :photo
     belongs_to :user,
@@ -20,11 +20,11 @@ class Post < ApplicationRecord
     class_name: :User
 
     
-    def has_photo
-        if !self.photo.attached?
-            errors[:photo] << "must be attached."
-        end
-    end
+    # def has_photo
+    #     if !self.photo.attached?
+    #         errors[:photo] << "must be attached."
+    #     end
+    # end
 
     has_many :comments,
     primary_key: :id,
