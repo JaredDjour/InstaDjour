@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import FollowsContainer from "../follows/follow_container";
+import NavBarContainer from "../nav_bar/nav_bar_container";
+
 class Profile extends React.Component {
     constructor(props) {
         super(props);
@@ -56,6 +58,7 @@ class Profile extends React.Component {
         
         return (
             <div>
+                <NavBarContainer />
                 <div className="space"></div>
                 <div className="all-profile-info-container"> 
                 <div className="all-profile-info">

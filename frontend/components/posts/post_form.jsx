@@ -72,10 +72,6 @@ class PostForm extends React.Component {
         :
         null;
 
-        const button = (this.state.photoUrl && this.state.caption) ?
-           <button type="button" onClick={this.handleSubmit} className="create-post-button">Post</button>
-        : null;
-    
        let userPic;
        if (this.props.username === "JaneDoe") {
            userPic = <img className="index-right-user-pic" src="https://image.flaticon.com/icons/svg/219/219990.svg" />
@@ -107,7 +103,7 @@ class PostForm extends React.Component {
                     {error}
                         <input className="create-post-caption" type="text" placeholder="Caption" value={this.state.caption} onChange={this.handleChange("caption")} />
                     </label>
-                    {button}
+                   <button type="button" disabled={!this.state.photoUrl || !this.state.caption} onClick={this.handleSubmit} className="create-post-button">Post</button>
                 </form>
                <h4 className="trademark">© 2019 INSTADJOUR</h4>
            </div>

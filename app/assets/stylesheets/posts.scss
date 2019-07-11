@@ -352,9 +352,9 @@
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    margin: 200px 255px 0 0;
+    margin: 200px 0 0 270px;
     top: 0;
-    right: 0;
+    // right: 0;
     // background-color: white;
     position: fixed;
     // overflow: scroll;
@@ -417,6 +417,7 @@
 .img-preview-space {
     height: 115px;
     width: 100%;
+    overflow: scroll;
 }
 .create-post-choose-file {
 
@@ -503,6 +504,11 @@
 }
 .create-post-button:focus{outline:0;}
 
+// @media (max-width: 1200px) {                  
+//    .index-right {
+//       display: none;
+//    }
+// }
 .individual-post-show {
     display: flex;
     flex-direction: row;

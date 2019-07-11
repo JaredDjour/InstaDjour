@@ -9,6 +9,7 @@ class CommentForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleEnter = this.handleEnter.bind(this);
     }
 
 
@@ -20,12 +21,23 @@ class CommentForm extends React.Component {
         this.setState({body: "", user_id: this.props.userId, postId: this.props.postId});
     }
 
+    handleEnter(e) {
+        if (event.keyCode === 13) {
+            e.preventDefault();
+
+            if (this.state.body !== "") {
+                this.props.createComment(this.state);
+            }
+            this.setState({body: "", user_id: this.props.userId, postId: this.props.postId});
+        }
+    }
+        
     handleChange(field) {
         return e => this.setState({ [field]: e.target.value });
     }
 
     render() {
-    
+        const {inputRef} = this.props;
         const button = (this.state.body !== "") ?
         <button className="create-comment_button" type="button" onClick={this.handleSubmit}>Post</button>
         : null;
@@ -34,7 +46,8 @@ class CommentForm extends React.Component {
             <div className="comment-form">
                 <form>
                     {/* <input className="add-comment" type="text" placeholder="Add a comment..." value={this.state.body} onChange={this.handleChange("body")} /> */}
-                    <textarea className="add-comment" type="text" placeholder="Add a comment..." value={this.state.body} onChange={this.handleChange("body")} onKeyUp={this.handleEnter} />      
+                    {/* <textarea className="add-comment" type="text" placeholder="Add a comment..." value={this.state.body} onChange={this.handleChange("body")} onKeyUp={this.handleEnter} />       */}
+                    <input className="add-comment" ref={inputRef} type="text" placeholder="Add a comment..." value={this.state.body} onChange={this.handleChange("body")} onKeyUp={this.handleEnter} />      
                     {button}
                  </form>
             </div>

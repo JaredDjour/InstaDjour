@@ -29,7 +29,7 @@ class PostShow extends React.Component {
         if (!this.state) return null;
         return (
             <div>
-                {/* <NavBarContainer /> */}
+                <NavBarContainer />
                 <div className="individual-post-show">
 
                     <div className="post-show-left">  

@@ -9,7 +9,9 @@ class NavBar extends React.Component {
 
 
     render() {
-        const users = this.props.users
+      
+        const users = (this.props.users) ?
+        this.props.users
         .filter(user => user.id !== this.props.currentUser.id) 
         .map(user => {
           return (
@@ -17,9 +19,11 @@ class NavBar extends React.Component {
                 <Link className="explore-list-item-link" to={`/users/${user.id}/posts`}>{user.username}</Link>
               </li>
             )
-          })
+          }) 
+          :null;
           
-        const posts = this.props.posts
+        const posts = (this.props.posts) ? 
+        this.props.posts
         .filter(post => post.username !== this.props.currentUser.username)
         .map(post => {
           return (
@@ -27,11 +31,33 @@ class NavBar extends React.Component {
               <Link className="heart-list-item-link" to={`/posts/${post.id}`}>{post.caption}</Link>
             </li>
           )
-        });
+        })
+        : null;
+       
         
+        const exploreIcon = {users} ?
+            (
+            <div className="icon-explore visible">
+              <ul className="hidden explore-list">
+                <li className="discover-people">Discover People</li>
+                {users}
+              </ul>
+            </div> 
+            ) : null;
+
+        const heartIcon = {posts} ?
+          (
+          <div className="icon-heart visible">
+            <ul className="hidden heart-list">
+              <li className="recent-likes">Discover Posts</li>
+              {posts}
+            </ul>
+          </div>
+        ) : null;
 
         let nav;
         (this.props.loggedIn) ?
+
         nav = (
           <div>
           <div className="nav-bar">
@@ -46,18 +72,8 @@ class NavBar extends React.Component {
               </div>
               <div className="nav-right">
 
-                <div className="icon-explore visible">
-                  <ul className="hidden explore-list">
-                      <li className="discover-people">Discover People</li>
-                      {users}
-                  </ul> 
-                </div> 
-                <div className="icon-heart visible">
-                  <ul className="hidden heart-list">
-                      <li className="recent-likes">Discover Posts</li>
-                      {posts}
-                  </ul> 
-                </div> 
+             {exploreIcon}
+             {heartIcon} 
                 <Link className="icon-profile" to={`/users/${this.props.id}/posts`}></Link>
                 <div className="logout">
                   <button type="button" className="logout-button" onClick={this.props.logout}>Logout</button>
