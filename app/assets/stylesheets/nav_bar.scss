@@ -125,11 +125,38 @@ body {
     margin-left: -38px;
 }
 
+.heart-list {
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    position: absolute;
+    display: none;
+    font-size: 14px;
+    position: absolute;
+    background: transparent;
+    overflow: scroll;
+   max-height: 125px;
+    margin-left: -36px;
+    width: 99px;
+}
+
+
+
 .explore-list:hover {
     margin-bottom: 10px;
     z-index: 5
 }
+
+.heart-list:hover {
+    margin-bottom: 10px;
+    z-index: 5
+}
 .discover-people {
+    margin-top: 23px;
+    font-weight: 500;
+    font-family: "Cookie", cursive;
+    font-size: 20px;
+    text-align: center
+}
+.recent-likes {
     margin-top: 23px;
     font-weight: 500;
     font-family: "Cookie", cursive;
@@ -148,8 +175,30 @@ body {
     text-align: center;
     border: 1px solid #ccc;
 }
+.heart-list-item {
+   padding: 4px 15px;
+    background: white;
+    border: 1px solid #ebebeb;
+    border-radius: 1px;
+    z-index: 5;
+    font-size: 10px;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    text-align: center;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+}
 
 .explore-list-item-link {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.heart-list-item-link {
     color: black;
     text-decoration: none;
     font-weight: 500;
@@ -193,7 +242,10 @@ body {
     height: 20px;
     margin: -12px 1px 8px 5px;
 }
+.logout-button {
 
+    cursor: pointer;
+}
 
 // .icon-settings{
     // background-image: url("https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiMxb_5oMziAhUNT98KHR2CBnEQjRx6BAgBEAU&url=https%3A%2F%2Fwww.vexels.com%2Fpng-svg%2Fpreview%2F147109%2Finstagram-settings-icon&psig=AOvVaw0PQP03jVw2ea1oHFCyW8Sx&ust=1559615033228469");

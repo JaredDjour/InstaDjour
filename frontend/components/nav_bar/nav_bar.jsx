@@ -7,29 +7,27 @@ class NavBar extends React.Component {
       super(props);
     }
 
-    // componentDidMount() {
-    //   if (this.props.loggedIn) {
-    //     this.props.fetchAllUsers()
-    //     this.props.fetchAllFollows();
-    //   }
-    // }
-    render() {
-      // if (this.props.users < 2) return null;
-        // const exploreItems = this.props.users
-       
 
-      const posts = this.props.posts;
-      const users = this.props.users
-        .filter(user => user.id !== this.props.currentUser) 
+    render() {
+        const users = this.props.users
+        .filter(user => user.id !== this.props.currentUser.id) 
         .map(user => {
-            return (
-              <li key={user.id} className="explore-list-item">
+          return (
+            <li key={user.id} className="explore-list-item">
                 <Link className="explore-list-item-link" to={`/users/${user.id}/posts`}>{user.username}</Link>
               </li>
             )
-        })
-    
-      const likes = this.props.likes;
+          })
+          
+        const posts = this.props.posts
+        .filter(post => post.username !== this.props.currentUser.username)
+        .map(post => {
+          return (
+            <li key={post.id} className="heart-list-item">
+              <Link className="heart-list-item-link" to={`/posts/${post.id}`}>{post.caption}</Link>
+            </li>
+          )
+        });
         
 
         let nav;
@@ -54,13 +52,15 @@ class NavBar extends React.Component {
                       {users}
                   </ul> 
                 </div> 
-
                 <div className="icon-heart visible">
-                  {/* <ul className="hidden heart-list">{heartItems}</ul> */}
-                </div>
+                  <ul className="hidden heart-list">
+                      <li className="recent-likes">Discover Posts</li>
+                      {posts}
+                  </ul> 
+                </div> 
                 <Link className="icon-profile" to={`/users/${this.props.id}/posts`}></Link>
                 <div className="logout">
-                  <button type="button" onClick={this.props.logout}>Logout</button>
+                  <button type="button" className="logout-button" onClick={this.props.logout}>Logout</button>
                 </div>
               </div>
                 </div>
