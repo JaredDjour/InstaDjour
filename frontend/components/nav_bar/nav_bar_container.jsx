@@ -5,9 +5,10 @@ import NavBar from './nav_bar';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   const id = state.session.id;
   const currentUser = state.entities.users[state.session.id];
+  // debugger
   return {
     id,
     currentUser,

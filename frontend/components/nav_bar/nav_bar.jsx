@@ -4,7 +4,9 @@ import PostIndexContainer from "../posts/post_index_container";
 
 
 const NavBar = ({currentUser, id, logout, loggedIn}) => {
-
+  // debugger
+    const exploreItems = [];
+    const heartItems = [];
     let ha;
     (loggedIn) ?
       ha = (
@@ -20,8 +22,12 @@ const NavBar = ({currentUser, id, logout, loggedIn}) => {
               <input className="search-bar" type="text" placeholder="Search" /> 
               </div>
               <div className="nav-right">
-                <Link className="icon-explore" to="/"></Link>
-                <Link className="icon-heart" to="/"></Link>
+                <div className="icon-explore visibile">
+                  <ul className="hidden explore-list">{exploreItems}</ul> 
+                </div> 
+                <div className="icon-heart visibile">
+                  <ul className="hidden heart-list">{heartItems}</ul>
+                </div>
                 <Link className="icon-profile" to={`/users/${id}/posts`}></Link>
                 <div className="logout">
                   <button type="button" onClick={logout}>Logout</button>
