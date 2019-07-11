@@ -2,15 +2,32 @@ import React from 'react';
 import {Link, Redirect} from 'react-router-dom';
 import PostIndexContainer from "../posts/post_index_container";
 
+class NavBar extends React.Component {
+    constructor(props) {
+      super(props);
+    }
 
-const NavBar = ({currentUser, id, logout, loggedIn}) => {
-  // debugger
-    const exploreItems = [];
-    const heartItems = [];
-    let ha;
-    (loggedIn) ?
-      ha = (
-        <div>
+    // componentDidMount() {
+    //   if (this.props.loggedIn) {
+    //     this.props.fetchAllUsers()
+    //     this.props.fetchAllFollows();
+    //   }
+    // }
+    render() {
+      // if (this.props.users < 2) return null;
+        // const exploreItems = this.props.users
+       
+      //     .filter(user => user.id !== this.props.currentUser) 
+      //   .map(user => {
+      //       return (
+      //         <li key={user.id}>{user.username}</li>
+      //       )
+      //   })
+    
+        let nav;
+        (this.props.loggedIn) ?
+        nav = (
+          <div>
           <div className="nav-bar">
             <div className="nav-display"> 
               <div className="nav-left">
@@ -23,14 +40,14 @@ const NavBar = ({currentUser, id, logout, loggedIn}) => {
               </div>
               <div className="nav-right">
                 <div className="icon-explore visibile">
-                  <ul className="hidden explore-list">{exploreItems}</ul> 
+                  {/* <ul className="hidden explore-list">{exploreItems}</ul>  */}
                 </div> 
                 <div className="icon-heart visibile">
-                  <ul className="hidden heart-list">{heartItems}</ul>
+                  {/* <ul className="hidden heart-list">{heartItems}</ul> */}
                 </div>
-                <Link className="icon-profile" to={`/users/${id}/posts`}></Link>
+                <Link className="icon-profile" to={`/users/${this.props.id}/posts`}></Link>
                 <div className="logout">
-                  <button type="button" onClick={logout}>Logout</button>
+                  <button type="button" onClick={this.props.logout}>Logout</button>
                 </div>
               </div>
                 </div>
@@ -39,24 +56,16 @@ const NavBar = ({currentUser, id, logout, loggedIn}) => {
       
         </div>
       ) 
-      // : ha = (
-      //   <div>
-      //     <div className="nav-bar-bottom">
-      //       <a href="https://www.instagram.com/" className="nav-bar-bottom-text">REAL INSTAGRAM</a>
-      //       <a href="https://www.linkedin.com/in/jared-djourabchi-7a2932160/" className="nav-bar-bottom-text">LINKEDIN </a>
-      //       <a href="https://github.com/JaredDjour" className="nav-bar-bottom-text">GITHUB</a>
-      //       <a href="https://www.linkedin.com/in/jared-djourabchi-7a2932160/" className="nav-bar-bottom-text">PORTFOLIO SITE</a>
-      //     </div>
-      //     <h4 className="trademark">© 2019 INSTADJOUR</h4>
-      //   </div>
-      // );
-     : null; 
+      : null; 
+      
       return (
         <div>
-          {ha}
+          {nav}
         </div>
       )
+    }
   }
-  
-
-export default NavBar;
+    
+    
+    export default NavBar;
+    

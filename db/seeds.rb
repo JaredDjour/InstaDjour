@@ -27,7 +27,6 @@ post7 = Post.create!(caption: "Relax", user_id: demo_user.id)
 post8 = Post.create!(caption: "Mmmmmmm", user_id: jane.id)
 post9 = Post.create!(caption: "Purple's the color of royalty", user_id: john.id)
 post10 = Post.create!(caption: "Rainbow roses", user_id: jane.id)
-post11 = Post.create!(caption: "Under the Sea", user_id: demo_user.id)
 post13 = Post.create!(caption: "Enjoy the view", user_id: john.id)
 post14 = Post.create!(caption: "Sightseeing", user_id: demo_user.id)
 post15 = Post.create!(caption: "Travel with anyone other than John", user_id: jane.id)
@@ -64,9 +63,6 @@ post9.photo.attach(io: file9, filename: 'purple.jpg')
 
 file10 = open('https://instadjour-seeds.s3.us-east-2.amazonaws.com/rose.jpg')
 post10.photo.attach(io: file10, filename: 'rose.jpg')
-
-file11 = open('https://instadjour-seeds.s3.us-east-2.amazonaws.com/sea.jpg')
-post11.photo.attach(io: file11, filename: 'sea.jpg')
 
 file13 = open('https://instadjour-seeds.s3.us-east-2.amazonaws.com/sight1.jpg')
 post13.photo.attach(io: file13, filename: 'sight1.jpg')

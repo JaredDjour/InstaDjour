@@ -358,6 +358,7 @@
     right: 0;
     // background-color: white;
     position: fixed;
+    // overflow: scroll;
     // position: absolute;
     width: 230px;
     height: auto;
@@ -403,6 +404,7 @@
     border-radius: 4px;
     min-height: 148px;
     max-height: 450px;
+    overflow: scroll;
     // z-index: 3;
 }
 

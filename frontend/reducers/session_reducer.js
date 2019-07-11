@@ -12,7 +12,7 @@ const sessionReducer = (state = {}, action) => {
         return { id: null};
       default:
         return state;
-    };
+    }
 };
 
 export default sessionReducer;

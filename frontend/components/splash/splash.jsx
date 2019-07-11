@@ -14,7 +14,7 @@ import PostIndexContainer from '../posts/post_index_container';
         } else {
             return (
                 <div>
-                <SignupFormContainer />
+                    <SignupFormContainer />
                 </div>
             )
         }

@@ -61,15 +61,20 @@ class PostForm extends React.Component {
 
    render() { 
 
-       const preview_img = this.state.photoUrl ?
+        const preview_img = this.state.photoUrl ?
             <img className="create-post-img-preview" src={this.state.photoUrl}></img> 
             :
             null;
-        
-            const error = (this.state.caption && !this.state.photoUrl) ?
+       
+            
+        const error = (this.state.caption && !this.state.photoUrl) ?
         <div className="error">Attach a photo!</div>
         :
         null;
+
+        const button = (this.state.photoUrl && this.state.caption) ?
+           <button type="button" onClick={this.handleSubmit} className="create-post-button">Post</button>
+        : null;
     
        let userPic;
        if (this.props.username === "JaneDoe") {
@@ -102,8 +107,8 @@ class PostForm extends React.Component {
                     {error}
                         <input className="create-post-caption" type="text" placeholder="Caption" value={this.state.caption} onChange={this.handleChange("caption")} />
                     </label>
-                   <button type="button" onClick={this.handleSubmit} className="create-post-button">Post</button>
-               </form>
+                    {button}
+                </form>
            </div>
        )
    }
