@@ -1,7 +1,6 @@
 @follows.each do |follow|
    json.set! follow.id do
       json.extract! follow, :id, :follower_id, :following_id
-      debugger
       json.extract! follow.follower, :username
       json.extract! follow.followed, :username
    end

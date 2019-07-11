@@ -14,10 +14,12 @@ class PostIndex extends React.Component {
         this.props.fetchAllComments();
         this.props.fetchAllLikes();
         this.props.fetchAllUsers();
+        this.props.fetchAllFollows();
     }
 
  
     render(){
+
         const posts = this.props.posts.reverse().map((post) => <PostIndexItem key={post.id} post={post} deletePost={this.props.deletePost}/>);
         return (
         <div className="all">

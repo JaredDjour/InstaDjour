@@ -49,17 +49,17 @@ class Follows extends React.Component {
     render() {
         const follows = Object.values(this.props.follows);
         const followers = follows.filter(follow => follow.following_id === this.props.followingId)
-        .map(follower => {
-            debugger
-            return (
-            <li key={follower.id}>{follower.username}</li>
-            )});
+        // .map(follower => {
+            
+        //     return (
+        //     <li key={follower.id}>{follower.follower_id}</li>
+        //     )});
 
         const following = follows.filter(follow => follow.follower_id === this.props.followingId)
-        .map(followed => {
-            return (
-                <li key={followed.id}>{followed.username}</li>
-            )});
+        // .map(followed => {
+        //     return (
+        //         <li key={followed.id}>{followed.username}</li>
+        //     )});
 
         const count = (followers.length) ?
             followers.length
@@ -87,11 +87,11 @@ class Follows extends React.Component {
                 <div className="followers-and-following-container">
                     <h2 className="followers-count">{count}
                         <div className="followers">{followerS}</div>
-                        <ul>{followers}</ul> 
+                        {/* <ul>{followers}</ul>  */}
                     </h2>
                     <h2 className="following-count">{count2}
                         <div className="following">following</div>
-                        <ul>{following}</ul>
+                        {/* <ul>{following}</ul> */}
                     </h2>
                 </div>
             </div>
