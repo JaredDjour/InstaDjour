@@ -19,8 +19,16 @@ class PostIndex extends React.Component {
 
  
     render(){
+        const follows = Object.values(this.props.follows); 
+        const followed = follows.filter(follow => follow.follower_id === this.props.currentUser);
+        const following = [];
+        followed.forEach((follow) => {
+            following.push(follow.following_id);
+        });
 
-        const posts = this.props.posts.reverse().map((post) => <PostIndexItem key={post.id} post={post} deletePost={this.props.deletePost}/>);
+        const posts = this.props.posts.filter(post => following.includes(post.user_id))
+        .reverse().map((post) => <PostIndexItem key={post.id} post={post} deletePost={this.props.deletePost}/>);
+        
         return (
         <div className="all">
             <ul>{posts}</ul>
