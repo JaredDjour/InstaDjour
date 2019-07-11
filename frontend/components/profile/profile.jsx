@@ -30,10 +30,11 @@ class Profile extends React.Component {
             profilePic = <img className="profile-pic-jane" src="https://image.flaticon.com/icons/svg/219/219990.svg" /> 
         } else if (this.props.username === "JohnTho") {
             profilePic = <img className="profile-pic-john" src="https://countrybutchers.co.uk/wp-content/uploads/2016/05/Man-Placeholder-768x512.jpg" /> 
-        } else profilePic = <img className="profile-pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQviq0vi_kFNfszVCvxMb8BKc26jnVeQtWTFoH1LxLhBO1PXP8O" />
-    
-      
-        if (!this.props.username) return null;
+        } else if (this.props.username === "DemoUser") {
+            profilePic = <img className="profile-pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQviq0vi_kFNfszVCvxMb8BKc26jnVeQtWTFoH1LxLhBO1PXP8O" />
+        } else profilePic = <img className="profile-pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQviq0vi_kFNfszVCvxMb8BKc26jnVeQtWTFoH1LxLhBO1PXP8O"/>
+
+         if (!this.props.username) return null;
 
         // const profilePic = <img className="profile-pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQviq0vi_kFNfszVCvxMb8BKc26jnVeQtWTFoH1LxLhBO1PXP8O" />
         
@@ -53,7 +54,7 @@ class Profile extends React.Component {
             "post"
             :
             "posts";
-
+        
         return (
             <div>
                 <div className="space"></div>
@@ -66,7 +67,8 @@ class Profile extends React.Component {
                         </div>
                     </div>
                     <div className="right-profile-info">
-                        <h1 className="username">{this.props.username}</h1>
+                        <h1 className="username">{this.props.username}
+                        </h1>
                         <FollowsContainer followingId={this.props.userId} follows={this.props.follows}/>
                         <h2 className="posts-count">{posts.length}
                             <div className="posts">{postsString}</div>

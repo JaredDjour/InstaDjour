@@ -48,23 +48,52 @@ class Follows extends React.Component {
 
     render() {
         const follows = Object.values(this.props.follows);
-        const followCount = follows.filter(follow => follow.following_id === this.props.followingId).length;
+        const followers = follows.filter(follow => follow.following_id === this.props.followingId)
+        .map(follower => {
+            debugger
+            return (
+            <li key={follower.id}>{follower.username}</li>
+            )});
 
-        const count = (followCount) ?
-            followCount
+        const following = follows.filter(follow => follow.follower_id === this.props.followingId)
+        .map(followed => {
+            return (
+                <li key={followed.id}>{followed.username}</li>
+            )});
+
+        const count = (followers.length) ?
+            followers.length
             :
             "0";
-        const followers = (count === 1) ?
+        const followerS = (count === 1) ?
             "follower"
             :
             "followers";
-
+        const count2 = (following.length) ?
+            following.length
+            :
+            "0";
+        // const following = (count === 1) ?
+        //     "follower"
+        //     :
+        //     "followers";
+        const follow = (this.following(this.props.followingId)) ?
+            "Following"
+            :
+            "Follow";
         return (
             <div>
-                <button className="follow-button" onClick={this.handleClick}>Follow</button>
-                <h2 className="followers-count">{count}
-                    <div className="followers">{followers}</div>
-                </h2>
+                <button className="follow-button" onClick={this.handleClick}>{follow}</button>
+                <div className="followers-and-following-container">
+                    <h2 className="followers-count">{count}
+                        <div className="followers">{followerS}</div>
+                        <ul>{followers}</ul> 
+                    </h2>
+                    <h2 className="following-count">{count2}
+                        <div className="following">following</div>
+                        <ul>{following}</ul>
+                    </h2>
+                </div>
             </div>
         )
     }

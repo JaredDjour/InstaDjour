@@ -35,11 +35,13 @@ class User < ApplicationRecord
   
     has_many :follows,
     primary_key: :id,
-    foreign_key: :following_id,
+    foreign_key: :follower_id,
     class_name: :Follow
 
     has_many :followers,
-    through: :follows
+    primary_key: :id,
+    foreign_key: :following_id,
+    class_name: :Follow 
 
     after_initialize :ensure_session_token
     attr_reader :password

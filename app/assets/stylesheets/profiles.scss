@@ -120,6 +120,10 @@
     background: #ebebeb;
 }
 
+.followers-and-following-container {
+    display: flex;
+}
+
 .followers-count {
     font-size: 12px;
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -130,6 +134,23 @@
 }
 
 .followers {
+    font-size: 12px;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 200;
+    padding: 0px 0px 0px 4px;
+    width: auto; 
+}
+
+.following-count {
+    font-size: 12px;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    padding: 14px 30px 14px 0px;
+    width: 100%;
+    display: flex; 
+}
+
+.following {
     font-size: 12px;
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-weight: 200;
