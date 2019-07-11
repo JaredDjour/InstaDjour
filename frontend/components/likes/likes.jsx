@@ -3,12 +3,12 @@ import React from 'react';
 class Likes extends React.Component {
     constructor(props) {
         super(props);
-        this.getLike = this.getLike.bind(this);
-        this.liked = this.liked.bind(this);
-        this.handleLike = this.handleLike.bind(this);
+        this.fetchLike = this.fetchLike.bind(this);
+        this.liking = this.liking.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    getLike(likeableId) {
+    fetchLike(likeableId) {
         const likes = Object.values(this.props.likes);
 
         for (let i = 0; i < likes.length; i++) {
@@ -19,7 +19,7 @@ class Likes extends React.Component {
         }
     }
 
-    liked(likeableId) {
+    liking(likeableId) {
         const likes = Object.values(this.props.likes);
 
         for (let i = 0; i < likes.length; i++) {
@@ -31,15 +31,15 @@ class Likes extends React.Component {
         return false;
     }
 
-    handleLike() {
+    handleClick() {
         const like = {
             user_id: this.props.currentUser,
             likeable_type: "Post",
             likeable_id: this.props.postId,
         };
 
-        if (this.liked(like.likeable_id)) {
-            const likeId = this.getLike(like.likeable_id);
+        if (this.liking(like.likeable_id)) {
+            const likeId = this.fetchLike(like.likeable_id);
             this.props.deleteLike(likeId);
         } else {
             this.props.createLike(like);
@@ -56,10 +56,10 @@ class Likes extends React.Component {
             :
             null; 
 
-        if (this.liked(this.props.postId)) {
+        if (this.liking(this.props.postId)) {
             return (
                 <div className="post-options">
-                    <div className="post-options-heart-filled" onClick={this.handleLike}></div>
+                    <div className="post-options-heart-filled" onClick={this.handleClick}></div>
                     <div className="like-count">{count}</div>
                     <div className="post-options-comment"></div>
                     {/* <div className="post-options-bookmark"></div> */}
@@ -69,7 +69,7 @@ class Likes extends React.Component {
         else {
             return (
                 <div className="post-options">
-                    <div className="post-options-heart" onClick={this.handleLike}></div>
+                    <div className="post-options-heart" onClick={this.handleClick}></div>
                     <div className="like-count">{count}</div>
                     <div className="post-options-comment"></div>
                     {/* <div className="post-options-bookmark"></div> */}

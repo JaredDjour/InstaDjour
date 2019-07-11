@@ -18,12 +18,12 @@ const mdp = dispatch => ({
 class CommentLikes extends React.Component {
     constructor(props) {
         super(props);
-        this.getLike = this.getLike.bind(this);
-        this.liked = this.liked.bind(this);
-        this.handleLike = this.handleLike.bind(this);
+        this.fetchLike = this.fetchLike.bind(this);
+        this.liking = this.liking.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    getLike(likeableId) {
+    fetchLike(likeableId) {
         const likes = Object.values(this.props.likes);
 
         for (let i = 0; i < likes.length; i++) {
@@ -34,7 +34,7 @@ class CommentLikes extends React.Component {
         }
     }
 
-    liked(likeableId) {
+    liking(likeableId) {
         const likes = Object.values(this.props.likes);
 
         for (let i = 0; i < likes.length; i++) {
@@ -46,15 +46,15 @@ class CommentLikes extends React.Component {
         return false;
     }
 
-    handleLike() {
+    handleClick() {
         const like = {
             user_id: this.props.currentUser,
             likeable_type: "Comment",
             likeable_id: this.props.commentId,
         };
 
-        if (this.liked(like.likeable_id)) {
-            const likeId = this.getLike(like.likeable_id);
+        if (this.liking(like.likeable_id)) {
+            const likeId = this.fetchLike(like.likeable_id);
             this.props.deleteLike(likeId);
         } else {
             this.props.createLike(like);
@@ -71,10 +71,10 @@ class CommentLikes extends React.Component {
             :
             null;
 
-        if (this.liked(this.props.commentId)) {
+        if (this.liking(this.props.commentId)) {
             return (
                 <div className="comment-likes">
-                    <div className="comment-heart-filled" onClick={this.handleLike}></div>
+                    <div className="comment-heart-filled" onClick={this.handleClick}></div>
                     <div className="comment-like-count">{count}</div>
                 </div>
             )
@@ -82,7 +82,7 @@ class CommentLikes extends React.Component {
         else {
             return (
                 <div className="comment-likes">
-                    <div className="comment-heart" onClick={this.handleLike}></div>
+                    <div className="comment-heart" onClick={this.handleClick}></div>
                     <div className="comment-like-count">{count}</div>
                 </div>
             )

@@ -29,7 +29,7 @@ class PostIndexItem extends React.Component {
   
     render(){
         const deletePost = (this.props.username === this.props.currentUser) ?
-               (<li className="post-auth-options-delete" onClick={this.handleDelete}>Delete Post</li>) :
+            (<li className="post-auth-options-delete post-auth-options-list-item" onClick={this.handleDelete}>Delete Post</li>) :
                null;
 
         return (
@@ -37,11 +37,14 @@ class PostIndexItem extends React.Component {
                 <div className="post-auth-container">
                     <div className="post-auth-image"></div>
                     <Link className="post-auth" to={`/users/${this.state.user_id}/posts`}>{this.props.username}</Link>
-                    <div className="post-auth-options visible"></div>
-                    <ul className="post-auth-options-list hidden">
-                        {deletePost}
-                        <li><a href="/posts/${this.state.id}">Show Post</a></li> 
-                    </ul>
+                    
+                    <div className="post-auth-options visible">
+                        
+                        <ul className="post-auth-options-list hidden">
+                            <li className="post-auth-options-list-item"><a className="post-auth-options-list-item-show" href={`/#/posts/${this.state.id}`}>Show Post</a></li> 
+                            {deletePost}
+                        </ul>
+                    </div>
                 </div>
                 <div className="post-photo-container">
                     <img className="photos" src={this.state.photoUrl}></img> 

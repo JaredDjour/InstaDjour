@@ -27,18 +27,45 @@
     height: 5px;
     width: 16px;
     margin-top: 22px;
-    cursor: pointer;
+    // cursor: pointer;
     margin-left: 340px; 
 }
 
 .post-auth-options-list:hover {
-    background: blue;
+    // background: blue;
+    margin-bottom: 10px;
+    z-index: 5;
 }
 .post-auth-options-list {
+    z-index: 5;
+    margin-top: 5px;
+    font-size: 10px;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    // font-weight: 500;
+    text-decoration: none;
 }
 
+.post-auth-options-list-item {
+    padding: 4px 15px;
+    // background: transparent;
+    background: white;
+    border: 1px solid #ebebeb;
+    border-radius: 1px;
+    z-index: 5;
+    font-size: 10px;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    // cursor: pointer;
+}
+.post-auth-options-list-item-show {
+    text-decoration: none;
+    color: black;
+}
 .post-auth-options-delete {
     display: hidden;
+    cursor: pointer;
 }
 
 .post-auth-container {
@@ -66,8 +93,9 @@
 }
 
 .post-photo-container {
-  border: solid #e6e6e6 1px;
+//   border: solid black 0.5px;
   width: 100%; 
+//   height: 100%;
 }
 
 .post-caption {
@@ -403,7 +431,10 @@
     font-size: 13px;;
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;;
     padding-top: 4px;
+    cursor: pointer;
 }
+.create-post-choose-file:focus {outline:0;}
+
 .create-post-file-input {
     display: none; 
 }
@@ -465,8 +496,9 @@
     font-weight: 400;
     font-size: 13px;;
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    cursor: pointer;
 }
-
+.create-post-button:focus{outline:0;}
 
 .individual-post-show {
     display: flex;
@@ -479,9 +511,10 @@
     // padding-top: 7%; 
 }
 .post-show-left {
-    width: 400px;
-    height: auto;
-    border: 1px solid #fafafa;
+    width: 478px;
+    height: 100%;
+    // border: solid black 0.5px;
+    border: solid #e6e6e6 1px;
 }
 
 .post-show-right {

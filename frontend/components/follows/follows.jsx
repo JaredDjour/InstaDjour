@@ -89,7 +89,7 @@ class Follows extends React.Component {
                 <div className="followers-and-following-container">
                     <h2 className="followers-count">{count}
                         <div className="followers visible">{followerS}
-                        <ul className="hidden follower-and-following-list">{followers}</ul> 
+                            <ul className="hidden follower-and-following-list">{followers}</ul> 
                         </div>
                     </h2>
                     <h2 className="following-count">{count2}
