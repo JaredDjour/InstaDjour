@@ -78,6 +78,7 @@
     font-size: 10px;
     cursor: pointer;
 }
+.comment-options:focus {outline:0;}
 
 .add-comment{
     border: solid 1px #dbdbdb;
@@ -93,6 +94,9 @@
     margin-bottom: 7px;
     margin-top: -4px;
 }
+
+.add-comment:focus {outline:0;}
+
 .create-comment_button {
     color: #3897f0;
     background: #fafafa;
@@ -102,7 +106,7 @@
     position: absolute;
     margin: -35px 0 0 434px;
 }
-
+.create-comment_button:focus {outline:0;}
 .comment-heart {
     // background-image: url("https://images.vexels.com/media/users/3/147091/isolated/preview/5f8a1ea9c90ceed8d92999bc824417eb-instagram-heart-icon-by-vexels.png");
     background-image: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-heart-outline-512.png"); 

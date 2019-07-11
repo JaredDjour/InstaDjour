@@ -117,9 +117,28 @@
 
 
 .follow-button {
-    background: #ebebeb;
     margin: 10px 0 0 0;
+    background: #3897f0;
+    border-color: #3897f0;
+    color: #fff;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    border-radius: 2px;
+    padding: 3px 10px;
 }
+
+.following-button {
+    // background: #ebebeb;
+    border-color: #dbdbdb;
+    color: #262626;
+    margin: 10px 0 0 0;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    border-radius: 2px;
+    padding: 3px 10px;
+}
+.follow-button:focus {outline:0;}
+.following-button:focus {outline:0;}
 
 .followers-and-following-container {
     display: flex;

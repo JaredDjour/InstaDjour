@@ -77,13 +77,15 @@ class Follows extends React.Component {
         //     "follower"
         //     :
         //     "followers";
+
         const follow = (this.following(this.props.followingId)) ?
-            "Following"
+            <button className="following-button" onClick={this.handleClick}>Following</button>
             :
-            "Follow";
+            <button className="follow-button" onClick={this.handleClick}>Follow</button>;
+        
         return (
             <div>
-                <button className="follow-button" onClick={this.handleClick}>{follow}</button>
+                {follow}
                 <div className="followers-and-following-container">
                     <h2 className="followers-count">{count}
                         <div className="followers visible">{followerS}

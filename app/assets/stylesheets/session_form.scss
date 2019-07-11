@@ -245,6 +245,8 @@
     cursor: pointer;
     z-index: 1;
 }
+.demo-button:focus {outline:0;}
+
 .main{
     margin: 30px -10px 0 0px;
     // margin: 0 0 0 -8px;
@@ -303,6 +305,7 @@
     font-weight: 100;
     padding: 1px 5px;
 }
+.login-input:focus {outline:0;}
 
 .session-submit {
     display: flex;
@@ -416,12 +419,10 @@
     display: flex;
     // flex-direction: row;
     justify-content: center;
-    // width: 295px;
     width: 100%;
-    padding: 15px;
-    // position: fixed;
-    position: absolute;
-    bottom: 0;
+    // padding: 15px;
+    // position: absolute;
+    // bottom: 0;
     // margin-left: 450px;
     // margin: 5px auto auto auto;
     margin-left: auto;
@@ -440,9 +441,9 @@
 .trademark{
     display: flex;
     flex-direction: row;
-    bottom: 0;
-    // position: fixed;
-    position: absolute;
+    // // bottom: 0;
+    // // position: fixed;
+    // position: absolute;
     justify-content: center;
     font-size: 9px;
     color: #999;
