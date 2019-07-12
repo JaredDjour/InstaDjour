@@ -7,7 +7,7 @@ import {fetchAllFollows} from "../../actions/follow_actions";
 import PostIndex from "./post_index";
 
 
-const msp = state => {
+const msp = (state) => {
     return {
         posts: Object.values(state.entities.posts),
         follows: Object.values(state.entities.follows),
@@ -15,6 +15,8 @@ const msp = state => {
         comments: Object.values(state.entities.comments),
         likes: Object.values(state.entities.likes),
         currentUser: state.session.id,
+        username: state.entities.users[state.session.id].username,
+        firstName: state.entities.users[state.session.id].full_name.split(" ")[0],
     };
 };
 

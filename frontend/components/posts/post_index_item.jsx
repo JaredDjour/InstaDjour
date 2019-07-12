@@ -19,6 +19,7 @@ class PostIndexItem extends React.Component {
         super(props);
         this.state = this.props.post;
         this.handleDelete = this.handleDelete.bind(this);
+        // this.clickCount = 0;
     }
 
     handleDelete(e) {
@@ -27,6 +28,13 @@ class PostIndexItem extends React.Component {
         this.props.deletePost(this.state.id);
     }
 
+    // wanted to have double-click photo for like but meh
+    // handleClick() {
+    //     this.clickCount += 1;
+    //     if (this.clickCount === 2) {
+    //         this.props.likes.includ
+    //     }
+    // }
 
     render(){
         const deletePost = (this.props.username === this.props.currentUser) ?

@@ -10,10 +10,10 @@ class PostForm extends React.Component {
            photoUrl: null,
            user_id: null
        };
-    //    this.state = this.props.post;
-       this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
        this.handleChange = this.handleChange.bind(this);
        this.handleFile = this.handleFile.bind(this);
+       this.handleEnter = this.handleEnter.bind(this);
    }
 
    handleSubmit(e) {
@@ -36,16 +36,33 @@ class PostForm extends React.Component {
            }
        );
         this.setState({ caption: "", photoFile: null, photoUrl: null, userId: null });
-    
+    }
 
-   }
+    handleEnter(e) {
+        if (event.keyCode === 13) {
+            e.preventDefault();
+            const formData = new FormData();
+            formData.append('post[caption]', this.state.caption);
+            formData.append('post[userId]', this.state.userId);
 
-   //What's the difference between e.target vs e.currentTarget?
-   handleChange(field) {
+            if (this.state.photoFile) {
+
+                formData.append('post[photo]', this.state.photoFile);
+            }
+
+            this.props.action(formData).then(
+                (response) => console.log(response.message),
+                (response) => {
+                    console.log(response.responseJSON);
+                }
+            );
+            this.setState({ caption: "", photoFile: null, photoUrl: null, userId: null });
+        }
+    }
+
+    handleChange(field) {
        return e => this.setState({[field]: e.target.value});
-    
-   }
-
+     }
 
     handleFile(e) {
         const reader = new FileReader();
@@ -109,7 +126,7 @@ class PostForm extends React.Component {
                     {preview_img}
                     <label className="create-post-caption-container">
                     {error}
-                        <input className="create-post-caption" type="text" placeholder="Caption" value={this.state.caption} onChange={this.handleChange("caption")} />
+                       <input className="create-post-caption" type="text" placeholder="Caption" value={this.state.caption} onChange={this.handleChange("caption")} onKeyUp={this.handleEnter} />
                     </label>
                    <button type="button" disabled={!this.state.photoUrl || !this.state.caption} onClick={this.handleSubmit} className="create-post-button">Post</button>
                 </form>
