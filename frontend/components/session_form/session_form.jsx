@@ -30,12 +30,6 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e){
-    // if (this.props.formType === "Sign up"){
-
-    // }else if (this.props.formType === "Log in"){
-
-    // }
-
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
@@ -45,7 +39,7 @@ class SessionForm extends React.Component {
   handleDemo(e) {
     e.preventDefault();
     const demoUser = Object.assign({}, {username: "DemoUser", password: "DemoUser"});
-    this.props.processDemo(demoUser)
+    this.props.processDemo(demoUser);
     // .then(() => this.props.history.push("/"));
   }
 
@@ -75,20 +69,21 @@ class SessionForm extends React.Component {
         let left;
         let bottom;
         let demo = (
-      <div>
-        <button type="button" onClick={this.handleDemo} className="demo-button">Log in as Demo User</button>
-        <div className="demo-icon"></div>
+      <div className="demo-button-container">
+        <button type="button" onClick={this.handleDemo} className="demo-button">Log in as a Demo User</button>
+         <div className="demo-icon"></div>
       </div>
     )
     let sessionSubmit = (
-      <input className="session-submit" type="submit" value={this.props.formType} />
+      <input className="session-submit" type="submit" value={this.props.formType} onSubmit={this.handleSubmit}/>
     );
     if (this.props.formType === "Sign Up"){
       main = 
-        (  
-          <label>
-            <h2 className="logo-greet">Sign up to see photos and videos from your friends. </h2>
+        ( 
+          <div> 
+          <h2 className="logo-greet">Sign up to see photos and videos from your friends. </h2>
             {demo}
+          <label>
           <h3 className="or"> OR</h3>
             <input className="login-input" type="text"
               placeholder="Mobile Number or email" value={this.state.email}
@@ -107,6 +102,7 @@ class SessionForm extends React.Component {
               onChange={this.handleChange('password')} />
           {sessionSubmit} 
           </label>
+        </div> 
         )
         bottom = (
           <div className="terms-container">
@@ -147,7 +143,7 @@ class SessionForm extends React.Component {
           <div className="login-form-container">
             <h1 className="logo">Instadjour</h1>
 
-            <form onSubmit={this.handleSubmit} className="login-form-box">
+            <form className="login-form-box">
             
              
                 <div className="login-form">
