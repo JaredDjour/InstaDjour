@@ -8,6 +8,7 @@ class SessionForm extends React.Component {
     this.state = {email: "", fullName: "", username: "", password: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
+    this.handleEnter = this.handleEnter.bind(this);
     // this.changeBg = this.changeBg.bind(this);
   }
 
@@ -34,6 +35,16 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
     // .then(() => this.props.history.push("/"));
+  }
+
+  handleEnter(e) {
+    if (event.keyCode === 13) {
+      e.preventDefault();
+      const user = Object.assign({}, this.state);
+      if (user.username && user.password) {
+        this.props.processForm(user);
+      }
+    }
   }
 
   handleDemo(e) {
@@ -87,19 +98,19 @@ class SessionForm extends React.Component {
           <h3 className="or"> OR</h3>
             <input className="login-input" type="text"
               placeholder="Mobile Number or email" value={this.state.email}
-              onChange={this.handleChange('email')} />
+              onChange={this.handleChange('email')} onKeyUp={this.handleEnter} />
             
             <input className="login-input" type="text"
               placeholder="Full Name" value={this.state.fullName}
-              onChange={this.handleChange('fullName')} />
+              onChange={this.handleChange('fullName')} onKeyUp={this.handleEnter}/>
             
             <input className="login-input" type="text"
               placeholder="Username" value={this.state.username}
-              onChange={this.handleChange('username')} />
+              onChange={this.handleChange('username')} onKeyUp={this.handleEnter}/>
             {/* <br/>   */}
             <input className="login-input" type="password" value={this.state.password}
               placeholder="Password"
-              onChange={this.handleChange('password')} />
+              onChange={this.handleChange('password')} onKeyUp={this.handleEnter}/>
           {sessionSubmit} 
           </label>
         </div> 
@@ -122,11 +133,11 @@ class SessionForm extends React.Component {
         <label>
         <input className="login-input" type="text"
           placeholder="Phone number, username, or email" value={this.state.username}
-          onChange={this.handleChange('username')} />
+            onChange={this.handleChange('username')} onKeyUp={this.handleEnter}/>
         
         <input className="login-input" type="password" value={this.state.password}
           placeholder="Password"
-          onChange={this.handleChange('password')}/>
+            onChange={this.handleChange('password')} onKeyUp={this.handleEnter}/>
           {sessionSubmit}
           <h3 className="or"> OR</h3>
           {demo}
