@@ -84,11 +84,12 @@ class PostForm extends React.Component {
             :
             null;
        
-            
-        const error = (this.state.caption && !this.state.photoUrl) ?
-        <div className="error">Attach a photo!</div>
-        :
-        null;
+        let error;
+        if (this.state.caption && !this.state.photoUrl) {
+            error = <div className="error">Attach a photo!</div>;
+        } else if (!this.state.caption && this.state.photoUrl) {
+            error = <div className="error">Add a Caption!</div>;
+        } else error = null;
 
        let userPic;
        if (this.props.username === "JaneDoe") {
