@@ -30,9 +30,9 @@ class PostIndex extends React.Component {
         const posts = this.props.posts
         .filter(post => following.includes(post.user_id) || post.user_id === this.props.currentUser)
         .reverse().map((post) => <PostIndexItem key={post.id} post={post} deletePost={this.props.deletePost}/>);
-    
+        
         const greeting = (!posts.length) ?
-            <h1 className="initial-greeting">Hey {this.props.firstName || this.props.username},
+            <h1 className="initial-greeting">Hey {this.props.fullName.split(" ")[0] || this.props.username},
                 <br/>
                 click on the explore icon above to start following other users!</h1>
             : null;

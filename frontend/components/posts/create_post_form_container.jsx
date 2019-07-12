@@ -5,6 +5,7 @@ import {withRouter} from 'react-router-dom';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const msp = state => {
+    debugger
     return {
         // post: {caption: ""}
         post: {    

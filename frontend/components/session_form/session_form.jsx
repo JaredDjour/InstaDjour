@@ -5,7 +5,7 @@ import {Link, Redirect} from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {email: "", fullName: "", username: "", password: ""};
+    this.state = {email: "", full_name: "", username: "", password: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
@@ -105,8 +105,8 @@ class SessionForm extends React.Component {
           </label>
           <label>
             <input className="login-input" type="text"
-              placeholder="Full Name" value={this.state.fullName}
-              onChange={this.handleChange('fullName')} onKeyUp={this.handleEnter}/>
+              placeholder="Full Name" value={this.state.full_name}
+              onChange={this.handleChange('full_name')} onKeyUp={this.handleEnter}/>
           </label> 
           <label>
             <input className="login-input" type="text"

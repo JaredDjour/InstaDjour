@@ -16,7 +16,7 @@ const msp = (state) => {
         likes: Object.values(state.entities.likes),
         currentUser: state.session.id,
         username: state.entities.users[state.session.id].username,
-        firstName: state.entities.users[state.session.id].full_name.split(" ")[0],
+        fullName: state.entities.users[state.session.id].full_name,
     };
 };
 
