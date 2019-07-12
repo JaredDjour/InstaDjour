@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 class PostForm extends React.Component {
    constructor(props){
@@ -88,8 +89,15 @@ class PostForm extends React.Component {
                 {/* <div className="index-right-user-pic"></div> */}
                 {userPic}
                 <div className="index-right-user-names-container">
-                        <h2 className="index-right-current-user">{this.props.username}</h2>
-                        <h2 className="index-right-user-name">{this.props.fullName}</h2>
+                        <Link className="index-right-current-user" 
+                            to={`/users/${this.props.currentUser}/posts`}>
+                            {this.props.username}
+                        </Link>
+                        <br/>
+                        <Link className="index-right-user-name" 
+                            to={`/users/${this.props.currentUser}/posts`}>
+                            {this.props.fullName}
+                        </Link>
                 </div>
                </div>
                <form className="create-post-form">

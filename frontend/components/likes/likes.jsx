@@ -6,6 +6,8 @@ class Likes extends React.Component {
         this.fetchLike = this.fetchLike.bind(this);
         this.liking = this.liking.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.commentForm = React.createRef();
+        this.handleComment = this.handleComment.bind(this);
     }
 
     fetchLike(likeableId) {
@@ -46,6 +48,12 @@ class Likes extends React.Component {
         }
     }
 
+      
+    handleComment() {
+        console.log(this.commentForm); 
+        $('.add-comment').first().focus();
+     
+    }
 
     render() {
         const likes = Object.values(this.props.likes);
@@ -61,7 +69,7 @@ class Likes extends React.Component {
                 <div className="post-options">
                     <div className="post-options-heart-filled" onClick={this.handleClick}></div>
                     <div className="like-count">{count}</div>
-                    <div className="post-options-comment"></div>
+                    <div className="post-options-comment" onClick={() => {this.handleComment()}}></div>
                     {/* <div className="post-options-bookmark"></div> */}
                 </div>
             )
@@ -71,7 +79,7 @@ class Likes extends React.Component {
                 <div className="post-options">
                     <div className="post-options-heart" onClick={this.handleClick}></div>
                     <div className="like-count">{count}</div>
-                    <div className="post-options-comment"></div>
+                    <div className="post-options-comment" onClick={() => {this.handleComment()}}></div>
                     {/* <div className="post-options-bookmark"></div> */}
                 </div>
             )

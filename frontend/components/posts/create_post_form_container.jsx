@@ -15,6 +15,7 @@ const msp = state => {
             // username: state.entities.posts.id.username
         },
         username: state.entities.users[state.session.id].username,
+        currentUser: state.session.id,
         fullName: state.entities.users[state.session.id].full_name,
     };
 };

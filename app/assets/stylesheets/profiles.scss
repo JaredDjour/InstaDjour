@@ -201,4 +201,10 @@
 }
 .follower-and-following-list-item {
     display: flex;
+    margin: 7px 0 0 -7px;
+}
+
+.follower-and-following-list-item-link {
+    text-decoration: none;
+    color: black;
 }

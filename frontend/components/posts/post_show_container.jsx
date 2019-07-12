@@ -11,6 +11,8 @@ const msp = (state, ownProps) => {
     return {
         post: state.entities.posts[ownProps.match.params.postId],
         likes: state.entities.likes,
+        users: Object.values(state.entities.users),
+        posts: Object.values(state.entities.posts),
         // username: state.entities.posts.username
         
     };

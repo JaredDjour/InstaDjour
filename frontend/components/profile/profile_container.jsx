@@ -21,6 +21,8 @@ const msp = (state, ownProps) => {
         fullName,
         email,
         follows: state.entities.follows,
+        users: Object.values(state.entities.users), 
+        allPosts: Object.values(state.entities.posts), 
     };
 };
 

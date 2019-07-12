@@ -1,5 +1,6 @@
 import React from 'react';
-
+import {Link} from "react-router-dom";
+ 
 class Follows extends React.Component {
     constructor(props) {
         super(props);
@@ -50,15 +51,25 @@ class Follows extends React.Component {
         const follows = Object.values(this.props.follows);
         const followers = follows.filter(follow => follow.following_id === this.props.followingId)
         .map(follower => {
-            
+            const users = this.props.users;
+ 
             return (
-                <li key={follower.id} className="follower-and-following-list-item">{follower.follower_id}</li>
+                // <li key={follower.id} className="follower-and-following-list-item">{follower.follower_id}</li>
+                <li key={follower.id} className="follower-and-following-list-item">
+                    <Link className="follower-and-following-list-item-link" to={`/users/${follower.follower_id}/posts`}> 
+                        {users.filter(user => user.id === follower.follower_id)[0].username }
+                    </Link>
+                </li>
             )});
 
         const following = follows.filter(follow => follow.follower_id === this.props.followingId)
         .map(followed => {
             return (
-                <li key={followed.id} className="follower-and-following-list-item">{followed.username}</li>
+                <li key={followed.id} className="follower-and-following-list-item">
+                    <Link className="follower-and-following-list-item-link" to={`/users/${followed.following_id}/posts`}>
+                    {followed.username}
+                    </Link>
+                </li>
             )});
 
         const count = (followers.length) ?

@@ -58,7 +58,7 @@ class Profile extends React.Component {
         
         return (
             <div>
-                <NavBarContainer />
+                <NavBarContainer posts={this.props.allPosts} users={this.props.users}/>
                 <div className="space"></div>
                 <div className="all-profile-info-container"> 
                 <div className="all-profile-info">
@@ -71,7 +71,7 @@ class Profile extends React.Component {
                     <div className="right-profile-info">
                         <h1 className="username">{this.props.username}
                         </h1>
-                        <FollowsContainer followingId={this.props.userId} follows={this.props.follows}/>
+                        <FollowsContainer users={this.props.users} followingId={this.props.userId} follows={this.props.follows}/>
                         <h2 className="posts-count">{posts.length}
                             <div className="posts">{postsString}</div>
                         </h2>

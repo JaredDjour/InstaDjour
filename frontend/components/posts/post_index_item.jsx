@@ -26,7 +26,8 @@ class PostIndexItem extends React.Component {
         e.preventDefault();
         this.props.deletePost(this.state.id);
     }
-  
+
+
     render(){
         const deletePost = (this.props.username === this.props.currentUser) ?
             (<li className="post-auth-options-delete post-auth-options-list-item" onClick={this.handleDelete}>Delete Post</li>) :
