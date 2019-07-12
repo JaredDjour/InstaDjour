@@ -31,6 +31,7 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e){
+    debugger
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
@@ -82,13 +83,13 @@ class SessionForm extends React.Component {
         let demo = (
       <label className="demo-button-container">
         <button type="button" onClick={this.handleDemo} className="demo-button">Log in as a Demo User</button>
-         <div className="demo-icon"></div>
+        <div className="demo-icon"></div>
       </label>
     )
     let sessionSubmit = (
-      <label>  
-        <input className="session-submit" type="submit" value={this.props.formType} onSubmit={this.handleSubmit}/>
-      </label>
+      // <label>  
+        <input className="session-submit" type="submit" value={this.props.formType} onClick={this.handleSubmit}/>
+      // </label>
     );
     if (this.props.formType === "Sign Up"){
       main = 
@@ -145,8 +146,8 @@ class SessionForm extends React.Component {
             <input className="login-input" type="password" value={this.state.password}
               placeholder="Password"
               onChange={this.handleChange('password')} onKeyUp={this.handleEnter}/>
-              {sessionSubmit}
           </label> 
+          {sessionSubmit}
           <h3 className="or"> OR</h3>
           {demo}
         </div>

@@ -6,7 +6,6 @@ class Likes extends React.Component {
         this.fetchLike = this.fetchLike.bind(this);
         this.liking = this.liking.bind(this);
         this.handleClick = this.handleClick.bind(this);
-        this.commentForm = React.createRef();
         this.handleComment = this.handleComment.bind(this);
     }
 
@@ -50,9 +49,7 @@ class Likes extends React.Component {
 
       
     handleComment() {
-        console.log(this.commentForm); 
-        $('.add-comment').first().focus();
-     
+        $('.add-comment').first().focus(); 
     }
 
     render() {
