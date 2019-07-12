@@ -32,9 +32,9 @@ class PostIndex extends React.Component {
         .reverse().map((post) => <PostIndexItem key={post.id} post={post} deletePost={this.props.deletePost}/>);
     
         const greeting = (!posts.length) ?
-            <h1 className="initial-greeting">Hey {this.props.firstName || this.props.username}!
+            <h1 className="initial-greeting">Hey {this.props.firstName || this.props.username},
                 <br/>
-                Click on the Explore icon above to start following other users!</h1>
+                click on the explore icon above to start following other users!</h1>
             : null;
         
         return (
