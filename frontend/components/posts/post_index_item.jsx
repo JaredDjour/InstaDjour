@@ -49,7 +49,7 @@ class PostIndexItem extends React.Component {
                     
                     <div className="post-auth-options visible"> 
                         <ul className="post-auth-options-list hidden">
-                            <li className="post-auth-options-list-item"><a className="post-auth-options-list-item-show" href={`/#/posts/${this.state.id}`}>Show Post</a></li> 
+                            <li className="post-auth-options-list-item"><a className="post-auth-options-list-item-show" href={`/#/posts/${this.state.id}`}>Go to Post</a></li> 
                             {deletePost}
                         </ul>
                     </div>

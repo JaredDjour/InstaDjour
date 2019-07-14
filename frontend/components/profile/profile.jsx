@@ -6,17 +6,18 @@ import NavBarContainer from "../nav_bar/nav_bar_container";
 class Profile extends React.Component {
     constructor(props) {
         super(props);
+        this.state = this.props.user;
     }
 
-    componentDidMount() {
-        this.props.fetchAllUsers();
-        this.props.fetchAllPosts();
-        // this.props.fetchUserPosts(this.props.userId);
-        this.props.fetchAllComments();
-        this.props.fetchAllLikes();
-        // .then(() => this.setState(this.props.userId));
-        this.props.fetchAllFollows();
-    }
+    // componentDidMount() {
+    //     this.props.fetchAllUsers()
+    //     .then(() => this.setState(this.props.user));
+     
+    //     this.props.fetchAllPosts();
+    //     this.props.fetchAllComments();
+    //     this.props.fetchAllLikes();
+    //     this.props.fetchAllFollows();
+    // }
 
     componentDidUpdate(prevProps) {
         // if (parseInt(prevProps.match.params.user_id) !== this.props.userId) {

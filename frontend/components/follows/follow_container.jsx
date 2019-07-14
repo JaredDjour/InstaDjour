@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-// import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { createFollow, deleteFollow } from '../../actions/follow_actions';
 import Follows from './follows';
 
@@ -15,4 +15,4 @@ const mdp = dispatch => ({
 });
 
 // export default withRouter(connect(msp, mdp)(Follows));
-export default connect(msp, mdp)(Follows);
+export default withRouter(connect(msp, mdp)(Follows));

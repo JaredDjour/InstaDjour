@@ -1,7 +1,5 @@
 import React from 'react';
-import {Link, Redirect} from 'react-router-dom';
-import {PostIndexItem} from "./post_index_item";
-import CreateCommentFormContainer from '../comments/create_comment_form_container';
+import {Link} from 'react-router-dom';
 import CommentIndexContainer from "../comments/comment_index_container";
 import LikesContainer from "../likes/likes_container";
 import NavBarContainer from "../nav_bar/nav_bar_container";
@@ -56,7 +54,6 @@ class PostShow extends React.Component {
 
                         <div className="post-show-comments">
                             <CommentIndexContainer post={this.props.post} postId={this.props.post.id} />
-                            {/* <CreateCommentFormContainer postId={this.props.post.id} /> */}
                         </div>
                         {/* <div className="post-edit-delete-container">
                             <button className="post-index-item-delete-button" type="button" onClick={this.handleSubmit}>Delete Post</button>
@@ -72,4 +69,4 @@ class PostShow extends React.Component {
     }
 }
 
-    export default PostShow;
+export default PostShow;

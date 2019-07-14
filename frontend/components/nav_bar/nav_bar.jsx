@@ -7,6 +7,13 @@ class NavBar extends React.Component {
       super(props);
     }
 
+  // componentDidMount() {
+  //   this.props.fetchAllPosts();
+  //   this.props.fetchAllComments();
+  //   this.props.fetchAllLikes();
+  //   this.props.fetchAllUsers();
+  //   this.props.fetchAllFollows();
+  // }
 
     render() {
       
@@ -49,7 +56,7 @@ class NavBar extends React.Component {
           (
           <div className="icon-heart visible">
             <ul className="hidden heart-list">
-              <li className="recent-likes">Discover Posts</li>
+              <li className="recent-likes">Find a Post</li>
               {posts}
             </ul>
           </div>

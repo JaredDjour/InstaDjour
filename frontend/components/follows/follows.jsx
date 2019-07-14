@@ -88,11 +88,16 @@ class Follows extends React.Component {
         //     "follower"
         //     :
         //     "followers";
-
-        const follow = (this.following(this.props.followingId)) ?
+   
+       let follow;
+       
+       if (parseInt(this.props.match.params.user_id) !== this.props.currentUser) {
+        follow = (this.following(this.props.followingId)) ?
             <button className="following-button" onClick={this.handleClick}>Following</button>
             :
             <button className="follow-button" onClick={this.handleClick}>Follow</button>;
+        
+        } else follow = null; 
         
         return (
             <div>
