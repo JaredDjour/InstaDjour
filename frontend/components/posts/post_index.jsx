@@ -34,7 +34,7 @@ class PostIndex extends React.Component {
         const greeting = (!posts.length) ?
             <h1 className="initial-greeting">Hey {this.props.fullName.split(" ")[0] || this.props.username},
                 <br/>
-                click on the explore icon above to start following other users!</h1>
+                click on the Compass in the Nav Bar above to start following other users!</h1>
             : null;
         
         return (

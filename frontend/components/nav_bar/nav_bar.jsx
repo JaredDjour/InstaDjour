@@ -12,15 +12,15 @@ class NavBar extends React.Component {
       
         const users = (this.props.users) ?
         this.props.users
-        .filter(user => user.id !== this.props.currentUser.id) 
+        .filter(user => user.id !== this.props.currentUser.id)
         .map(user => {
           return (
             <li key={user.id} className="explore-list-item">
                 <Link className="explore-list-item-link" to={`/users/${user.id}/posts`}>{user.username}</Link>
               </li>
             )
-          }) 
-          :null;
+          })
+          : null;
           
         const posts = (this.props.posts) ? 
         this.props.posts
@@ -63,9 +63,9 @@ class NavBar extends React.Component {
           <div className="nav-bar">
             <div className="nav-display"> 
               <div className="nav-left">
-                <span className= "nav-left-icon"></span>
-              <Link className="nav-left-text" to="/">Instadjour</Link>
-              </div> 
+                <Link className="nav-left-icon" to="/"></Link>
+                <Link className="nav-left-text" to="/">Instadjour</Link>
+               </div> 
               <div className="nav-center">
                 <span className="icon-search"></span>
               <input className="search-bar" type="text" placeholder="Search" /> 
@@ -75,6 +75,7 @@ class NavBar extends React.Component {
              {exploreIcon}
              {heartIcon} 
                 <Link className="icon-profile" to={`/users/${this.props.id}/posts`}></Link>
+                <Link className="icon-home" to="/"></Link>
                 <div className="logout">
                   <button type="button" className="logout-button" onClick={this.props.logout}>Logout</button>
                 </div>

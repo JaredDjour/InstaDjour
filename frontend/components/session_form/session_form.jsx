@@ -31,7 +31,6 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e){
-    debugger
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
@@ -77,20 +76,35 @@ class SessionForm extends React.Component {
       <img className="bg5" src="https://www.instagram.com/static/images/homepage/screenshot5.jpg/0a2d3016f375.jpg" />
     </div>
     ) 
+    const emailErrors = ((this.state.username && !this.state.email) || 
+      (this.state.email && (!this.state.email.includes(".com") || 
+      !this.state.email.includes("@") || this.state.email.slice(-4) !== ".com"))) ?
+      <div className="session-errors">Please enter a valid Email.</div>
+      :null;
+        
+    const fullNameErrors = ((this.state.username && !this.state.full_name) || 
+    (this.state.full_name && !this.state.full_name.includes(" "))) ?
+      <div className="session-errors">Please enter your Full Name.</div>
+      :null;
+      
+      const signUpSubmit = (
+          <input className="session-submit" disabled={!this.state.email || !this.state.full_name 
+            || !this.state.username || !this.state.password} 
+            type="submit" value={this.props.formType} onClick={this.handleSubmit}/>
+      );
+      const signInSubmit = (
+          <input className="session-submit" disabled={!this.state.username || !this.state.password} 
+            type="submit" value={this.props.formType} onClick={this.handleSubmit}/>
+      );
+      let demo = (
+          <label className="demo-button-container">
+            <button type="button" onClick={this.handleDemo} className="demo-button">Log in as a Demo User</button>
+            <div className="demo-icon"></div>
+          </label>
+      );
         let main; 
         let left;
         let bottom;
-        let demo = (
-      <label className="demo-button-container">
-        <button type="button" onClick={this.handleDemo} className="demo-button">Log in as a Demo User</button>
-        <div className="demo-icon"></div>
-      </label>
-    )
-    let sessionSubmit = (
-      // <label>  
-        <input className="session-submit" type="submit" value={this.props.formType} onClick={this.handleSubmit}/>
-      // </label>
-    );
     if (this.props.formType === "Sign Up"){
       main = 
         ( 
@@ -103,11 +117,13 @@ class SessionForm extends React.Component {
               placeholder="Mobile Number or email" value={this.state.email}
               onChange={this.handleChange('email')} onKeyUp={this.handleEnter} />
           </label>
+          {emailErrors}
           <label>
             <input className="login-input" type="text"
               placeholder="Full Name" value={this.state.full_name}
               onChange={this.handleChange('full_name')} onKeyUp={this.handleEnter}/>
-          </label> 
+          </label>
+          {fullNameErrors}
           <label>
             <input className="login-input" type="text"
               placeholder="Username" value={this.state.username}
@@ -118,7 +134,7 @@ class SessionForm extends React.Component {
               placeholder="Password"
               onChange={this.handleChange('password')} onKeyUp={this.handleEnter}/>
           </label>
-          {sessionSubmit} 
+          {signUpSubmit} 
         </div> 
         )
         bottom = (
@@ -139,7 +155,7 @@ class SessionForm extends React.Component {
         <div>
           <label>
             <input className="login-input" type="text"
-            placeholder="Phone number, username, or email" value={this.state.username}
+            placeholder="Username" value={this.state.username}
             onChange={this.handleChange('username')} onKeyUp={this.handleEnter}/>
           </label> 
           <label>
@@ -147,7 +163,7 @@ class SessionForm extends React.Component {
               placeholder="Password"
               onChange={this.handleChange('password')} onKeyUp={this.handleEnter}/>
           </label> 
-          {sessionSubmit}
+          {signInSubmit}
           <h3 className="or"> OR</h3>
           {demo}
         </div>

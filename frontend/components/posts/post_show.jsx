@@ -62,9 +62,9 @@ class PostShow extends React.Component {
                             <button className="post-index-item-delete-button" type="button" onClick={this.handleSubmit}>Delete Post</button>
                         </div>  */}
                             {/* <Link className="post-index-item-edit" to={`/posts/${this.state.id}/edit`}>Edit Post</Link> */}
-                        <div className="feed-button-container">
+                        {/* <div className="feed-button-container">
                             <Link className="feed-button" to="/">Feed</Link>
-                        </div> 
+                        </div>  */}
                     </div>
                 </div>
             </div>
