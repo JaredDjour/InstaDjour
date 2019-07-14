@@ -88,13 +88,13 @@ class SessionForm extends React.Component {
       :null;
       
       const signUpSubmit = (
-          <input className="session-submit" disabled={!this.state.email || !this.state.full_name 
+          <button className="session-submit" disabled={!this.state.email || !this.state.full_name 
             || !this.state.username || !this.state.password} 
-            type="submit" value={this.props.formType} onClick={this.handleSubmit}/>
+          type="submit" onClick={this.handleSubmit}>{this.props.formType}</button>
       );
       const signInSubmit = (
-          <input className="session-submit" disabled={!this.state.username || !this.state.password} 
-            type="submit" value={this.props.formType} onClick={this.handleSubmit}/>
+          <button className="session-submit" disabled={!this.state.username || !this.state.password} 
+          type="submit" onClick={this.handleSubmit}>{this.props.formType}</button>
       );
       let demo = (
           <label className="demo-button-container">
