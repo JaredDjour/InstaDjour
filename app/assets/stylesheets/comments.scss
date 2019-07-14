@@ -9,7 +9,8 @@
     border-left: solid #e6e6e6 1px;
     border-right: solid #e6e6e6 1px;
     margin: -6px 0 0px -1px;
-    padding-bottom: 3px; 
+    padding-bottom: 3px;
+    background: white; 
 }
 
 .individual_comment {
@@ -66,7 +67,7 @@
     // background: #87cdfa;
     // color: white;
     color: #3897f0;
-    background: #fafafa;
+    background: white;
     // border-radius: 5px;
     border: none;
     font-size: 10px;
@@ -78,7 +79,7 @@
     border: solid 1px #dbdbdb;
     color: #262626;
     padding: 5px 10px 5px 10px;
-    background-color: #fafafa;
+    // background-color: #fafafa;
     min-height: 25px;
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-weight: 100;
@@ -92,7 +93,7 @@
 
 .create-comment_button {
     color: #3897f0;
-    background: #fafafa;
+    // background: #fafafa;
     border: 0;
     display: inline;
     padding: 0;

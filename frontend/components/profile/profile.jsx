@@ -9,15 +9,15 @@ class Profile extends React.Component {
         this.state = this.props.user;
     }
 
-    // componentDidMount() {
-    //     this.props.fetchAllUsers()
-    //     .then(() => this.setState(this.props.user));
+    componentDidMount() {
+        this.props.fetchAllUsers();
+        // .then(() => this.setState(this.props.user));
      
-    //     this.props.fetchAllPosts();
-    //     this.props.fetchAllComments();
-    //     this.props.fetchAllLikes();
-    //     this.props.fetchAllFollows();
-    // }
+        this.props.fetchAllPosts();
+        // this.props.fetchAllComments();
+        // this.props.fetchAllLikes();
+        this.props.fetchAllFollows();
+    }
 
     componentDidUpdate(prevProps) {
         // if (parseInt(prevProps.match.params.user_id) !== this.props.userId) {

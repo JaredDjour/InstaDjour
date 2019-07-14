@@ -116,7 +116,8 @@
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-weight: 400;
     margin-left: 6px;
-    margin-top: 4px;   
+    margin-top: 4px;  
+    background: white; 
 }
 
 .post-caption-auth {
@@ -142,6 +143,7 @@
     display: flex;
     padding-bottom: 8px;
     // margin-bottom: 5px;
+    background: white;
 }
 
 
@@ -153,6 +155,7 @@
     width: 100%;
     padding-top: 4px;
     display: flex;
+    background: white;
 }
 
 [class*="post-options-"] {
@@ -317,7 +320,7 @@
     justify-content: center;
     margin: auto;
     width: 99.5%;
-    max-height: 450px;
+    // max-height: 450px;
     height: auto;
     background-size: cover;
     background-repeat: no-repeat;
@@ -474,7 +477,7 @@
     outline: 0;
     padding: 3px 10px 3px 4px;
     z-index: 2;
-    background-color: #fafafa;
+    // background-color: #fafafa;
     height: 12px;
     // text-align: left;
     text-align: center;
@@ -554,7 +557,9 @@
     padding-top: 5px;
     display: flex;
     padding-bottom: 8px;
-    margin-bottom: -12px;;
+    margin-bottom: -12px;
+    background: white;
+
 }
 .post-show-options{
     border-left: solid #e6e6e6 1px; 
@@ -564,12 +569,16 @@
     // width: 100%;
     padding-top: 4px;
     padding-bottom: 23px;
+    background: white;
+
 }
 .post-show-space {
     width: 100%;
     height: 25px;
     border-left: solid #e6e6e6 1px;
     border-right: solid #e6e6e6 1px;
+    background: white;
+
 }
 
 .post-show-comments {

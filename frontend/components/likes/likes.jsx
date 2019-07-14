@@ -1,12 +1,19 @@
 import React from 'react';
+import _ from 'lodash';
 
 class Likes extends React.Component {
     constructor(props) {
         super(props);
         this.fetchLike = this.fetchLike.bind(this);
         this.liking = this.liking.bind(this);
-        this.handleClick = this.handleClick.bind(this);
+        // this.handleClick = _.throttle(this.handleClick.bind(this), 250); 
+        this.handleClick = _.debounce(this.handleClick.bind(this), 700, {
+            'leading': true,
+            'trailing': false
+        }); 
+        // this.handleClick = this.handleClick.bind(this);
         this.handleComment = this.handleComment.bind(this);
+        this.ready = null;
     }
 
     fetchLike(likeableId) {
@@ -33,6 +40,7 @@ class Likes extends React.Component {
     }
 
     handleClick() {
+        this.ready = true;
         const like = {
             user_id: this.props.currentUser,
             likeable_type: "Post",
@@ -45,6 +53,7 @@ class Likes extends React.Component {
         } else {
             this.props.createLike(like);
         }
+        this.ready = false;
     }
 
       

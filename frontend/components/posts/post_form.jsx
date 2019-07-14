@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import _ from 'lodash';
 
 class PostForm extends React.Component {
    constructor(props){
@@ -10,7 +11,11 @@ class PostForm extends React.Component {
            photoUrl: null,
            user_id: null
        };
-        this.handleSubmit = this.handleSubmit.bind(this);
+       this.handleSubmit = _.debounce(this.handleSubmit.bind(this), 700, {
+           'leading': true,
+           'trailing': false
+       }); 
+        // this.handleSubmit = this.handleSubmit.bind(this);
        this.handleChange = this.handleChange.bind(this);
        this.handleFile = this.handleFile.bind(this);
        this.handleEnter = this.handleEnter.bind(this);
@@ -135,7 +140,7 @@ class PostForm extends React.Component {
            </div>
        )
    }
-   
+
     // constructor(props) {
     //     super(props);
     //     this.state = { pictures: [] };
