@@ -20,6 +20,10 @@ class NavBar extends React.Component {
         const users = (this.props.users) ?
         this.props.users
         .filter(user => user.id !== this.props.currentUser.id)
+        // .sort((a, b) => {
+        //   return (
+        //   parseFloat(a.username) - parseFloat(b.username))})
+        .sort((a, b) => (a.username > b.username) ? 1 : ((b.username > a.username) ? -1 : 0)) 
         .map(user => {
           return (
             <li key={user.id} className="explore-list-item">
@@ -32,6 +36,8 @@ class NavBar extends React.Component {
         const posts = (this.props.posts) ? 
         this.props.posts
         .filter(post => post.username !== this.props.currentUser.username)
+        .sort((a, b) => (a.caption > b.caption) ? 1 : ((b.caption > a.caption) ? -1 : 0)) 
+        // .sort((a, b) => parseFloat(a.caption) - parseFloat(b.caption))
         .map(post => {
           return (
             <li key={post.id} className="heart-list-item">
