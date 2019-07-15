@@ -62,11 +62,11 @@ class NavBar extends React.Component {
                 <Link className="nav-left-icon" to="/"></Link>
                 <Link className="nav-left-text" to="/">Instadjour</Link>
                </div> 
-              <div className="nav-center">
+              {/* <div className="nav-center">
                 <span className="icon-search"></span>
                 <input className="search-bar" type="text" name="query" id="query" placeholder="Search"/>
                 <input type="submit" name="commit" value="Search"/>
-               </div>
+               </div> */}
               <div className="nav-right">
                 {exploreIcon}
                 {heartIcon} 

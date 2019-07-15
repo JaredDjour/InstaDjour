@@ -28,7 +28,7 @@ class PostIndexItem extends React.Component {
         this.props.deletePost(this.state.id);
     }
 
-    // wanted to have double-click photo for like but meh
+    // wanted to have double-click photo for like but
     // handleClick() {
     //     this.clickCount += 1;
     //     if (this.clickCount === 2) {
