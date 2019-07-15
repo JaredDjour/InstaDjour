@@ -18,7 +18,40 @@ class User < ApplicationRecord
   validates :username, :email, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
 
-#   include P
+    # include PgSearch
+    include PgSearch::Model
+    # pg_search_scope :search_for, against: %i(username full_name)
+    # pg_search_scope :search, against: [:username, :full_name]
+    # multisearchable against: [:username, :full_name]
+
+    pg_search_scope :search,
+                  against: [
+                    :username,
+                    :full_name
+                  ],
+                  using: {
+                    tsearch: {
+                      prefix: true,
+                      normalization: 2
+                    }
+                  }
+
+    def self.perform_search(keyword)
+        if keyword.present?
+            then User.search(keyword)
+            else User.all
+        end.sorted
+    end
+    # pg_search_scope :search_full_text, against: {
+    # title:   'A',
+    # content: 'B'
+    # }
+
+    # pg_search_scope :search_full_text, against: [
+    # [:title, 'A'],
+    # [:content, 'B']
+    # }
+    
     has_many :posts,
     primary_key: :id,
     foreign_key: :user_id,

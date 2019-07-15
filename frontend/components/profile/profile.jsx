@@ -10,20 +10,11 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchAllUsers();
-        // .then(() => this.setState(this.props.user));
-     
-        this.props.fetchAllPosts();
-        // this.props.fetchAllComments();
-        // this.props.fetchAllLikes();
+        this.props.fetchAllUsers();     
+        this.props.fetchUserPosts(this.props.userId);     
+        // this.props.fetchAllPosts();
         this.props.fetchAllFollows();
-    }
-
-    componentDidUpdate(prevProps) {
-        // if (parseInt(prevProps.match.params.user_id) !== this.props.userId) {
-        if (!this.props.username) {
-            this.props.fetchAllUsers();
-        }
+        window.scrollTo(0, 0);
     }
 
     render() {

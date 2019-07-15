@@ -16,7 +16,16 @@ class Api::UsersController < ApplicationController
     render :index
     # render "/api/users/index"
   end
-
+  # def index
+  #    if params[:query].present?
+  #        users = User.search(params[:query])
+  #        render "/api/users/index"
+  #    else
+  #        @users = User.all
+  #        render "/api/users/index" 
+  #    end
+  # end
+  
   def show
     # @users = User.all
     # @user = User.find(params[:id]) 

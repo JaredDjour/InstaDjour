@@ -16,6 +16,7 @@ class PostIndex extends React.Component {
         this.props.fetchAllLikes();
         this.props.fetchAllUsers();
         this.props.fetchAllFollows();
+        window.scrollTo(0, 0)
     }
 
  

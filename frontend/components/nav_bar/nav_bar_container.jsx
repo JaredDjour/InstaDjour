@@ -5,9 +5,9 @@ import NavBar from './nav_bar';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import {fetchAllFollows} from "../../actions/follow_actions";
 import {fetchAllUsers} from "../../actions/user_actions";
-// import {fetchAllPosts} from "../../actions/post_actions";
-// import {fetchAllComments} from "../../actions/comment_actions";
-// import {fetchAllLikes} from "../../actions/like_actions";
+import {fetchAllPosts} from "../../actions/post_actions";
+import {fetchAllComments} from "../../actions/comment_actions";
+import {fetchAllLikes} from "../../actions/like_actions";
 
 const mapStateToProps = (state, ownProps) => { 
 
@@ -25,10 +25,10 @@ const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   openModal: modal => dispatch(openModal(modal)),
   closeModal: () => dispatch(closeModal()),
-  // fetchAllComments: () => dispatch(fetchAllComments()),
-  // fetchAllPosts: () => dispatch(fetchAllPosts()),
-  // fetchAllLikes: () => dispatch(fetchAllLikes()),
-  // deletePost: id => dispatch(deletePost(id)),
+  fetchAllComments: () => dispatch(fetchAllComments()),
+  fetchAllPosts: () => dispatch(fetchAllPosts()),
+  fetchAllLikes: () => dispatch(fetchAllLikes()),
+  deletePost: id => dispatch(deletePost(id)),
   fetchAllUsers: () => dispatch(fetchAllUsers()),
   fetchAllFollows: () => dispatch(fetchAllFollows()),
 });

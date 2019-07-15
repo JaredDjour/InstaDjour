@@ -16,6 +16,7 @@ class PostShow extends React.Component {
         this.props.fetchAllLikes();
         this.props.fetchPost(this.props.match.params.postId)
         .then(() => this.setState(this.props.post));
+        window.scrollTo(0, 0)
     }
 
     handleSubmit(e) {

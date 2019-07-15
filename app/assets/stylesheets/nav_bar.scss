@@ -84,7 +84,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    margin: -65px -35px 0px 564px;
+    // margin for when have a search bar:
+    // margin: -65px -35px 0px 564px;
+    margin: -30px -35px 0px 564px
 }
 
 [class*="icon-"] {

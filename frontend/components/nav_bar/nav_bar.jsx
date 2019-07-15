@@ -1,28 +1,15 @@
 import React from 'react';
-import {Link, Redirect} from 'react-router-dom';
-import PostIndexContainer from "../posts/post_index_container";
+import {Link} from 'react-router-dom';
 
 class NavBar extends React.Component {
     constructor(props) {
       super(props);
     }
 
-  // componentDidMount() {
-  //   this.props.fetchAllPosts();
-  //   this.props.fetchAllComments();
-  //   this.props.fetchAllLikes();
-  //   this.props.fetchAllUsers();
-  //   this.props.fetchAllFollows();
-  // }
-
     render() {
-      
         const users = (this.props.users) ?
         this.props.users
         .filter(user => user.id !== this.props.currentUser.id)
-        // .sort((a, b) => {
-        //   return (
-        //   parseFloat(a.username) - parseFloat(b.username))})
         .sort((a, b) => (a.username > b.username) ? 1 : ((b.username > a.username) ? -1 : 0)) 
         .map(user => {
           return (
@@ -37,7 +24,6 @@ class NavBar extends React.Component {
         this.props.posts
         .filter(post => post.username !== this.props.currentUser.username)
         .sort((a, b) => (a.caption > b.caption) ? 1 : ((b.caption > a.caption) ? -1 : 0)) 
-        // .sort((a, b) => parseFloat(a.caption) - parseFloat(b.caption))
         .map(post => {
           return (
             <li key={post.id} className="heart-list-item">
@@ -68,10 +54,7 @@ class NavBar extends React.Component {
           </div>
         ) : null;
 
-        let nav;
-        (this.props.loggedIn) ?
-
-        nav = (
+        const nav = (
           <div>
           <div className="nav-bar">
             <div className="nav-display"> 
@@ -81,12 +64,12 @@ class NavBar extends React.Component {
                </div> 
               <div className="nav-center">
                 <span className="icon-search"></span>
-              <input className="search-bar" type="text" placeholder="Search" /> 
-              </div>
+                <input className="search-bar" type="text" name="query" id="query" placeholder="Search"/>
+                <input type="submit" name="commit" value="Search"/>
+               </div>
               <div className="nav-right">
-
-             {exploreIcon}
-             {heartIcon} 
+                {exploreIcon}
+                {heartIcon} 
                 <Link className="icon-profile" to={`/users/${this.props.id}/posts`}></Link>
                 <Link className="icon-home" to="/"></Link>
                 <div className="logout">
@@ -99,7 +82,6 @@ class NavBar extends React.Component {
       
         </div>
       ) 
-      : null; 
       
       return (
         <div>
