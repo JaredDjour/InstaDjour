@@ -55,10 +55,15 @@ class Likes extends React.Component {
         }
         this.ready = false;
     }
-
-      
-    handleComment() {
-        $('.add-comment').first().focus(); 
+ 
+    handleComment(e) {
+        // $('.add-comment').first().focus(); 
+        // $('.add-comment').next().focus(); 
+       // Thank you to Alex Volynsky for helping me with the logic. 
+        const commentButton = document.getElementsByClassName("post-options-comment");
+        const elementsArr = Array.from(commentButton);
+        const index = elementsArr.indexOf(e.target); 
+        document.getElementsByClassName("add-comment")[index].focus();
     }
 
     render() {
@@ -75,7 +80,7 @@ class Likes extends React.Component {
                 <div className="post-options">
                     <div className="post-options-heart-filled" onClick={this.handleClick}></div>
                     <div className="like-count">{count}</div>
-                    <div className="post-options-comment" onClick={() => {this.handleComment()}}></div>
+                    <div className="post-options-comment" onClick={(e) => {this.handleComment(e)}}></div>
                     {/* <div className="post-options-bookmark"></div> */}
                 </div>
             )

@@ -18,6 +18,7 @@ class User < ApplicationRecord
   validates :username, :email, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
 
+#   include P
     has_many :posts,
     primary_key: :id,
     foreign_key: :user_id,

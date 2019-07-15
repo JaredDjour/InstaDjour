@@ -50,6 +50,7 @@ class Follows extends React.Component {
     render() {
         const follows = Object.values(this.props.follows);
         const followers = follows.filter(follow => follow.following_id === this.props.followingId)
+        .sort((a, b) => (a.username > b.username) ? 1 : ((b.username > a.username) ? -1 : 0)) 
         .map(follower => {
             const users = this.props.users;
  
@@ -63,6 +64,7 @@ class Follows extends React.Component {
             )});
 
         const following = follows.filter(follow => follow.follower_id === this.props.followingId)
+        .sort((a, b) => (a.username > b.username) ? 1 : ((b.username > a.username) ? -1 : 0)) 
         .map(followed => {
             return (
                 <li key={followed.id} className="follower-and-following-list-item">
@@ -98,7 +100,7 @@ class Follows extends React.Component {
             <button className="follow-button" onClick={this.handleClick}>Follow</button>;
         
         } else follow = null; 
-        
+
         return (
             <div>
                 {follow}
