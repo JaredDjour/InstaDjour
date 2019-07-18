@@ -38,7 +38,8 @@ class SessionForm extends React.Component {
   }
 
   handleEnter(e) {
-    if (event.keyCode === 13) {
+    e.preventDefault();
+    if (e.keyCode === 13) {
       e.preventDefault();
       const user = Object.assign({}, this.state);
       if (user.username && user.password) {
