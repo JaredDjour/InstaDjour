@@ -16,7 +16,16 @@ class PostShow extends React.Component {
         this.props.fetchAllLikes();
         this.props.fetchPost(this.props.match.params.postId)
         .then(() => this.setState(this.props.post));
-        window.scrollTo(0, 0)
+        // this.props.fetchAllPosts()
+        // .then(() => this.setState(this.props.post));
+        window.scrollTo(0, 0);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.match.params.postId !== this.props.match.params.postId) {
+            this.props.fetchPost(this.props.match.params.postId)
+                .then(() => this.setState(this.props.post));
+        }
     }
 
     handleSubmit(e) {
@@ -28,7 +37,7 @@ class PostShow extends React.Component {
         if (!this.state) return null;
         return (
             <div>
-                <NavBarContainer users={this.props.users} posts={this.props.posts}/>
+                <NavBarContainer users={this.props.users} post={this.props.post} posts={this.props.posts}/>
                 <div className="individual-post-show">
 
                     <div className="post-show-left">  

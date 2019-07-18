@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import {fetchPost, deletePost} from "../../actions/post_actions";
+import {fetchPost, fetchAllPosts, deletePost} from "../../actions/post_actions";
 import { fetchAllComments } from "../../actions/comment_actions";
 import { fetchAllLikes } from "../../actions/like_actions";
 
@@ -16,6 +16,7 @@ const msp = (state, ownProps) => {
         // username: state.entities.posts.username
         
     };
+    
 };
 
 const mdp = dispatch => {
@@ -24,7 +25,7 @@ const mdp = dispatch => {
         action: id => dispatch(deletePost(id)),
         fetchAllComments: () => dispatch(fetchAllComments()),
         fetchAllLikes: () => dispatch(fetchAllLikes()),
-
+        fetchAllPosts: () => dispatch(fetchAllPosts())
     };
 };
 

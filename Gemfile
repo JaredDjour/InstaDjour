@@ -52,7 +52,8 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem "annotate"
-  gem 'pg_search'   
+  gem 'bullet'
+  # gem 'pg_search'   
 
 
 end

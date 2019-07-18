@@ -13,6 +13,7 @@ class Api::UsersController < ApplicationController
 
   def index
     @users = User.all
+    # @users = User.all.includes(:posts, :comments, :likes, :follows, :followers)
     render :index
     # render "/api/users/index"
   end

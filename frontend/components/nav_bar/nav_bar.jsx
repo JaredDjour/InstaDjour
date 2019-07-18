@@ -4,6 +4,12 @@ import {Link} from 'react-router-dom';
 class NavBar extends React.Component {
     constructor(props) {
       super(props);
+      // this.state = this.props.post;
+    }
+
+    componentDidMount() {
+      this.props.fetchAllUsers();
+      this.props.fetchAllPosts();
     }
 
     render() {
@@ -22,7 +28,7 @@ class NavBar extends React.Component {
           
         const posts = (this.props.posts) ? 
         this.props.posts
-        .filter(post => post.username !== this.props.currentUser.username)
+        // .filter(post => post.username !== this.props.currentUser.username)
         .sort((a, b) => (a.caption > b.caption) ? 1 : ((b.caption > a.caption) ? -1 : 0)) 
         .map(post => {
           return (

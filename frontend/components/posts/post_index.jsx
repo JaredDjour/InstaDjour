@@ -11,12 +11,12 @@ class PostIndex extends React.Component {
         };
     }
     componentDidMount(){
-        this.props.fetchAllPosts();
+        // this.props.fetchAllPosts();
         this.props.fetchAllComments();
         this.props.fetchAllLikes();
-        this.props.fetchAllUsers();
+        // this.props.fetchAllUsers();
         this.props.fetchAllFollows();
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
     }
 
  

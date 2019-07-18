@@ -3,7 +3,7 @@
 ### Technologies
  Ruby on Rails, PostgreSQL, ActiveStorage, AWS, React, Redux, Webpack, CSS, HTML, Heroku.
 
-![InstaDjour](https://github.com/JaredDjour/InstaDjour/blob/master/InstaDjour.gif?raw=true)
+![InstaDjour Gif](https://github.com/JaredDjour/InstaDjour/blob/master/InstaDjour.gif?raw=true)
 
 
 ## InstaDjour
