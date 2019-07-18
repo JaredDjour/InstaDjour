@@ -23,7 +23,7 @@ class CommentForm extends React.Component {
 
     handleEnter(e) {
         e.preventDefault();
-        if (event.keyCode === 13) {
+        if (e.keyCode === 13) {
             e.preventDefault();
 
             if (this.state.body !== "") {

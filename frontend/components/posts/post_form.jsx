@@ -44,7 +44,8 @@ class PostForm extends React.Component {
     }
 
     handleEnter(e) {
-        if (event.keyCode === 13) {
+        e.preventDefault();
+        if (e.keyCode === 13 && this.state.photoFile) {
             e.preventDefault();
             const formData = new FormData();
             formData.append('post[caption]', this.state.caption);
@@ -53,14 +54,14 @@ class PostForm extends React.Component {
             if (this.state.photoFile) {
 
                 formData.append('post[photo]', this.state.photoFile);
+                this.props.action(formData).then(
+                    (response) => console.log(response.message),
+                    (response) => {
+                        console.log(response.responseJSON);
+                    }
+                );
             }
 
-            this.props.action(formData).then(
-                (response) => console.log(response.message),
-                (response) => {
-                    console.log(response.responseJSON);
-                }
-            );
             this.setState({ caption: "", photoFile: null, photoUrl: null, userId: null });
         }
     }
