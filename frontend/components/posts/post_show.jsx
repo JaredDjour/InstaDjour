@@ -50,7 +50,7 @@ class PostShow extends React.Component {
                         <div className="post-show-auth-container">
                             <div className="post-auth-image"></div>
                             <Link className="post-auth" to={`/users/${this.state.user_id}/posts`}>{this.state.username}</Link>
-                            <div className="post-auth-options"></div>
+                            {/* <div className="post-auth-options"></div> */}
                         </div>
 
                         <div className="post-show-caption-container">

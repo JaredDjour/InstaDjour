@@ -30,21 +30,19 @@ body {
 }
 
 .nav-left-text {
+    font-size: 28px;
+    font-family: "Cookie", cursive;
+    margin: 6px 10px 0;
     text-decoration: none;
     color: #262626;
-    font-size: 24px;
-    font-family: "Cookie", cursive;
-    // font-family: "Billabong";
-    // src: local('Billabong'), url('Billabong.woff') format('woff'); 
-    margin: 3px 10px 0;
     padding: 0px 10px;
     border-left: solid 1px black; 
 }
 
 .nav-left-icon {
-    background-size: 22px 22px;
-    width: 20px;
-    height: 20px;
+    background-size: 26px 26px;
+    width: 25px;
+    height: 25px;
     // background-image: url("http://grassyhillcountryclub.com/wp-content/uploads/2019/01/ig-logo-2.png");
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Instagram_font_awesome.svg/240px-Instagram_font_awesome.svg.png");
     cursor: pointer;
@@ -86,7 +84,7 @@ body {
     justify-content: space-evenly;
     // margin for when have a search bar:
     // margin: -65px -35px 0px 564px;
-    margin: -30px -35px 0px 564px
+    margin: -33px -35px 0px 564px
 }
 
 [class*="icon-"] {

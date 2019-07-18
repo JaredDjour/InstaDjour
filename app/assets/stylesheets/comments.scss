@@ -1,6 +1,6 @@
 
 .comment-index-container {
-    width: 478px;
+    width: 568px;
     margin-bottom: 5px;
 }
 
@@ -16,7 +16,7 @@
 .individual_comment {
     display: flex;
     flex-direction: row;
-    max-width: 400px;
+    max-width: 455px;
     flex-wrap: wrap;
     font-size: 10px;
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -42,11 +42,11 @@
 }
 
 .comment-body {
-    max-width: 270px;
+    max-width: 395px;
     flex-wrap: wrap;
 }
 .comment-form {
-    width: 458px;
+    width: 548px;
     margin: 0 0 12px -1px;
     font-size: 14px;
     outline: none;
@@ -62,8 +62,8 @@
 
 
 .comment-options {
-    margin: 0 0px 0 405px;
-    position: absolute;
+    margin: -12px 0px 0 490px;
+    position: relative;
     padding: 0px 5px 0 5px;
     // background: #87cdfa;
     // color: white;
@@ -79,16 +79,16 @@
 .add-comment{
     border: solid 1px #dbdbdb;
     color: #262626;
-    padding: 5px 10px 5px 10px;
-    // background-color: #fafafa;
+    padding: 5px 84px 5px 10px;
     min-height: 25px;
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-weight: 100;
-    width: 100%;
+    width: 86.5%;
     font-size: 10px;
     margin-bottom: 7px;
     margin-top: -4px;
     outline: none;
+    flex-wrap: wrap;
 }
 
 .add-comment:focus {outline:0;}
@@ -100,7 +100,7 @@
     display: inline;
     padding: 0;
     position: absolute;
-    margin: -35px 0 0 434px;
+    margin: -33px 0 0 511px;
 }
 .create-comment_button:focus {outline:0;}
 .comment-heart {
@@ -111,7 +111,7 @@
     height: 13px;
     cursor: pointer;
     position: absolute;
-    margin: -10px 0 0 447px;
+    margin: -10px 0 0 535px;
 }
 
 .comment-heart-filled {
@@ -121,7 +121,7 @@
     width: 15px;
     height: 15px;
     cursor: pointer;
-    margin: -11px 0px 0px 446px;
+    margin: -11px 0px 0px 534px;
     position: absolute;
 }
 .comment-like-count {
@@ -129,10 +129,11 @@
     font-size: 5px;
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-weight: 400;
-    margin: -3px 0px 0 459px;
+    margin: -3px 0px 0 547px;
     position: absolute;
 }
 
 .comment-likes {
     width: 100%;
+    margin-top: -1px;
 }

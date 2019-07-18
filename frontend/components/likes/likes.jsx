@@ -90,7 +90,7 @@ class Likes extends React.Component {
                 <div className="post-options">
                     <div className="post-options-heart" onClick={this.handleClick}></div>
                     <div className="like-count">{count}</div>
-                    <div className="post-options-comment" onClick={() => {this.handleComment()}}></div>
+                    <div className="post-options-comment" onClick={(e) => {this.handleComment(e)}}></div>
                     {/* <div className="post-options-bookmark"></div> */}
                 </div>
             )

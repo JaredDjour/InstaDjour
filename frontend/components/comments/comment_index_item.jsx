@@ -38,8 +38,10 @@ class CommentIndexItem extends React.Component {
                 <div className="comment-body-container">
                     <div className="comment-body">{this.props.comment.body}</div>
                 </div>
-                {deleteComment}
+           
                 <CommentLikes className="comment-options" comment={this.props.comment} commentId={this.props.comment.id} likes={this.props.likes} />
+                {deleteComment}
+             
             </div>
         )
     }

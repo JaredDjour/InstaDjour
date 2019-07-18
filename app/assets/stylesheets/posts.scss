@@ -32,12 +32,11 @@
     display: flex;
     justify-content: center;
     background-image: url(https://cdn3.iconfinder.com/data/icons/solid-icons-part-5/128/dot-512.png);
-    background-size: 5px 5px;
-    height: 5px;
-    width: 16px;
+    background-size: 6px 6px;
+    height: 6px;
+    width: 17px;
     margin-top: 22px;
-    // cursor: pointer;
-    margin-left: 446px;
+    margin-left: 527px;
     position: absolute; 
 }
 
@@ -311,8 +310,8 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
-    width: 480px;
-    margin-right: 232px; 
+    width: 570px;
+    margin-right: 310px; 
 }
 
 .photos {
@@ -373,7 +372,7 @@
     position: fixed;
     // overflow: scroll;
     // position: absolute;
-    width: 230px;
+    width: 240px;
     height: auto;
     max-height: 450px;
     // border: solid 1px #dbdbdb;
@@ -428,7 +427,7 @@
     font-size: 28px;
     font-family: "Cookie", cursive;
     font-weight: 400;
-    margin: 10px 0px 4px 65px;
+    margin: 10px 0px 4px 75px;
 }
 .img-preview-space {
     height: 115px;
@@ -483,7 +482,7 @@
     text-align: center;
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-weight: 100;
-    margin: 11px 53px 3px;
+    margin: 11px 58px 3px;
 }
 
 
@@ -536,7 +535,7 @@
     // padding-top: 7%; 
 }
 .post-show-left {
-    width: 478px;
+    width: 568px;
     height: 100%;
     // border: solid black 0.5px;
     border: solid #e6e6e6 1px;
@@ -545,7 +544,7 @@
 .post-show-right {
     height: inherit;
     margin: -14px 0px 0 0;
-    width: 478px;
+    width: 568px;
 }
 
 .post-show-caption-container {
