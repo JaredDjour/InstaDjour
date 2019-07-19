@@ -7,9 +7,10 @@ import { fetchAllLikes } from "../../actions/like_actions";
 import PostShow from "./post_show";
 
 const msp = (state, ownProps) => { 
-   
+    const post = (state.entities.posts[ownProps.match.params.postId] || ownProps.post); 
     return {
-        post: state.entities.posts[ownProps.match.params.postId],
+        // post: (state.entities.posts[ownProps.match.params.postId] || state.ui.modal[1]),
+        post,
         likes: state.entities.likes,
         users: Object.values(state.entities.users),
         posts: Object.values(state.entities.posts),

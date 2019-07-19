@@ -17,11 +17,13 @@
     flex-direction: column;
     justify-content: center;
     margin: 10px;
+    cursor: pointer;
 }
 
 .individual-profile-photo {
     width: 240px;
     height: 240px;
+    cursor: pointer;
 }
 
 .space {
@@ -190,7 +192,7 @@
 .visible:hover .hidden {
     //this refers to the ".hidden" list that appears when hovering over ".visible"
   display: inline-block;
-  cursor: default;
+//   cursor: default;
 }
 
 .follower-and-following-list {

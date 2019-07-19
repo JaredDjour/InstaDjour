@@ -35,7 +35,7 @@ const mdp = dispatch => {
         // fetchAllPosts: () => dispatch(fetchAllPosts()),
         fetchAllUsers: () => dispatch(fetchAllUsers()),
         fetchAllFollows: () => dispatch(fetchAllFollows()),
-        openModal: (id) => dispatch(openModal('showPost', id)),
+        openModal: (item) => dispatch(openModal('showPost', item)),
         closeModal: () => dispatch(closeModal()),
      };
 };

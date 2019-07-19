@@ -5,8 +5,7 @@ import NavBarContainer from "../nav_bar/nav_bar_container";
 
 class Profile extends React.Component {
     constructor(props) {
-        super(props);
-        this.state = this.props.user;
+        super(props);        
         this.handleShow = this.handleShow.bind(this);
     }
 
@@ -18,8 +17,8 @@ class Profile extends React.Component {
         window.scrollTo(0, 0);
     }
 
-    handleShow() {
-       this.props.openModal(); 
+    handleShow(item) {
+       this.props.openModal(item); 
     }
 
     render() {
@@ -42,7 +41,7 @@ class Profile extends React.Component {
                 //     <img className="individual-profile-photo" src={post.photoUrl}></img>
                 // </Link>
                 <div key={post.id} className="individual-profile-photo-container">
-                    <img className="individual-profile-photo" src={post.photoUrl}></img>
+                    <img className="individual-profile-photo" src={post.photoUrl} onClick={ () => this.handleShow(post)}></img>
                 </div>
         )}).reverse();
    

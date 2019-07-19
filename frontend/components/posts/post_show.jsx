@@ -14,10 +14,10 @@ class PostShow extends React.Component {
     componentDidMount() {
         this.props.fetchAllComments();
         this.props.fetchAllLikes();
+        // this.props.fetchPost(this.props.post.id)
+        //     .then(() => this.setState(this.props.post)); 
         this.props.fetchPost(this.props.match.params.postId)
         .then(() => this.setState(this.props.post));
-        // this.props.fetchAllPosts()
-        // .then(() => this.setState(this.props.post));
         window.scrollTo(0, 0);
     }
 
@@ -34,6 +34,7 @@ class PostShow extends React.Component {
     }
 
     render() {
+        // if (!this.props.post) return null;
         if (!this.state) return null;
         return (
             <div>
