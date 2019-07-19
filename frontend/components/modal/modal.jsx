@@ -21,7 +21,7 @@ function Modal({ modal, closeModal, item}) {
     if (!modal) {
         return null;
     }
-    debugger
+    // debugger
   
     let component;
     // switch (modal) {

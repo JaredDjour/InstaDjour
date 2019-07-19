@@ -10,7 +10,27 @@
 
 .modal-child {
   position: absolute;
-  top: 50%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
+  max-width: 375px;
+  
+}
+
+.modal-post-show-right {
+    max-width: 375px;
+}
+
+
+.modal-post-show-auth-container {
+max-width: 375px;
+
+}
+
+.modal-post-show-caption-container {
+max-width: 375px;
+}
+
+.modal-post-show-comments {
+max-width: 375px;
 }
