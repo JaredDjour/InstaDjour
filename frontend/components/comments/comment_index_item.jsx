@@ -33,7 +33,7 @@ class CommentIndexItem extends React.Component {
         return (
             <div className="individual_comment">
                 <div className="comment-auth-container">
-                    <Link className="comment-auth" to={`/users/${this.props.userId}/posts`}>{this.props.username}</Link>
+                    <Link className="comment-auth" to={`/users/${this.props.userId}`}>{this.props.username}</Link>
                 </div>
                 <div className="comment-body-container">
                     <div className="comment-body">{this.props.comment.body}</div>

@@ -28,11 +28,9 @@ class Api::UsersController < ApplicationController
   # end
   
   def show
-    # @users = User.all
-    # @user = User.find(params[:id]) 
-    # # render :index
-    # render :show
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
+    @user = User.find(params[:username])
+
       if @user
         # render "/api/users/:id"
         render :show

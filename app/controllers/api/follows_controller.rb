@@ -11,7 +11,7 @@ class Api::FollowsController < ApplicationController
     end
 
     def index
-        @follows = Follow.all
+        @follows = Follow.all.includes(:follower, :followed)
         render :index
     end
 

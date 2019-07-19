@@ -53,11 +53,11 @@ class Follows extends React.Component {
         .sort((a, b) => (a.username > b.username) ? 1 : ((b.username > a.username) ? -1 : 0)) 
         .map(follower => {
             const users = this.props.users;
- 
+            if (this.props.users.length < 2) return null;
             return (
                 // <li key={follower.id} className="follower-and-following-list-item">{follower.follower_id}</li>
                 <li key={follower.id} className="follower-and-following-list-item">
-                    <Link className="follower-and-following-list-item-link" to={`/users/${follower.follower_id}/posts`}> 
+                    <Link className="follower-and-following-list-item-link" to={`/users/${follower.follower_id}`}> 
                         {users.filter(user => user.id === follower.follower_id)[0].username }
                     </Link>
                 </li>
@@ -68,7 +68,7 @@ class Follows extends React.Component {
         .map(followed => {
             return (
                 <li key={followed.id} className="follower-and-following-list-item">
-                    <Link className="follower-and-following-list-item-link" to={`/users/${followed.following_id}/posts`}>
+                    <Link className="follower-and-following-list-item-link" to={`/users/${followed.following_id}`}>
                     {followed.username}
                     </Link>
                 </li>

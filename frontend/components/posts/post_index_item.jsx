@@ -45,7 +45,7 @@ class PostIndexItem extends React.Component {
             <div className="individual-post">
                 <div className="post-auth-container">
                     <div className="post-auth-image"></div>
-                    <Link className="post-auth" to={`/users/${this.state.user_id}/posts`}>{this.props.username}</Link>
+                    <Link className="post-auth" to={`/users/${this.state.user_id}`}>{this.props.username}</Link>
                     
                     <div className="post-auth-options visible"> 
                         <ul className="post-auth-options-list hidden">
@@ -59,7 +59,7 @@ class PostIndexItem extends React.Component {
                 </div> 
                 <LikesContainer post={this.props.post} postId={this.props.post.id} likes={this.props.likes}/>
                 <div className="post-caption-container">
-                    <Link className="post-caption-auth" to={`/users/${this.state.user_id}/posts`}>{this.props.username}</Link>
+                    <Link className="post-caption-auth" to={`/users/${this.state.user_id}`}>{this.props.username}</Link>
                     <Link className="post-caption" to={`/posts/${this.state.id}`}>{this.state.caption}</Link>
                 </div>
                 <div className="comment-index-container"> 

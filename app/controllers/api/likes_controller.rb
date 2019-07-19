@@ -11,7 +11,7 @@ class Api::LikesController < ApplicationController
     end
 
     def index
-        @likes = Like.all
+        @likes = Like.all.includes(:user, :likeable)
         render :index
     end
 

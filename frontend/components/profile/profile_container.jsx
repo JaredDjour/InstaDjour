@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import { fetchUserPosts } from "../../actions/post_actions";
 import { fetchAllUsers} from "../../actions/user_actions";
 import { fetchAllFollows } from "../../actions/follow_actions";
+import {openModal, closeModal} from "../../actions/modal_actions";
 import Profile from "./profile";
 
 
@@ -34,6 +35,8 @@ const mdp = dispatch => {
         // fetchAllPosts: () => dispatch(fetchAllPosts()),
         fetchAllUsers: () => dispatch(fetchAllUsers()),
         fetchAllFollows: () => dispatch(fetchAllFollows()),
+        openModal: (id) => dispatch(openModal('showPost', id)),
+        closeModal: () => dispatch(closeModal()),
      };
 };
 

@@ -20,7 +20,7 @@ class NavBar extends React.Component {
         .map(user => {
           return (
             <li key={user.id} className="explore-list-item">
-                <Link className="explore-list-item-link" to={`/users/${user.id}/posts`}>{user.username}</Link>
+                <Link className="explore-list-item-link" to={`/users/${user.id}`}>{user.username}</Link>
               </li>
             )
           })
@@ -76,7 +76,8 @@ class NavBar extends React.Component {
               <div className="nav-right">
                 {exploreIcon}
                 {heartIcon} 
-                <Link className="icon-profile" to={`/users/${this.props.id}/posts`}></Link>
+                <Link className="icon-profile" to={`/users/${this.props.id}`}></Link>
+                {/* <Link className="icon-profile" to={`/users/${this.props.username}`}></Link> */}
                 <Link className="icon-home" to="/"></Link>
                 <div className="logout">
                   <button type="button" className="logout-button" onClick={this.props.logout}>Logout</button>

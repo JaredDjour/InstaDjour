@@ -7,6 +7,7 @@ class Profile extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.user;
+        this.handleShow = this.handleShow.bind(this);
     }
 
     componentDidMount() {
@@ -15,6 +16,10 @@ class Profile extends React.Component {
         // this.props.fetchAllPosts();
         this.props.fetchAllFollows();
         window.scrollTo(0, 0);
+    }
+
+    handleShow() {
+       this.props.openModal(); 
     }
 
     render() {
@@ -33,9 +38,12 @@ class Profile extends React.Component {
         
         const posts = this.props.posts.map(post => {
             return (
-                <Link key={post.id} className="individual-profile-photo-container" to={`/posts/${post.id}`}>
+                // <Link key={post.id} className="individual-profile-photo-container" to={`/posts/${post.id}`}>
+                //     <img className="individual-profile-photo" src={post.photoUrl}></img>
+                // </Link>
+                <div key={post.id} className="individual-profile-photo-container">
                     <img className="individual-profile-photo" src={post.photoUrl}></img>
-                </Link>
+                </div>
         )}).reverse();
    
 

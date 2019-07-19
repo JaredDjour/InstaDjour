@@ -14,12 +14,14 @@ const mapStateToProps = (state, ownProps) => {
 
   const id = state.session.id;
   const currentUser = state.entities.users[state.session.id];
-
+  const username = state.entities.users[state.session.id].username;
+  
   return {
     post: state.entities.posts[ownProps.match.params.postId],
 
     id,
     currentUser,
+    username,
     loggedIn: !!currentUser,
   };
 };

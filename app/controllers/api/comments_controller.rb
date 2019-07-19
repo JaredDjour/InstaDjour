@@ -12,7 +12,7 @@ class Api::CommentsController < ApplicationController
     end
 
     def index
-        @comments = Comment.all
+        @comments = Comment.all.includes(:user, :post, :likes)
         # @comments = Comment.find_by(params[:post_id])
         render :index
     end

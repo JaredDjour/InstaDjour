@@ -114,12 +114,12 @@ class PostForm extends React.Component {
                 {userPic}
                 <div className="index-right-user-names-container">
                         <Link className="index-right-current-user" 
-                            to={`/users/${this.props.currentUser}/posts`}>
+                            to={`/users/${this.props.currentUser}`}>
                             {this.props.username}
                         </Link>
                         <br/>
                         <Link className="index-right-user-name" 
-                            to={`/users/${this.props.currentUser}/posts`}>
+                            to={`/users/${this.props.currentUser}`}>
                             {this.props.fullName}
                         </Link>
                 </div>

@@ -12,8 +12,8 @@ class Api::PostsController < ApplicationController
     end
 
     def index
-        @posts = Post.all.with_attached_photo
-        @users = User.all
+        @posts = Post.all.includes(:user, :comments, :likes).with_attached_photo
+        # @users = User.all
         render :index
     end
 

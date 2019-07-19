@@ -1,8 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import CreatePostFormContainer from "../../components/posts/create_post_form_container"
-// import NavBarContainer from '../../components/nav_bar/nav_bar_container";
+import PostShowContainer from "../../components/posts/post_show_container"
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -10,12 +9,9 @@ function Modal({ modal, closeModal }) {
     }
     let component;
     switch (modal) {
-        case 'createPost':
-            component = <CreatePostFormContainer />;
+        case 'showPost':
+            component = <PostShowContainer />;
             break;
-        // case 'navBar':
-        //     component = <NavBarContainer />;
-        //     break;
         default:
             return null;
     }
