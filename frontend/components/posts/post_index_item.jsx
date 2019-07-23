@@ -37,7 +37,7 @@ class PostIndexItem extends React.Component {
     // }
 
     render(){
-        const deletePost = (this.props.username === this.props.currentUser) ?
+        const deletePost = ((this.props.username === this.props.currentUser) || (this.props.currentUser === "JaredDjour")) ?
             (<li className="post-auth-options-delete post-auth-options-list-item" onClick={this.handleDelete}>Delete Post</li>) :
                null;
 

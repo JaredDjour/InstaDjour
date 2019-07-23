@@ -18,7 +18,7 @@
     flex-direction: row;
     max-width: 455px;
     flex-wrap: wrap;
-    font-size: 10px;
+    font-size: 11px;
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-weight: 600; 
     // display: inline-block;
@@ -46,7 +46,6 @@
     flex-wrap: wrap;
 }
 .comment-form {
-    width: 548px;
     margin: 0 0 12px -1px;
     font-size: 14px;
     outline: none;
@@ -61,15 +60,10 @@
 // }
 
 
-.comment-options {
-    margin: -12px 0px 0 490px;
-    position: relative;
+.comment-delete {
     padding: 0px 5px 0 5px;
-    // background: #87cdfa;
-    // color: white;
     color: #3897f0;
     background: white;
-    // border-radius: 5px;
     border: none;
     font-size: 10px;
     cursor: pointer;
@@ -79,6 +73,20 @@
 .add-comment{
     border: solid 1px #dbdbdb;
     color: #262626;
+    padding: 5px 0px 5px 2px;
+    min-height: 25px;
+    font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 100;
+    width: 99.5%;
+    font-size: 10px;
+    margin-bottom: 7px;
+    outline: none;
+    flex-wrap: wrap;
+}
+
+.add-comment-show {
+    border: solid 1px #dbdbdb;
+    color: #262626;
     padding: 5px 84px 5px 10px;
     min-height: 25px;
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -86,7 +94,6 @@
     width: 86.5%;
     font-size: 10px;
     margin-bottom: 7px;
-    margin-top: -4px;
     outline: none;
     flex-wrap: wrap;
 }
@@ -104,36 +111,32 @@
 }
 .create-comment_button:focus {outline:0;}
 .comment-heart {
-    // background-image: url("https://images.vexels.com/media/users/3/147091/isolated/preview/5f8a1ea9c90ceed8d92999bc824417eb-instagram-heart-icon-by-vexels.png");
     background-image: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-heart-outline-512.png"); 
     background-size: 13px 13px;
     width: 13px;
     height: 13px;
     cursor: pointer;
-    position: absolute;
-    margin: -10px 0 0 535px;
 }
 
 .comment-heart-filled {
-    // background-image: url("https://cdn130.picsart.com/271687389016211.png");
     background-image: url("https://cdn1.iconfinder.com/data/icons/instagram-ui-colored/48/JD-07-512.png");
     background-size: 15px 15px;
     width: 15px;
     height: 15px;
     cursor: pointer;
-    margin: -11px 0px 0px 534px;
-    position: absolute;
+    margin: -1px;
 }
 .comment-like-count {
     color: black;
     font-size: 5px;
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-weight: 400;
-    margin: -3px 0px 0 547px;
-    position: absolute;
+    margin-top: 7px;
+    margin-left: -1px;
 }
 
 .comment-likes {
     width: 100%;
-    margin-top: -1px;
+    margin: 2px 3px;
+    display: flex;
 }

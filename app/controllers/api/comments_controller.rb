@@ -38,7 +38,9 @@ class Api::CommentsController < ApplicationController
     end
 
     def destroy
-        @comment = current_user.comments.find(params[:id])
+        # @comment = current_user.comments.find(params[:id])
+        # Taken out bc want to add condition for my account to delete others' comments
+        @comment = Comment.find(params[:id])
         if @comment.destroy
             render :show
         else

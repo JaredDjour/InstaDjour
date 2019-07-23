@@ -2,7 +2,7 @@ import { createComment, fetchComment } from "../../actions/comment_actions";
 import { fetchPost } from "../../actions/post_actions";
 import { connect } from "react-redux";
 import CommentForm from "./comment_form";
-
+import {withRouter} from "react-router-dom";
 // const msp = (state, ownProps) => {
 //     return {
 //         comment: {
@@ -27,4 +27,4 @@ const mdp = dispatch => {
     };
 };
 
-export default connect(null, mdp)(CommentForm);
+export default withRouter(connect(null, mdp)(CommentForm));

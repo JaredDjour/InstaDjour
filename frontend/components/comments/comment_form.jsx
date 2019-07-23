@@ -39,19 +39,35 @@ class CommentForm extends React.Component {
 
     render() {
         const {inputRef} = this.props;
+
         const button = (this.state.body !== "") ?
         <button className="create-comment_button" type="button" onClick={this.handleSubmit}>Post</button>
         : null;
-        
+
+    //    const commentForm = (this.props.match.params.postId === this.props.postId) ?
+    //         <div className="comment-form-show">
+    //             <form>
+    //                 <input className="add-comment-show" ref={inputRef} type="text" placeholder="Add a comment..." value={this.state.body} onChange={this.handleChange("body")} onKeyUp={this.handleEnter} />
+    //                 {button}
+    //             </form>
+    //         </div>
+    //         :
+    //         <div className="comment-form">
+    //             <form>
+    //                 <input className="add-comment" ref={inputRef} type="text" placeholder="Add a comment..." value={this.state.body} onChange={this.handleChange("body")} onKeyUp={this.handleEnter} />
+    //                 {button}
+    //             </form>
+    //         </div>; 
+
+
         return (
+            // {commentForm}
             <div className="comment-form">
-                <form>
-                    {/* <input className="add-comment" type="text" placeholder="Add a comment..." value={this.state.body} onChange={this.handleChange("body")} /> */}
-                    {/* <textarea className="add-comment" type="text" placeholder="Add a comment..." value={this.state.body} onChange={this.handleChange("body")} onKeyUp={this.handleEnter} />       */}
-                    <input className="add-comment" ref={inputRef} type="text" placeholder="Add a comment..." value={this.state.body} onChange={this.handleChange("body")} onKeyUp={this.handleEnter} />      
-                    {button}
-                 </form>
-            </div>
+               <form>
+                   <input className="add-comment" ref={inputRef} type="text" placeholder="Add a comment..." value={this.state.body} onChange={this.handleChange("body")} onKeyUp={this.handleEnter} />
+                   {button}
+               </form>
+           </div>
         )
     }
 }

@@ -39,8 +39,9 @@ class Api::PostsController < ApplicationController
     # end
 
     def destroy
-        @post = current_user.posts.find(params[:id])
-        # @post = Post.find(params[:id])
+        # @post = current_user.posts.find(params[:id])
+        # Taken out bc want to add condition for my account to delete others' posts
+        @post = Post.find(params[:id])
         if @post.destroy
             render :show
         else

@@ -101,7 +101,7 @@ class PostShow extends React.Component {
                             <img className="photos" src={this.state.photoUrl}></img>
                         </div> 
                     </div> 
-{/* 
+
                     <div className="post-show-right">
                         <div className="post-show-auth-container">
                             <div className="post-auth-image"></div>
@@ -119,8 +119,8 @@ class PostShow extends React.Component {
                         <div className="post-show-comments">
                             <CommentIndexContainer post={this.props.post} postId={this.props.post.id} />
                         </div> 
-                    </div>  */}
-                    {postShowRight}
+                    </div> 
+                    {/* {postShowRight} */}
 
                 </div>
             </div>

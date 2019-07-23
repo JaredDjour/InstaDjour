@@ -26,8 +26,8 @@ class CommentIndexItem extends React.Component {
 
 
     render() {
-        const deleteComment = (this.props.username === this.props.currentUser) ?
-            <button className="comment-options" type="button" onClick={this.handleDelete}>Delete</button>
+        const deleteComment = ((this.props.username === this.props.currentUser) || (this.props.currentUser === "JaredDjour")) ?
+            <button className="comment-delete" type="button" onClick={this.handleDelete}>Delete</button>
             : null;
 
         return (
@@ -39,7 +39,7 @@ class CommentIndexItem extends React.Component {
                     <div className="comment-body">{this.props.comment.body}</div>
                 </div>
            
-                <CommentLikes className="comment-options" comment={this.props.comment} commentId={this.props.comment.id} likes={this.props.likes} />
+                <CommentLikes comment={this.props.comment} commentId={this.props.comment.id} likes={this.props.likes} />
                 {deleteComment}
              
             </div>

@@ -111,7 +111,7 @@
     display: inline-block;
     color: black;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 11px;
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-weight: 400;
     margin-left: 6px;
@@ -122,7 +122,7 @@
 .post-caption-auth {
     display: inline-block;
     overflow: hidden;
-    font-size: 10px;
+    font-size: 11px;
     color: black;
     font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-weight: 600; 
@@ -141,7 +141,7 @@
     padding-top: 5px;
     display: flex;
     padding-bottom: 8px;
-    // margin-bottom: 5px;
+    margin-bottom: 3px;
     background: white;
 }
 
@@ -235,7 +235,7 @@
 .post-show-container {
    display: flex;
     justify-content: center;
-    padding: 50PX;
+    padding: 50px;
     flex-wrap: wrap;
     // margin-top: 50px;
     align-content: center; 
@@ -421,6 +421,9 @@
     max-height: 450px;
     overflow: scroll;
     // z-index: 3;
+    display: flex;
+	flex-direction: column;
+
 }
 
 .upload-post {
@@ -497,6 +500,8 @@
     height: auto;
     max-height: 180px;
     justify-content: center;
+    max-width: 100%;
+
 }
 
 
@@ -519,6 +524,11 @@
 }
 .create-post-button:focus{outline:0;}
 
+.create-post-button[disabled] {
+	background-color: #ebebeb;
+	cursor: default;
+}
+
 // @media (max-width: 1200px) {                  
 //    .index-right {
 //       display: none;
@@ -527,7 +537,7 @@
 .individual-post-show {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     justify-content: center;
     margin: auto;
     margin-top: 85px;
@@ -535,7 +545,7 @@
     // padding-top: 7%; 
 }
 .post-show-left {
-    width: 568px;
+    width: 400px;
     height: 100%;
     // border: solid black 0.5px;
     border: solid #e6e6e6 1px;
@@ -544,7 +554,7 @@
 .post-show-right {
     height: inherit;
     margin: -14px 0px 0 0;
-    width: 568px;
+    width: 400px;
 }
 
 .post-show-caption-container {

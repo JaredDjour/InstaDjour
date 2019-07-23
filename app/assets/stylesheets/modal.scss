@@ -13,8 +13,10 @@
   top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 375px;
-  
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 550px;
+  margin: 30px auto;
 }
 
 .modal-post-show-right {
