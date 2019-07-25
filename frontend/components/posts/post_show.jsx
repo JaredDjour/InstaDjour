@@ -14,8 +14,6 @@ class PostShow extends React.Component {
     componentDidMount() {
         this.props.fetchAllComments();
         this.props.fetchAllLikes();
-        // this.props.fetchPost(this.props.post.id)
-        //     .then(() => this.setState(this.props.post)); 
         this.props.fetchPost(this.props.match.params.postId)
         .then(() => this.setState(this.props.post));
         window.scrollTo(0, 0);
@@ -41,55 +39,6 @@ class PostShow extends React.Component {
         const nav = (this.state.id === parseInt(this.props.match.params.postId)) ? 
             <NavBarContainer users={this.props.users} post={this.props.post} posts={this.props.posts} />
             : null;
-
-
-        const postShowRight = (this.state.id === parseInt(this.props.match.params.postId)) ?
-            (<div className="post-show-right">
-                <div className="post-show-auth-container">
-                    <div className="post-auth-image"></div>
-                    <Link className="post-auth" to={`/users/${this.state.user_id}`}>{this.state.username}</Link>
-                </div>
-
-                <div className="post-show-caption-container">
-                    <Link className="post-caption-auth" to={`/users/${this.state.user_id}`}>{this.state.username}</Link>
-
-                    <h4 className="post-caption">{this.state.caption}</h4>
-                </div>
-                <LikesContainer post={this.props.post} postId={this.props.post.id} likes={this.props.likes} />
-                <div className="post-show-space"></div>
-
-                <div className="post-show-comments">
-                    <CommentIndexContainer post={this.props.post} postId={this.props.post.id} />
-                </div>
-            </div>
-                )  
-                
-                :
-            // (<div className="modal-post-show-right">
-            //     <div className="modal-post-show-auth-container">
-            //         <div className="post-auth-image"></div>
-            //         <Link className="post-auth" to={`/users/${this.state.user_id}`}>{this.state.username}</Link>
-            //     </div>
-
-            //     <div className="modal-post-show-caption-container">
-            //         <Link className="post-caption-auth" to={`/users/${this.state.user_id}`}>{this.state.username}</Link>
-
-            //         <h4 className="post-caption">{this.state.caption}</h4>
-            //     </div>
-            //     <LikesContainer post={this.props.post} postId={this.props.post.id} likes={this.props.likes} />
-            //     <div className="post-show-space"></div>
-
-            //     <div className="modal-post-show-comments">
-            //         <CommentIndexContainer post={this.props.post} postId={this.props.post.id} />
-            //     </div>
-            // </div>
-            // )
-            
-            // (<div>
-            //     <h4 className="post-caption">{this.state.caption}</h4>
-            //    <Link className="post-auth-options-list-item-show" to={`/posts/${this.state.id}`}>Go to Post</Link>
-            // </div>)
-            null; 
 
         return (
             <div>

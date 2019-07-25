@@ -97,7 +97,7 @@
     background-color:white; 
     border: solid #e6e6e6 1px; 
     text-align: start;
-    margin-top: 15px;
+    // margin-top: 15px;
    
 }
 
@@ -496,12 +496,8 @@
 }
 
 .create-post-img-preview {
-    width: 100%;
-    height: auto;
     max-height: 180px;
-    justify-content: center;
-    max-width: 100%;
-
+    object-fit: contain;
 }
 
 
@@ -553,7 +549,7 @@
 
 .post-show-right {
     height: inherit;
-    margin: -14px 0px 0 0;
+    // margin: -14px 0px 0 0;
     width: 400px;
 }
 
