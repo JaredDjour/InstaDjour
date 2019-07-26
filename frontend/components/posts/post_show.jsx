@@ -62,12 +62,14 @@ class PostShow extends React.Component {
 
                             <h4 className="post-caption">{this.state.caption}</h4>
                         </div> 
+                    <div className="post-show-contain">
                         <LikesContainer post={this.props.post} postId={this.props.post.id} likes={this.props.likes} />
                         <div className="post-show-space"></div>
 
                         <div className="post-show-comments">
                             <CommentIndexContainer post={this.props.post} postId={this.props.post.id} />
                         </div> 
+                    </div>
                     </div> 
                     {/* {postShowRight} */}
 
