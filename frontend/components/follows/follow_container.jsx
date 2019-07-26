@@ -14,5 +14,4 @@ const mdp = dispatch => ({
     deleteFollow: followId => dispatch(deleteFollow(followId))
 });
 
-// export default withRouter(connect(msp, mdp)(Follows));
 export default withRouter(connect(msp, mdp)(Follows));

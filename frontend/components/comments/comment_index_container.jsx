@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-// import {withRouter} from "react-router-dom";
 import { fetchAllComments, deleteComment } from "../../actions/comment_actions";
 import CommentIndex from "./comment_index";
 
@@ -22,5 +21,4 @@ const mdp = dispatch => {
 };
 
 
-// export default withRouter(connect(msp, mdp)(CommentIndex));
 export default connect(msp, mdp)(CommentIndex);

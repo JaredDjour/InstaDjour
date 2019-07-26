@@ -4,8 +4,6 @@ body {
     color: #262626;
 }
 .nav-bar-container {
-    // top: 0;
-    // position: fixed;
 }
 .nav-bar {
     display: flex;
@@ -43,7 +41,6 @@ body {
     background-size: 26px 26px;
     width: 25px;
     height: 25px;
-    // background-image: url("http://grassyhillcountryclub.com/wp-content/uploads/2019/01/ig-logo-2.png");
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Instagram_font_awesome.svg/240px-Instagram_font_awesome.svg.png");
     cursor: pointer;
 }
@@ -82,8 +79,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    // margin for when have a search bar:
-    // margin: -65px -35px 0px 564px;
     margin: -33px -35px 0px 564px
 }
 
