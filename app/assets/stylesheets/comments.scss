@@ -77,6 +77,8 @@
     // margin-bottom: 7px;
     outline: none;
     flex-wrap: wrap;
+    position: relative;
+    bottom: 0;
 }
 
 .add-comment-show {
@@ -101,6 +103,8 @@
     display: inline;
     padding: 0;
     background: transparent;
+    position: relative;
+    bottom: 0;
 }
 .create-comment_button:focus {outline:0;}
 .comment-heart {
