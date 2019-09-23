@@ -56,27 +56,28 @@
 .profile-pic-container {
     // background-image: url("https://app.instarocket.co/Content/profile/1.png");
     // background-size: 130px 130px;
+    margin: 0 -5px 0 0px;
     width: 130px;
     height: 130px;
 }
 
 .profile-pic {
-    width: 115px;
-    height: 115px;
+    width: 113px;
+    height: 113px;
     border-radius: 60px;
-    margin: 0px 0 5px -123px;
+    margin: 0px 0px 5px -113px;;
 }
 .profile-pic-jane {
     width: 123px;
     height: 125px;
     border-radius: 60px;
-    margin: 0px 0 2px -126px;
+    margin: 0px 0 2px -121px;
 }
 .profile-pic-john {
     width: 123px;
     height: 125px;
     border-radius: 60px;
-    margin: 0px 0 2px -126px;
+    margin: 0px 0 2px -121px;
 }
 
 .right-profile-info {
